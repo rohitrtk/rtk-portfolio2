@@ -1,4 +1,9 @@
 ---
+import App from "@components/App.jsx";
+import Navbar from "@components/Navbar.jsx";
+import Main from "@components/Main.jsx";
+
+import "@styles/global.css";
 ---
 
 <html lang="en">
@@ -7,9 +12,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Rohit Kisto</title>
+		<body class="bg-neutral-900 text-gray-400 m-1">
+			<App client:only="react"/>
+		</body>
 	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+	
 </html>
