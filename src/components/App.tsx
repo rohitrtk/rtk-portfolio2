@@ -14,7 +14,7 @@ const App = () => {
 
   const scrollToOffset = (offset: number) => {
     if (!mainParallaxRef.current) return;
-    console.log("boop");
+
     mainParallaxRef.current.scrollTo(offset);
   };
 
