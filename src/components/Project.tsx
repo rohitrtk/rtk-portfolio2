@@ -1,9 +1,11 @@
 import { useState, ReactNode } from "react";
 import { Modal, Carousel } from "flowbite-react";
+import ProgrammingIcon, { JavaScriptIcon, PHPIcon } from "./Icons";
 
 export interface ProjectData {
   title: string;
   coverPhoto: string;
+  toolsUsed: string[];
   carouselPhotos: string[];
   info: string[];
 }
@@ -12,10 +14,11 @@ interface Props {
   title: string;
   src: string;
   alt?: string;
+  toolsUsed?: string[];
   children?: ReactNode;
 }
 
-const Project = ({ title, src, children, alt = "" }: Props) => {
+const Project = ({ title, src, children, toolsUsed, alt = "" }: Props) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -36,20 +39,25 @@ const Project = ({ title, src, children, alt = "" }: Props) => {
         onClose={toggleOpen}
         popup={true}
         dismissible={true}
-        className="h-auto p-5">
-        <Modal.Header className="flex flex-col justify-center align-middle h-auto text-center bg-neutral-900 rounded-t-lg">
-          <h1 className="text-heading text-white">{title}</h1>
-        </Modal.Header>
-        <Modal.Body className="w-full rounded-b-lg bg-neutral-900">
-          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+        position="center"
+        size="4xl">
+        <Modal.Body className="rounded-b-lg bg-neutral-900 overflow-y-scroll">
+          <div className="flex font-text font-bold underline text-4xl justify-center text-center p-3">
+            <h1>{title}</h1>
+          </div>
+          <div className="h-96">
             <Carousel>
               <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" />
               <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" />
               <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" />
             </Carousel>
+            <div className="flex flex-row p-2 gap-4">
+              <ProgrammingIcon icon="php" />
+              <ProgrammingIcon icon="javascript" />
+              <ProgrammingIcon icon="aframe" />
+            </div>
+            <div className="flex flex-col gap-4">{children}</div>
           </div>
-
-          <div>{children}</div>
         </Modal.Body>
       </Modal>
     </>

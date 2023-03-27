@@ -9,6 +9,8 @@ import Projects from "@sections/Projects";
 
 import ParallaxContext from "@context/ParallaxContext.jsx";
 
+import About from "@sections/About/index.jsx";
+
 const App = () => {
   const mainParallaxRef = useRef<IParallax | null>(null);
 
@@ -32,24 +34,19 @@ const App = () => {
         <ParallaxLayer
           sticky={{ start: 1, end: 3 }}
           className="p-10 flex flex-row justify-between -z-20">
-          <h1 className="text-6xl font-text">About Me</h1>
+          <About.Header />
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={1.25}
           className="p-10 flex flex-row justify-between align-middle -z-20">
-          <p className="text-2xl font-text">
-            Hello! I'm Rohit, and I'm a Software Developer.
-          </p>
-          <img src="/placeholder-avatar.png" className="w-[200px] h-[200px]" />
+          <About.Body text="Hello! I'm Rohit, and I'm a Software Developer." />
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={3}
           className="p-10 flex flex-row justify-between -z-20">
-          <p className="text-2xl font-text">
-            I'm also a mathematician, philosopher, musician, and weightlifter.
-          </p>
+          <About.Body text="I'm also a mathematician, philosopher, musician, and weightlifter." />
         </ParallaxLayer>
 
         {/* Works Section */}

@@ -30,15 +30,21 @@ const Projects = () => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 justify-center align-middle">
       {projectsData &&
-        projectsData.map(({ title, coverPhoto, carouselPhotos, info }, i) => {
-          return (
-            <Project title={title} src={coverPhoto} key={`project-${i}`}>
-              {info.map((section, j) => {
-                return <section key={`project-${i}-${j}`}>{section}</section>;
-              })}
-            </Project>
-          );
-        })}
+        projectsData.map(
+          ({ title, coverPhoto, toolsUsed, carouselPhotos, info }, i) => {
+            return (
+              <Project
+                title={title}
+                src={coverPhoto}
+                key={`project-${i}`}
+                toolsUsed={toolsUsed}>
+                {info.map((section, j) => {
+                  return <section key={`project-${i}-${j}`}>{section}</section>;
+                })}
+              </Project>
+            );
+          }
+        )}
     </div>
   );
 };
