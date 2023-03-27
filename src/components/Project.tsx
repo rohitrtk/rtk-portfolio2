@@ -1,6 +1,13 @@
 import { useState, ReactNode } from "react";
 import { Modal, Carousel } from "flowbite-react";
 
+export interface ProjectData {
+  title: string;
+  coverPhoto: string;
+  carouselPhotos: string[];
+  info: string[];
+}
+
 interface Props {
   title: string;
   src: string;
