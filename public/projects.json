@@ -1,7 +1,7 @@
 [
   {
     "title": "Student Application Form",
-    "coverPhoto": "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
+    "coverPhoto": "./images/snp-1.png",
     "carouselPhotos": [
       "./images/snp-1.png",
       "./images/snp-2.png",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Project 2",
+    "title": "XR Experience",
     "coverPhoto": "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "carouselPhotos": [
       "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "title": "Project 3",
+    "title": "Recycling Game",
     "coverPhoto": "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "carouselPhotos": [
       "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "title": "Project 4",
+    "title": "VSCO Clone",
     "coverPhoto": "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "carouselPhotos": [
       "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "title": "Project 5",
+    "title": "Sudoku Solver",
     "coverPhoto": "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "carouselPhotos": [
       "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",

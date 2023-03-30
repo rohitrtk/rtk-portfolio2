@@ -1,5 +1,4 @@
-import { useState, useEffect, ReactNode } from "react";
-import { useInView, useSpring, a } from "@react-spring/web";
+import type { ReactNode } from "react";
 
 import Header from "./Header";
 import Body from "./Body";
@@ -9,20 +8,7 @@ interface Props {
 }
 
 const About = ({ children }: Props) => {
-  const [viewed, setViewed] = useState(false);
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    console.log("working ;");
-    if (inView && !viewed) {
-      // Play animation
-      console.log("Poof!");
-
-      setViewed(true);
-    }
-  }, [inView]);
-
-  return <a.div ref={ref}>{children}</a.div>;
+  return { children };
 };
 
 About.Header = Header;

@@ -2,6 +2,7 @@ import { useRef } from "react";
 
 import Hamburger from "@components/Hamburger.js";
 import NavbarListItem from "./NavbarListItem.js";
+import NavbarLink from "./NavbarLink.js";
 
 const Navbar = () => {
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -25,6 +26,7 @@ const Navbar = () => {
               href="#contact"
               targetScrollIndex={5}
             />
+            <NavbarLink title="GitHub" href="https://github.com/rohitrtk" />
           </ul>
         </div>
       </div>

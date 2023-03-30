@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 
 import Navbar from "@components/Navbar/Navbar.jsx";
-import ContactForm from "@components/ContactForm/ContactForm.js";
 
 import Intro from "@sections/Intro.jsx";
 import Projects from "@sections/Projects";
@@ -10,6 +9,7 @@ import Projects from "@sections/Projects";
 import ParallaxContext from "@context/ParallaxContext.jsx";
 
 import About from "@sections/About/index.jsx";
+import Contact from "@sections/Contact";
 
 const App = () => {
   const mainParallaxRef = useRef<IParallax | null>(null);
@@ -23,56 +23,47 @@ const App = () => {
   return (
     <ParallaxContext.Provider
       value={{ parallaxRef: mainParallaxRef, scrollToOffset }}>
-      <Parallax ref={mainParallaxRef} pages={7} className="w-screen h-screen">
+      <Parallax
+        ref={mainParallaxRef}
+        pages={6}
+        className="w-screen h-screen scrollbar-hide">
         <ParallaxLayer sticky={{ start: 0, end: 0.25 }}>
           <Navbar />
         </ParallaxLayer>
 
-        <Intro />
+        <ParallaxLayer
+          offset={0.25}
+          className="p-10 flex flex-row justify-between -z-20">
+          <Intro />
+        </ParallaxLayer>
 
-        {/* About Section */}
+        {/* 
+          About Section 
+          - Have to split about section into multiple parts to play nicely with parallax
+        */}
         <ParallaxLayer
           sticky={{ start: 1, end: 3 }}
           className="p-10 flex flex-row justify-between -z-20">
           <About.Header />
         </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={1.25}
-          className="p-10 flex flex-row justify-between align-middle -z-20">
-          <About.Body text="Hello! I'm Rohit, and I'm a Software Developer." />
-        </ParallaxLayer>
+        <>
+          <ParallaxLayer
+            offset={1.25}
+            className="p-10 flex flex-row justify-between align-middle -z-20">
+            <About.Body text="Hello! I'm Rohit, and I'm a Software Developer." />
+          </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={3}
-          className="p-10 flex flex-row justify-between -z-20">
-          <About.Body text="I'm also a mathematician, philosopher, musician, and weightlifter." />
-        </ParallaxLayer>
+          <ParallaxLayer
+            offset={3}
+            className="p-10 flex flex-row justify-between -z-20">
+            <About.Body text="I'm also a mathematician, philosopher, musician, and weightlifter." />
+          </ParallaxLayer>
+        </>
 
-        {/* Works Section */}
-        <ParallaxLayer
-          offset={4}
-          className="p-10 flex flex-row justify-between -z-20">
-          <h1 className="text-6xl font-text">Works</h1>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={4.25}
-          className="p-2 justify-center align-middle container mx-auto -z-20">
+        <ParallaxLayer offset={4}>
           <Projects />
-        </ParallaxLayer>
-
-        {/* Contact Section */}
-        <ParallaxLayer
-          offset={5.25}
-          className="p-10 flex flex-row justify-between -z-20">
-          <h1 className="text-6xl font-text">Contact</h1>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={5.4}
-          className="flex flex-row justify-start p-10 -z-20">
-          <ContactForm />
+          <Contact />
         </ParallaxLayer>
       </Parallax>
     </ParallaxContext.Provider>

@@ -14,11 +14,19 @@ interface Props {
   title: string;
   src: string;
   alt?: string;
+  carouselPhotos: string[];
   toolsUsed?: string[];
   children?: ReactNode;
 }
 
-const Project = ({ title, src, children, toolsUsed, alt = "" }: Props) => {
+const Project = ({
+  title,
+  src,
+  children,
+  toolsUsed,
+  carouselPhotos,
+  alt = ""
+}: Props) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -28,7 +36,7 @@ const Project = ({ title, src, children, toolsUsed, alt = "" }: Props) => {
   return (
     <>
       <div className="relative cursor-pointer" onClick={toggleOpen}>
-        <img className="h-auto max-w-full rounded-lg" src={src} alt={alt} />
+        <img className="h-full max-w-full rounded-lg" src={src} alt={alt} />
         <div className="text-center align-middle justify-center absolute w-[100%] h-[25%] top-1/2 opacity-75 bg-neutral-900">
           <p>{title}</p>
         </div>
@@ -47,9 +55,9 @@ const Project = ({ title, src, children, toolsUsed, alt = "" }: Props) => {
           </div>
           <div className="h-96">
             <Carousel>
-              <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" />
-              <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" />
-              <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" />
+              {carouselPhotos.map((photo) => (
+                <img src={photo} className="w-full h-full" />
+              ))}
             </Carousel>
             <div className="flex flex-row p-2 gap-4">
               <ProgrammingIcon icon="php" />

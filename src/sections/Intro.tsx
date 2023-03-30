@@ -11,10 +11,7 @@ const Intro = () => {
   });
 
   return (
-    <ParallaxLayer
-      offset={0.25}
-      speed={1}
-      className="p-10 flex flex-row justify-between">
+    <>
       <div className="flex flex-col">
         <Trail
           value="Rohit"
@@ -40,7 +37,7 @@ const Intro = () => {
           src="/placeholder-avatar.png"
         />
       </a.div>
-    </ParallaxLayer>
+    </>
   );
 };
 
