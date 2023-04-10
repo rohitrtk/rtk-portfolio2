@@ -13,7 +13,8 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor."
-    ]
+    ],
+    "toolsUsed": ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL", "cPanel"]
   },
   {
     "title": "XR Experience",
@@ -27,7 +28,8 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor."
-    ]
+    ],
+    "toolsUsed": ["HTML", "CSS", "JavaScript", "aFrame", "Azure"]
   },
   {
     "title": "Recycling Game",
@@ -41,7 +43,8 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor."
-    ]
+    ],
+    "toolsUsed": ["Angular", "TypeScript", "NodeJS", "Firebase", "Ionic", "Cordova"]
   },
   {
     "title": "VSCO Clone",
@@ -55,7 +58,8 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor."
-    ]
+    ],
+    "toolsUsed": ["NextJS", "React", "TypeScript", "Chakra", "Firebase"]
   },
   {
     "title": "Sudoku Solver",
@@ -69,6 +73,7 @@
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor.",
       "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies leo pharetra, accumsan dolor eu, interdum nibh. Vestibulum maximus massa vel molestie auctor. Vivamus lobortis eros quis ipsum tristique, eget rhoncus nulla condimentum. Nunc pharetra ligula purus, id luctus justo egestas vel. Praesent ut fermentum ipsum, eu viverra sapien. Ut et suscipit est. Pellentesque pretium pulvinar porttitor. Sed id sodales tortor."
-    ]
+    ],
+    "toolsUsed": ["HTML", "CSS", "TypeScript", "Rust"]
   }
 ]

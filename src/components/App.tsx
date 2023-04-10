@@ -10,6 +10,16 @@ import ParallaxContext from "@context/ParallaxContext.jsx";
 
 import About from "@sections/About/index.jsx";
 import Contact from "@sections/Contact";
+import SectionHeader from "./SectionHeader";
+import type { AstroCookies } from "astro";
+import { Toaster } from "react-hot-toast";
+import Logo from "./Logo";
+
+export const prerender = true;
+
+interface Props {
+  cookie: AstroCookies;
+}
 
 const App = () => {
   const mainParallaxRef = useRef<IParallax | null>(null);
@@ -23,9 +33,10 @@ const App = () => {
   return (
     <ParallaxContext.Provider
       value={{ parallaxRef: mainParallaxRef, scrollToOffset }}>
+      <Toaster />
       <Parallax
         ref={mainParallaxRef}
-        pages={6}
+        pages={7}
         className="w-screen h-screen scrollbar-hide">
         <ParallaxLayer sticky={{ start: 0, end: 0.25 }}>
           <Navbar />
@@ -33,9 +44,28 @@ const App = () => {
 
         <ParallaxLayer
           offset={0.25}
-          className="p-10 flex flex-row justify-between -z-20">
+          speed={0.75}
+          className="flex justify-center">
+          {/* Test animation */}
+          <div className="min-w-[400px] max-h-[400px]">{/* <Logo /> */}</div>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0}
+          speed={0.5}
+          className="p-10 flex flex-row -z-20 justify-center items-center">
           <Intro />
         </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0}
+          className="-z-30 brightness-50 bg-no-repeat"
+          style={{
+            // Tailwind being weird here
+            //bg-[url(https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center
+            backgroundSize: "cover"
+          }}
+        />
 
         {/* 
           About Section 
@@ -43,8 +73,11 @@ const App = () => {
         */}
         <ParallaxLayer
           sticky={{ start: 1, end: 3 }}
-          className="p-10 flex flex-row justify-between -z-20">
-          <About.Header />
+          className="p-10 flex flex-row justify-between brightness-50 -z-20 bg-[url(https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]"
+          style={{
+            backgroundSize: "cover"
+          }}>
+          <SectionHeader title="About Me" />
         </ParallaxLayer>
 
         <>
@@ -61,8 +94,22 @@ const App = () => {
           </ParallaxLayer>
         </>
 
-        <ParallaxLayer offset={4}>
+        <ParallaxLayer
+          sticky={{ start: 4, end: 4.5 }}
+          className="p-10 flex flex-row justify-between brightness-50 -z-20 bg-[url(https://images.pexels.com/photos/2177482/pexels-photo-2177482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]"
+          style={{
+            backgroundSize: "cover"
+          }}>
+          <SectionHeader title="Works" />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={4.25}
+          className="flex -z-20 align-middle p-10 justify-center">
           <Projects />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={6}>
           <Contact />
         </ParallaxLayer>
       </Parallax>

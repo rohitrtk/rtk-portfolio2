@@ -1,44 +1,49 @@
-import Trail from "@components/Trail.jsx";
-import { a, useSpring } from "@react-spring/web";
-import { ParallaxLayer } from "@react-spring/parallax";
+import { a, useTrail } from "@react-spring/web";
+
+import { useFade } from "@hooks/useFade";
+import Stripe from "@components/Stripe";
 
 const Intro = () => {
-  const imgSpring = useSpring({
-    config: { mass: 5, friction: 500, tension: 1000 },
-    from: { opacity: 0, x: 200 },
-    to: { opacity: 1, x: 0 },
-    delay: 1500
-  });
-
   return (
     <>
-      <div className="flex flex-col">
-        <Trail
-          value="Rohit"
-          styleString="text-6xl md:text-9xl font-text font-bold"
-        />
-
-        <Trail
-          value="Kisto"
-          styleString="text-6xl md:text-9xl font-text font-bold"
-          delay={500}
-        />
-
-        <Trail
-          value="Software Developer"
-          styleString="text-2xl md:text-3xl font-text"
-          delay={1000}
-        />
-      </div>
-
-      <a.div style={imgSpring} className="flex flex-start justify-center">
-        <img
-          className="rounded-full border border-gray-200 w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
-          src="/placeholder-avatar.png"
-        />
-      </a.div>
+      <Stripe />
+      <NormalView />
+      <MobileView />
     </>
   );
 };
 
 export default Intro;
+
+const MobileView = () => {
+  const [ref, style] = useFade();
+
+  return (
+    <a.div ref={ref} style={style} className="flex sm:flex-row flex-col w-full">
+      <div className="sm:hidden text-center justify-center align-middle">
+        <h1 className="text-7xl font-text font-bold">Rohit Kisto</h1>
+        <h1 className="text-2xl font-text font-bold">Software Developer</h1>
+      </div>
+    </a.div>
+  );
+};
+
+const NormalView = () => {
+  const [ref, style] = useFade();
+
+  return (
+    <a.div className="hidden sm:flex flex-row justify-center min-w-full">
+      <a.div
+        ref={ref}
+        style={style}
+        className="flex flex-col justify-start text-center">
+        <a.h1 className="flex flex-row text-9xl font-text font-bold">
+          <a.span>Rohit Kisto</a.span>
+        </a.h1>
+        <a.h1 className="text-2xl md:text-3xl font-text font-bold">
+          Software Developer
+        </a.h1>
+      </a.div>
+    </a.div>
+  );
+};

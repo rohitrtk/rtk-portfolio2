@@ -14,8 +14,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="px-2 md:px-4 py-2.5 bg-neutral-900">
-      <div className="container flex flex-wrap items-center justify-end mx-auto">
+    <nav className="px-2 py-2.5 w-full bg-grey-900">
+      <div className="flex flex-row justify-end px-3">
         <Hamburger onClick={hamburgerOnClick} />
         <div ref={menuRef} className="hidden w-full md:block md:w-auto">
           <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">

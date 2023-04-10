@@ -1,10 +1,9 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import ContactFormInput, { ContactFormTextArea } from "./ContactFormInput.js";
+import { ContactFormTextArea } from "./ContactFormInput.js";
+import { toast } from "react-hot-toast";
 
 export interface FormInputs {
-  name: string;
-  emailAddress: string;
   message: string;
 }
 
@@ -14,71 +13,47 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors }
   } = useForm<FormInputs>();
+
+  const sendMessage = async () => {
+    return true;
+  };
+
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log(data);
+    toast.promise(sendMessage(), {
+      loading: "Sending message...",
+      success: <b>Message sent!</b>,
+      error: <b>Error sending message!</b>
+    });
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-      <div className="w-1/2 flex flex-row gap-4">
-        <ContactFormInput
-          name="name"
-          placeholder="Name"
-          register={register}
-          errors={errors}
-          registerOptions={{
+      <div className="block">
+        <textarea
+          className="w-full h-full font-text"
+          rows={4}
+          placeholder="Leave a message..."
+          {...register("message", {
             required: "Required",
             minLength: {
               value: 3,
               message: "4 characters minimum"
             },
             maxLength: {
-              value: 40,
-              message: "40 characters maximum"
+              value: 200,
+              message: "200 characters maximum"
             }
-          }}
+          })}
         />
-
-        <ContactFormInput
-          name="name"
-          placeholder="Name"
-          register={register}
-          errors={errors}
-          registerOptions={{
-            required: "Required",
-            minLength: {
-              value: 3,
-              message: "4 characters minimum"
-            },
-            maxLength: {
-              value: 40,
-              message: "40 characters maximum"
-            },
-            pattern: {
-              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-              message: "Invalid"
-            }
-          }}
-        />
+        {errors.message ? (
+          <p role="alert" className="font-text text-red-800">
+            {errors.message?.message}
+          </p>
+        ) : (
+          <></>
+        )}
       </div>
 
-      <ContactFormTextArea
-        name="message"
-        placeholder="Leave a message..."
-        register={register}
-        errors={errors}
-        registerOptions={{
-          required: "Required",
-          minLength: {
-            value: 3,
-            message: "4 characters minimum"
-          },
-          maxLength: {
-            value: 200,
-            message: "200 characters maximum"
-          }
-        }}
-      />
       <div className="justify-center flex flex-row">
         <button
           type="submit"

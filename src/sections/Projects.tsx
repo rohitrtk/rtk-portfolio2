@@ -34,11 +34,8 @@ const Projects = () => {
 
   return (
     <a.div ref={ref} style={style}>
-      <div className="p-10 flex flex-row justify-between -z-20">
-        <h1 className="text-6xl font-text">Works</h1>
-      </div>
       <div className="p-2 justify-center align-middle container mx-auto -z-20">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 justify-center align-middle">
+        <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center align-middle">
           {projectsData &&
             projectsData.map(
               ({ title, coverPhoto, toolsUsed, carouselPhotos, info }, i) => {
