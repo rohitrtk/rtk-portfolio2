@@ -8,10 +8,10 @@ const Contact = () => {
   const [ref, style] = useFade();
 
   return (
-    <a.div ref={ref} style={style} className="flex flex-col p-10">
-      <div className="flex flex-row justify-between parallax-body">
-        <h1 className="text-6xl font-body">Contact</h1>
-      </div>
+    <a.div
+      ref={ref}
+      style={style}
+      className="flex flex-col p-10 align-middle justify-center min-w-full">
       <div className="flex flex-row w-full justify-center">
         <div className="flex flex-col justify-center align-middle md:w-1/2 text-center">
           <p className="text-xl font-body">

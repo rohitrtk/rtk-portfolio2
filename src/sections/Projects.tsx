@@ -35,10 +35,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <a.div ref={ref} style={style} className="z-50">
+    <a.div ref={ref} style={style} className="">
       <div className="p-2 justify-center align-middle container mx-auto parallax-body">
         <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center align-middle">
           <P.SRForm />
+          <P.XRExperience />
           {projectsData &&
             projectsData.map(
               ({ title, coverPhoto, toolsUsed, carouselPhotos, info }, i) => {
