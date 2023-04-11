@@ -1,5 +1,10 @@
 import { useRef } from "react";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import {
+  Parallax,
+  ParallaxLayer,
+  IParallax,
+  IParallaxLayer
+} from "@react-spring/parallax";
 
 import { Toaster } from "react-hot-toast";
 
@@ -27,7 +32,11 @@ export const prerender = true;
  * 6. Contact Me
  */
 const App = () => {
-  const mainParallaxRef = useRef<IParallax | null>(null);
+  const mainParallaxRef = useRef<IParallax>(null);
+
+  const aboutSectionRef = useRef<IParallaxLayer>(null);
+  const projectsSectionRef = useRef<IParallaxLayer>(null);
+  const contactSectionRef = useRef<IParallaxLayer>(null);
 
   const scrollToOffset = (offset: number) => {
     if (!mainParallaxRef.current) return;
@@ -35,15 +44,25 @@ const App = () => {
     mainParallaxRef.current.scrollTo(offset);
   };
 
+  const provider = {
+    parallaxRef: mainParallaxRef,
+    scrollToOffset,
+    aboutSectionRef,
+    projectsSectionRef,
+    contactSectionRef
+  };
+
   return (
-    <ParallaxContext.Provider
-      value={{ parallaxRef: mainParallaxRef, scrollToOffset }}>
+    <ParallaxContext.Provider value={provider}>
       <Toaster />
       <Parallax
         ref={mainParallaxRef}
         pages={9}
         className="w-screen h-screen scrollbar-hide fixed">
-        <ParallaxLayer sticky={{ start: 0, end: 0.25 }} className="">
+        <ParallaxLayer
+          sticky={{ start: 0, end: 0.25 }}
+          speed={0.5}
+          className="relative z-50">
           <Navbar />
         </ParallaxLayer>
 
@@ -67,6 +86,7 @@ const App = () => {
         />
 
         <ParallaxLayer
+          ref={aboutSectionRef}
           sticky={{ start: 2, end: 4 }}
           className="relative overflow-hidden p-10 flex flex-row justify-between bg-neutral-900">
           <SectionHeader title="About Me" />
@@ -95,6 +115,7 @@ const App = () => {
         />
 
         <ParallaxLayer
+          ref={projectsSectionRef}
           sticky={{ start: 5, end: 6 }}
           className="relative overflow-hidden z-20 p-10 flex flex-row justify-between bg-neutral-900">
           <SectionHeader title="Works" />
@@ -115,6 +136,7 @@ const App = () => {
         />
 
         <ParallaxLayer
+          ref={contactSectionRef}
           sticky={{ start: 8, end: 9 }}
           className="relative overflow-hidden z-50 p-10 flex flex-row justify-between bg-neutral-900">
           <SectionHeader title="Contact" />
