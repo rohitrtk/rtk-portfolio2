@@ -3,6 +3,8 @@ import { a } from "@react-spring/web";
 
 import Project, { ProjectData } from "@components/Project.jsx";
 
+import { Project as P } from "@components/Projects";
+
 import { useFade } from "@hooks/useFade";
 
 const Projects = () => {
@@ -33,9 +35,10 @@ const Projects = () => {
   }, []);
 
   return (
-    <a.div ref={ref} style={style}>
-      <div className="p-2 justify-center align-middle container mx-auto -z-20">
+    <a.div ref={ref} style={style} className="z-50">
+      <div className="p-2 justify-center align-middle container mx-auto parallax-body">
         <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center align-middle">
+          <P.SRForm />
           {projectsData &&
             projectsData.map(
               ({ title, coverPhoto, toolsUsed, carouselPhotos, info }, i) => {

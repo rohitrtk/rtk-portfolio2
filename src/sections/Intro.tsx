@@ -21,8 +21,8 @@ const MobileView = () => {
   return (
     <a.div ref={ref} style={style} className="flex sm:flex-row flex-col w-full">
       <div className="sm:hidden text-center justify-center align-middle">
-        <h1 className="text-7xl font-text font-bold">Rohit Kisto</h1>
-        <h1 className="text-2xl font-text font-bold">Software Developer</h1>
+        <h1 className="text-7xl font-body font-bold">Rohit Kisto</h1>
+        <h1 className="text-2xl font-body font-bold">Software Developer</h1>
       </div>
     </a.div>
   );
@@ -37,10 +37,10 @@ const NormalView = () => {
         ref={ref}
         style={style}
         className="flex flex-col justify-start text-center">
-        <a.h1 className="flex flex-row text-9xl font-text font-bold">
+        <a.h1 className="flex flex-row text-9xl font-body font-bold">
           <a.span>Rohit Kisto</a.span>
         </a.h1>
-        <a.h1 className="text-2xl md:text-3xl font-text font-bold">
+        <a.h1 className="text-2xl md:text-3xl font-body font-bold">
           Software Developer
         </a.h1>
       </a.div>

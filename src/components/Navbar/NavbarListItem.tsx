@@ -20,7 +20,7 @@ const NavbarListItem = ({ title, href, targetScrollIndex }: Props) => {
         onClick={() => {
           if (scrollToOffset) scrollToOffset(targetScrollIndex);
         }}
-        className="text-2xl block py-2 pl-3 pr-4 font-text font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
+        className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
         {title}
       </a>
     </li>

@@ -34,7 +34,7 @@ const Logo = () => {
       width="400"
       height="400"
       viewBox="0 0 400 400"
-      className="-z-20">
+      className="parallax-body">
       <a.image
         width="55"
         height="236"

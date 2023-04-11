@@ -24,14 +24,14 @@ const ContactFormInput = ({
   return (
     <div className="flex flex-col">
       <input
-        className="bg-neutral-900 text-gray-400 font-text border-x-0 border-t-0 focus:ring-0 divide-none"
+        className="bg-neutral-900 text-gray-400 font-body border-x-0 border-t-0 focus:ring-0 divide-none"
         placeholder={placeholder}
         {...register(name, {
           ...registerOptions
         })}
       />
       {errors[name] ? (
-        <p role="alert" className="font-text text-red-600">
+        <p role="alert" className="font-body text-red-600">
           {errors[name]?.message}
         </p>
       ) : (
@@ -53,13 +53,13 @@ export const ContactFormTextArea = ({
   return (
     <div className="block">
       <textarea
-        className="w-full h-full font-text"
+        className="w-full h-full font-body"
         rows={4}
         placeholder={placeholder}
         {...register(name, { ...registerOptions })}
       />
       {errors[name] ? (
-        <p role="alert" className="font-text text-red-800">
+        <p role="alert" className="font-body text-red-800">
           {errors[name]?.message}
         </p>
       ) : (

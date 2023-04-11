@@ -52,7 +52,7 @@ const Project = ({
         position="center"
         size="4xl">
         <Modal.Body className="rounded-b-lg bg-neutral-900 overflow-y-scroll">
-          <div className="flex font-text font-bold underline text-4xl justify-center text-center p-3">
+          <div className="flex font-body font-bold underline text-4xl justify-center text-center p-3">
             <h1>{title}</h1>
           </div>
           <div className="h-96">
@@ -66,7 +66,7 @@ const Project = ({
               ))}
             </Carousel>
             <div className="text-center">
-              <h3 className="font-text underline font-bold text-2xl">
+              <h3 className="font-body underline font-bold text-2xl">
                 Built Using
               </h3>
             </div>
@@ -80,7 +80,7 @@ const Project = ({
               ))}
             </div>
             <div className="text-center">
-              <h3 className="font-text underline font-bold text-2xl">
+              <h3 className="font-body underline font-bold text-2xl">
                 Description
               </h3>
             </div>

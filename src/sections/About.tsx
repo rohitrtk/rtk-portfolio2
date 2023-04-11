@@ -6,14 +6,14 @@ interface Props {
   text: string;
 }
 
-const Body = ({ text }: Props) => {
+const About = ({ text }: Props) => {
   const [ref, style] = useFade();
 
   return (
-    <a.p ref={ref} style={style} className="text-2xl font-text">
+    <a.p ref={ref} style={style} className="text-2xl font-body">
       {text}
     </a.p>
   );
 };
 
-export default Body;
+export default About;

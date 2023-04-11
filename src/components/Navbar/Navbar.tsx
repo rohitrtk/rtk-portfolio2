@@ -19,12 +19,12 @@ const Navbar = () => {
         <Hamburger onClick={hamburgerOnClick} />
         <div ref={menuRef} className="hidden w-full md:block md:w-auto">
           <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-            <NavbarListItem title="About" href="#about" targetScrollIndex={1} />
+            <NavbarListItem title="About" href="#about" targetScrollIndex={3} />
             <NavbarListItem title="Works" href="#works" targetScrollIndex={4} />
             <NavbarListItem
               title="Contact"
               href="#contact"
-              targetScrollIndex={5}
+              targetScrollIndex={6}
             />
             <NavbarLink title="GitHub" href="https://github.com/rohitrtk" />
           </ul>

@@ -6,3 +6,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.parallax-picture {
+  z-index: 20;
+}
+
+.parallax-body {
+  z-index: -20;
+}
+
+.parallax-interactive {
+  z-index: 30;
+}
+
+.parallax-navbar {
+  z-index: 40;
+}

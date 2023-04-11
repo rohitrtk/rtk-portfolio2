@@ -30,7 +30,7 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <div className="block">
         <textarea
-          className="w-full h-full font-text"
+          className="w-full h-full font-body"
           rows={4}
           placeholder="Leave a message..."
           {...register("message", {
@@ -46,7 +46,7 @@ const ContactForm = () => {
           })}
         />
         {errors.message ? (
-          <p role="alert" className="font-text text-red-800">
+          <p role="alert" className="font-body text-red-800">
             {errors.message?.message}
           </p>
         ) : (
@@ -57,7 +57,7 @@ const ContactForm = () => {
       <div className="justify-center flex flex-row">
         <button
           type="submit"
-          className="font-text w-1/4 m-2 p-2 bg-neutral-800 rounded-md">
+          className="font-body w-1/4 m-2 p-2 bg-neutral-800 rounded-md">
           Send
         </button>
       </div>
