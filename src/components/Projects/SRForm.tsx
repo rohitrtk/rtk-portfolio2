@@ -1,5 +1,5 @@
 import Modal from "@components/Modal";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 import PHPIcon from "@assets/icons/php.svg";
 import HTMLIcon from "@assets/icons/html.svg";
@@ -9,6 +9,7 @@ import JavascriptIcon from "@assets/icons/javascript.svg";
 import MySQLIcon from "@assets/icons/mysql.svg";
 import CPanelIcon from "@assets/icons/cpanel.svg";
 import JQueryIcon from "@assets/icons/jquery.svg";
+import Cover from "./Cover";
 
 // Student Registration Form
 const SRForm = () => {
@@ -23,18 +24,7 @@ const SRForm = () => {
 
   return (
     <>
-      <div
-        className={`relative cursor-pointer flex flex-col align-middle justify-center`}
-        onClick={toggleModal}>
-        <img
-          className="h-full max-w-full rounded-lg"
-          src="/images/snp-1.png"
-          alt="SNP Project"
-        />
-        <div className="rounded-lg flex flex-col text-center align-middle justify-center absolute w-[100%] h-full top-0 opacity-75 bg-neutral-900">
-          <p>{title}</p>
-        </div>
-      </div>
+      <Cover title={title} toggleModal={toggleModal} />
 
       <Modal
         ref={modalRef}
