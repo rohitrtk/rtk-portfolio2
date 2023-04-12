@@ -1,3 +1,5 @@
-const OGDemo = () => {};
+const OGDemo = () => {
+  return <></>;
+};
 
 export default OGDemo;

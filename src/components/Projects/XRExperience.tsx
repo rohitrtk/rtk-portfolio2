@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 import Cover from "./Cover";
-import Modal from "@components/Modal";
+import Modal from "@components/UI/Modal";
 
 import PHPIcon from "@assets/icons/php.svg";
 import HTMLIcon from "@assets/icons/html.svg";
