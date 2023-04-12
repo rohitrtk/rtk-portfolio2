@@ -1,4 +1,4 @@
-import Modal from "@components/Modal";
+import Modal from "@components/UI/Modal";
 import { useRef } from "react";
 
 import PHPIcon from "@assets/icons/php.svg";
@@ -41,6 +41,11 @@ const SRForm = () => {
           <img src={CPanelIcon} className="w-10 h-10" />
         </div>
         <div className="text-left">
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
           <p>Hello</p>
         </div>
       </Modal>

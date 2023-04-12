@@ -1,3 +1,5 @@
-const SudokuSolver = () => {};
+const SudokuSolver = () => {
+  return <></>;
+};
 
 export default SudokuSolver;
