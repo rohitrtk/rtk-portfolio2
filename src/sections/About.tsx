@@ -11,26 +11,15 @@ import BooksIcon from "@assets/icons/books.svg";
 import MusicNoteIcon from "@assets/icons/denote.svg";
 import GuitarIcon from "@assets/icons/guitar.svg";
 
-const dur = 3000;
+import { dumbell, absx } from "@config/AboutAnimations";
+
+const dur = 1000;
 
 const About = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();
 
-  const dumbellStyle = useSpring({
-    from: { x: 350, y: 250 },
-    to: { x: 350, y: 100 },
-    config: {
-      duration: dur
-    }
-  });
-
-  const absxStyle = useSpring({
-    from: { x: -350, y: 250 },
-    to: { x: -350, y: -350 },
-    config: {
-      duration: dur
-    }
-  });
+  const dumbellStyle = useSpring(dumbell);
+  const absxStyle = useSpring(absx);
 
   return (
     <div
@@ -49,28 +38,28 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
           I'm also a Mathematician, Philosopher, Musician, and Weightlifter.
         </p>
       </a.div>
-
-      <a.img
-        style={{ ...dumbellStyle, rotateZ: "-45deg" }}
-        src={DumbbellIcon}
-        className="w-[10%]"
-      />
-
-      <a.div
-        style={{ ...absxStyle, rotate: "-20deg" }}
-        className="flex flex-col justify-center items-center">
-        <img src={AbsoluteValueXIcon} className="w-[80%]" />
-        <p className="font-body text-md">Stay Positive</p>
-      </a.div>
     </div>
   );
 });
 
 /*
-<img src={PiIcon} className="w-[14%]" />
-<img src={BooksIcon} className="w-[10%]" />
-<img src={MusicNoteIcon} className="w-[7%]" />
-<img src={GuitarIcon} className="w-[10%]" />
-*/
+      <img src={MusicNoteIcon} className="w-[7%]" />
+      <img src={GuitarIcon} className="w-[10%]" />
+      <img src={PiIcon} className="w-[14%]" />
+      <img src={BooksIcon} className="w-[10%]" />
+
+      <a.img
+        style={{ ...dumbellStyle, rotateZ: "-45deg" }}
+        src={DumbbellIcon}
+        className="w-[10%] md:ml-[60%] ml-[50%]"
+      />
+
+      <a.div
+        style={{ ...absxStyle, rotate: "-20deg" }}
+        className="flex flex-col justify-center items-center ml-[-60%]">
+        <img src={AbsoluteValueXIcon} className="w-[80%]" />
+        <p className="font-body text-md">Stay Positive</p>
+      </a.div>
+ */
 
 export default About;
