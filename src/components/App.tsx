@@ -18,7 +18,6 @@ import Contact from "@sections/Contact";
 import Logo from "./Logo";
 
 import ReturnArrow from "./ReturnArrow";
-import { useScroll } from "@react-spring/web";
 
 export const prerender = true;
 
@@ -33,11 +32,6 @@ export const prerender = true;
  * 6. Contact Me
  */
 const App = () => {
-  // const [enabled, setEnabled] = useState(true);
-  // const toggleEnabled = () => {
-  //   setEnabled(!enabled);
-  // };
-
   const introSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const projectsSectionRef = useRef<HTMLDivElement>(null);

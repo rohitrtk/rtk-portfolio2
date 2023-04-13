@@ -7,13 +7,18 @@ import Stripe from "@components/Stripe";
 import { forwardRef } from "react";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+  const [fadeRef, style] = useFade();
+
   return (
-    <a.div
+    <div
       ref={ref}
       className="flex flex-col p-10 align-middle min-w-full w-screen h-screen items-center justify-center sticky top-0 bg-neutral-900 overflow-hidden">
-      <div className="flex flex-col w-full justify-center text-center items-center gap-2 shadow-xl rounded-xl p-5">
+      <Stripe />
+      <a.div
+        ref={fadeRef}
+        style={style}
+        className="flex flex-col w-full justify-center text-center items-center gap-2 shadow-xl rounded-xl p-5">
         <h1 className="md:text-6xl text-4xl font-body overflow-hidden">
-          <Stripe />
           Contact
         </h1>
         <div className="flex flex-col justify-center align-middle md:w-1/2 text-center">
@@ -25,8 +30,8 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             <ContactForm />
           </div>
         </div>
-      </div>
-    </a.div>
+      </a.div>
+    </div>
   );
 });
 
