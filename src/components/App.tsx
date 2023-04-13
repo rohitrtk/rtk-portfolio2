@@ -1,4 +1,11 @@
-import { useState, useRef } from "react";
+import {
+  useState,
+  useRef,
+  createRef,
+  useEffect,
+  MutableRefObject,
+  useLayoutEffect
+} from "react";
 
 import { Toaster } from "react-hot-toast";
 
@@ -9,6 +16,9 @@ import About from "@sections/About";
 import Projects from "@sections/Projects";
 import Contact from "@sections/Contact";
 import Logo from "./Logo";
+
+import ReturnArrow from "./ReturnArrow";
+import { useScroll } from "@react-spring/web";
 
 export const prerender = true;
 
@@ -42,8 +52,10 @@ const App = () => {
 
   return (
     <SectionContext.Provider value={provider}>
-      <div className="overflow-x-clip">
+      <div className="overflow-x-clip relative">
         <Toaster />
+
+        <ReturnArrow />
 
         <Intro ref={introSectionRef} />
         <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />

@@ -7,10 +7,8 @@ import Navbar from "@components//Navbar";
 
 const Intro = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div
-      ref={ref}
-      className="w-screen h-screen flex flex-col items-center justify-center sticky top-0">
-      <div className="fixed top-0 justify-end flex w-full z-10">
+    <div className="w-screen h-screen flex flex-col items-center justify-center sticky top-0">
+      <div ref={ref} className="fixed top-0 justify-end flex w-full z-10">
         <Navbar />
       </div>
       <Stripe />
