@@ -1,12 +1,18 @@
+import { forwardRef, RefObject } from "react";
 import { a } from "@react-spring/web";
 
 import { Project } from "@components/Projects";
-import { useFade } from "@hooks/useFade";
 import Stripe from "@components/Stripe";
-import { forwardRef } from "react";
+import { useFade } from "@hooks/useFade";
 
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();
+
+  const toggleModal = (modalRef: RefObject<HTMLDivElement>) => {
+    modalRef.current?.classList.toggle("hidden");
+    modalRef.current?.classList.toggle("flex");
+    document.body.classList.toggle("overflow-y-hidden");
+  };
 
   return (
     <div
@@ -18,12 +24,12 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
           Works
         </h1>
         <div className="p-2 justify-center align-middle container mx-auto max-h-screen overflow-y-auto overflow-x-hidden scrollbar-hide">
-          <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center align-middle overflow-auto">
-            <Project.SRForm />
-            <Project.XRExperience />
-            <Project.RecyclingGame />
-            <Project.SudokuSolver />
-            <Project.OGDemo />
+          <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center items-middle">
+            <Project.SRForm toggleModal={toggleModal} />
+            <Project.XRExperience toggleModal={toggleModal} />
+            <Project.RecyclingGame toggleModal={toggleModal} />
+            <Project.SudokuSolver toggleModal={toggleModal} />
+            <Project.OGDemo toggleModal={toggleModal} />
           </div>
         </div>
       </a.div>

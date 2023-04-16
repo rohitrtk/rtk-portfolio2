@@ -6,3 +6,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tooltip {
+  position: relative;
+  border-bottom: 1px dashed #000;
+}
