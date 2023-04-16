@@ -1,22 +1,50 @@
-import { forwardRef, RefObject } from "react";
+import { forwardRef, RefObject, useRef } from "react";
 import { a } from "@react-spring/web";
 
 import { Project } from "@components/Projects";
 import Stripe from "@components/Stripe";
 import { useFade } from "@hooks/useFade";
 
+const mergeRefs =
+  (...refs: any) =>
+  (value: any) => {
+    for (let i = 0; i < refs.length; i += 1) {
+      const ref = refs[i];
+
+      if (typeof ref === "function") {
+        ref(value);
+      } else if (ref) {
+        ref.current = value;
+      }
+    }
+  };
+
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();
+
+  const currentRef = useRef<HTMLDivElement>(null);
 
   const toggleModal = (modalRef: RefObject<HTMLDivElement>) => {
     modalRef.current?.classList.toggle("hidden");
     modalRef.current?.classList.toggle("flex");
     document.body.classList.toggle("overflow-y-hidden");
+
+    const nextSibling = currentRef.current?.nextSibling as Element;
+    if (nextSibling) {
+      window.scrollTo({
+        top:
+          nextSibling.getBoundingClientRect().top +
+          window.scrollY -
+          window.innerHeight,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
     <div
-      ref={ref}
+      ref={mergeRefs(ref, currentRef)}
       className="w-screen min-h-screen h-auto flex flex-col bg-neutral-900 items-center justify-center sticky top-0 overflow-hidden gap-2">
       <Stripe />
       <a.div ref={fadeRef} style={style} className="shadow-xl rounded-xl p-5">
