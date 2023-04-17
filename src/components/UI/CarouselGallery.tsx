@@ -35,32 +35,44 @@ const CarouselGallery = ({ images }: Props) => {
   }, [active]);
 
   return (
-    <div className="relative w-[400px] h-[300px] rounded-lg">
-      <button onClick={handlePrev}>
-        <img
-          src={UpArrow}
-          className="absolute bg-none border-none top-[50%] z-[100] bg-black opacity-10 rounded-full p-2 -translate-y-1/2 hover:opacity-20 left-1 -rotate-90 "
-        />
-      </button>
-      <button onClick={handleNext}>
-        <img
-          src={UpArrow}
-          className="absolute bg-none border-none top-[50%] z-[100] bg-black opacity-10 rounded-full p-2 -translate-y-1/2 hover:opacity-20 right-1 rotate-90 "
-        />
-      </button>
-      <ul>
-        {temp.map((src, i) => (
-          <li
+    <div className="flex flex-col">
+      <div className="relative w-[400px] h-[300px] rounded-lg">
+        <button onClick={handlePrev}>
+          <img
+            src={UpArrow}
+            className="absolute bg-none border-none top-[50%] z-[100] bg-black opacity-10 rounded-full p-2 -translate-y-1/2 hover:opacity-20 left-1 -rotate-90 "
+          />
+        </button>
+        <button onClick={handleNext}>
+          <img
+            src={UpArrow}
+            className="absolute bg-none border-none top-[50%] z-[100] bg-black opacity-10 rounded-full p-2 -translate-y-1/2 hover:opacity-20 right-1 rotate-90 "
+          />
+        </button>
+        <ul>
+          {temp.map((src, i) => (
+            <li
+              key={i}
+              ref={(el) => (refs.current[i] = el!)}
+              className="absolute inset-0 opacity-0 data-[active]:opacity-100">
+              <img
+                src={src}
+                className="block w-full h-full object-cover object-center"
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex flex-row items-center justify-center p-1 m-1">
+        {temp.map((t, i) => (
+          <span
             key={i}
-            ref={(el) => (refs.current[i] = el!)}
-            className="absolute inset-0 opacity-0 data-[active]:opacity-100">
-            <img
-              src={src}
-              className="block w-full h-full object-cover object-center"
-            />
-          </li>
+            className={`items-center flex w-3 h-3 ${
+              i === active ? "bg-gray-800" : "bg-gray-600"
+            } rounded-full m-1`}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

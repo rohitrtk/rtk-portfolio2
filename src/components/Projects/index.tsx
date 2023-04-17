@@ -5,7 +5,6 @@ import RecyclingGame from "./RecyclingGame";
 import PhotoSharer from "./PhotoSharer";
 import SudokuSolver from "./SudokuSolver";
 import OGDemo from "./OGDemo";
-import type { RefObject } from "react";
 
 export const Project = {
   Cover,
@@ -16,7 +15,3 @@ export const Project = {
   SudokuSolver,
   OGDemo
 };
-
-export interface ProjectProps {
-  toggleModal: (modalRef: RefObject<HTMLDivElement>) => void;
-}

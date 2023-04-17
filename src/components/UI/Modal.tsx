@@ -1,28 +1,28 @@
-import { useContext, ReactNode, forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
+import { useSpring } from "@react-spring/web";
 
 import CarouselGallery from "./CarouselGallery";
-import Temp from "@assets/images/snp-1.png";
 
 interface Props {
   title: string;
-  toggleModal: () => void;
   children?: ReactNode;
+  setModalOpen: (value: boolean) => void;
 }
 
 const Modal = forwardRef<HTMLDivElement, Props>(
-  ({ title, toggleModal, children }, ref) => {
+  ({ title, children, setModalOpen }, ref) => {
     return (
       <div
         ref={ref}
-        data-lol="lol"
-        className="hidden fixed top-0 left-0 z-50 w-screen h-screen p-4 items-center justify-center">
+        className="fixed top-0 left-0 m-auto z-50 w-screen h-screen p-4">
         <div
-          className="absolute w-full h-full bg-black bg-opacity-50"
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50"
           onClick={(event) => {
-            toggleModal();
+            setModalOpen(false);
+            document.body.classList.toggle("overflow-y-hidden");
           }}
         />
-        <div className="relative rounded-lg justify-start items-center flex flex-col bg-neutral-900 w-2/3 h-full overflow-y-scroll">
+        <div className="relative rounded-lg m-auto justify-start items-center flex flex-col bg-neutral-900 w-2/3 h-full overflow-y-scroll">
           <h1 className="font-body text-6xl underline p-5 text-center">
             {title}
           </h1>

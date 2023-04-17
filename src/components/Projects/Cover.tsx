@@ -1,14 +1,14 @@
-import { RefObject, useState } from "react";
+import { useContext, useState } from "react";
 import { a, useSpring, easings } from "@react-spring/web";
+import SectionContext, { SectionContextProps } from "@context/SectionContext";
 import Temp from "@assets/images/snp-1.png";
-import type { ProjectProps } from ".";
 
-interface Props extends ProjectProps {
+interface Props {
   title: string;
-  toggleModal: () => void;
+  setModalOpen: (open: boolean) => void;
 }
 
-export const Cover = ({ title, toggleModal }: Props) => {
+export const Cover = ({ title, setModalOpen }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const style = useSpring({
@@ -21,11 +21,31 @@ export const Cover = ({ title, toggleModal }: Props) => {
     }
   });
 
+  const { projectsSectionRef } =
+    useContext<SectionContextProps>(SectionContext);
+
   return (
     <a.div
       className="rounded-md relative cursor-pointer flex flex-col align-middle justify-center bg-red-900"
       style={style}
-      onClick={toggleModal}
+      onClick={() => {
+        setModalOpen(true);
+        document.body.classList.toggle("overflow-y-hidden");
+        const nextSibling = projectsSectionRef?.current?.nextElementSibling;
+        console.log(nextSibling);
+        console.log(parent);
+
+        if (nextSibling) {
+          window.scrollTo({
+            top:
+              nextSibling.getBoundingClientRect().top +
+              window.scrollY -
+              window.innerHeight,
+            left: 0,
+            behavior: "smooth"
+          });
+        }
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
       <div className="rounded-md min-w-[320px] min-h-[240px]" />
