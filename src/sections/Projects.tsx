@@ -29,7 +29,7 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
     modalRef.current?.classList.toggle("flex");
     document.body.classList.toggle("overflow-y-hidden");
 
-    const nextSibling = currentRef.current?.nextSibling as Element;
+    const nextSibling = currentRef.current?.nextElementSibling;
     if (nextSibling) {
       window.scrollTo({
         top:
