@@ -24,7 +24,7 @@ const PhotoSharer = () => {
       <Cover title={title} setModalOpen={setModalOpen} />
 
       {modalOpen ? (
-        <Modal setModalOpen={setModalOpen} title={title}>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
           <div className="flex flex-row justify-center gap-5">
             <Tooltip text="HTML">
               <img src={HTMLIcon} className="w-10 h-10" />

@@ -19,7 +19,7 @@ const OGDemo = () => {
       <Cover title={title} setModalOpen={setModalOpen} />
 
       {modalOpen ? (
-        <Modal setModalOpen={setModalOpen} title={title}>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
           <div className="flex flex-row justify-center gap-5">
             <Tooltip text="C++">
               <img src={CPPIcon} className="w-10 h-10" />
@@ -29,7 +29,7 @@ const OGDemo = () => {
             </Tooltip>
           </div>
           <div className="flex flex-row justify-center items-center w-full pt-5">
-            <SourceCode locked={true} />
+            <SourceCode src="https://github.com/rohitrtk/MAT392-demo" />
           </div>
           <div className="w-full text-left p-10 gap-5 [&>*]:m-5">
             <section>
