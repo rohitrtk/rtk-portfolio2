@@ -1,18 +1,18 @@
 import type { Handler } from '@netlify/functions';
 
-const handler: Handler = async (event, context) => {
-  if (event.body === null) {
+const handler: Handler = async ({ body }) => {
+  if (body === null) {
     return {
       statusCode: 400,
       body: JSON.stringify("Payload required")
     };
   }
 
-  const { message } = JSON.parse(event.body) as {
+  const { message } = JSON.parse(body) as {
     message: string
   }
 
-  const res = await fetch(
+  const { status, statusText } = await fetch(
     `${process.env.URL}/.netlify/functions/emails/subscribed`,
     {
       headers: {
@@ -22,7 +22,7 @@ const handler: Handler = async (event, context) => {
       body: JSON.stringify({
         from: "rohitkisto.dev@gmail.com",
         to: "rohitkisto.dev@gmail.com",
-        subject: "Test Email",
+        subject: "New Message",
         parameters: {
           message
         },
@@ -30,17 +30,9 @@ const handler: Handler = async (event, context) => {
     }
   );
 
-  if (res.status !== 200) {
-    return {
-      statusCode: res.status,
-      body: JSON.stringify(`An error occured sending email!\n${res.statusText}`)
-    }
-  }
-
-
   return {
-    statusCode: 200,
-    body: JSON.stringify("Message sent!"),
+    statusCode: status,
+    body: JSON.stringify(status === 200 ? "Message sent!" : `An error occured sending email!\n${statusText}`)
   }
 }
 

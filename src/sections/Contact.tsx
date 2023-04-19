@@ -2,7 +2,7 @@ import { a } from "@react-spring/web";
 
 import { useFade } from "@hooks/useFade";
 
-import ContactForm from "@components/ContactForm/ContactForm";
+import ContactForm from "@components/ContactForm";
 import Stripe from "@components/Stripe";
 import { forwardRef } from "react";
 

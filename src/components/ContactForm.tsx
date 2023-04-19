@@ -10,7 +10,8 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm<FormInputs>();
 
   const [disabled, setDisabled] = useState(false);
@@ -23,17 +24,35 @@ const ContactForm = () => {
       })
     });
 
-    return status === 200;
+    if (status !== 200) {
+      throw new Error(`Error ${status} occured while sending message.`);
+    }
+
+    reset();
   };
 
   const onSubmit: SubmitHandler<FormInputs> = async (data: FormInputs) => {
     if (disabled) return;
 
-    await toast.promise(sendMessage(data), {
-      loading: "Sending message...",
-      success: <b>Message sent!</b>,
-      error: <b>An error occured. Please try again or contact me directly.</b>
-    });
+    await toast.promise(
+      sendMessage(data),
+      {
+        loading: <p>Sending message...</p>,
+        success: <b>Message sent!</b>,
+        error: <b>An error occured. Please try again or contact me directly.</b>
+      },
+      {
+        style: {
+          minWidth: "100px"
+        },
+        success: {
+          duration: 20000
+        },
+        error: {
+          duration: 8000
+        }
+      }
+    );
 
     setDisabled(false);
   };
@@ -52,8 +71,8 @@ const ContactForm = () => {
               message: "4 characters minimum"
             },
             maxLength: {
-              value: 200,
-              message: "200 characters maximum"
+              value: 2500,
+              message: "2500 characters maximum"
             }
           })}
         />
