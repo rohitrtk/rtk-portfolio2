@@ -11,3 +11,10 @@
   position: relative;
   border-bottom: 1px dashed #000;
 }
+
+.drag-none {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}

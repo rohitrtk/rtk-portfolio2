@@ -32,8 +32,6 @@ export const Cover = ({ title, setModalOpen }: Props) => {
         setModalOpen(true);
         document.body.classList.toggle("overflow-y-hidden");
         const nextSibling = projectsSectionRef?.current?.nextElementSibling;
-        console.log(nextSibling);
-        console.log(parent);
 
         if (nextSibling) {
           window.scrollTo({

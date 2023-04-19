@@ -22,12 +22,6 @@ const SRForm = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  const transition = useTransition(modalOpen, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
-  });
-
   return (
     <div className="p-1 m-2">
       <Cover title={title} setModalOpen={setModalOpen} />
