@@ -18,6 +18,15 @@
       ],
       "@context/*": [
         "src/context/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@config/*": [
+        "src/config/*"
       ]
     },
     "jsx": "react-jsx",

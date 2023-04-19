@@ -6,11 +6,12 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'heading': ['Merriweather', 'serif'],
-				'text': ['Quattrocento', 'serif'],
+				'body': ['Quattrocento', 'serif'],
 			}
 		},
 	},
 	plugins: [
+		require('tailwind-scrollbar-hide'),
 		require('flowbite/plugin')
 	],
 }
