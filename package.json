@@ -13,8 +13,10 @@
     "@astrojs/netlify": "^2.2.2",
     "@astrojs/react": "^2.1.0",
     "@astrojs/tailwind": "^3.1.1",
+    "@netlify/functions": "^1.4.0",
     "@react-spring/parallax": "^9.7.1",
     "@react-spring/web": "^9.7.1",
+    "@types/node": "^14.18.42",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "astro": "^2.3.0",
@@ -25,6 +27,7 @@
     "react-hook-form": "^7.43.8",
     "react-hot-toast": "^2.4.0",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "typescript": "^4.9.5"
   }
 }

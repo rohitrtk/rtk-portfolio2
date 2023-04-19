@@ -1,6 +1,5 @@
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-import { ContactFormTextArea } from "./ContactFormInput.js";
 import { toast } from "react-hot-toast";
 
 export interface FormInputs {
@@ -14,16 +13,29 @@ const ContactForm = () => {
     formState: { errors }
   } = useForm<FormInputs>();
 
-  const sendMessage = async () => {
-    return true;
+  const [disabled, setDisabled] = useState(false);
+
+  const sendMessage = async ({ message }: FormInputs) => {
+    const { status } = await fetch("./.netlify/functions/send-message", {
+      method: "POST",
+      body: JSON.stringify({
+        message
+      })
+    });
+
+    return status === 200;
   };
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    toast.promise(sendMessage(), {
+  const onSubmit: SubmitHandler<FormInputs> = async (data: FormInputs) => {
+    if (disabled) return;
+
+    await toast.promise(sendMessage(data), {
       loading: "Sending message...",
       success: <b>Message sent!</b>,
-      error: <b>Error sending message!</b>
+      error: <b>An error occured. Please try again or contact me directly.</b>
     });
+
+    setDisabled(false);
   };
 
   return (
@@ -56,6 +68,7 @@ const ContactForm = () => {
 
       <div className="justify-center flex flex-row">
         <button
+          disabled={disabled}
           type="submit"
           className="font-body w-1/4 m-2 p-2 bg-neutral-800 rounded-md">
           Send
