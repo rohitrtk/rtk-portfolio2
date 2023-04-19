@@ -1,9 +1,8 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Tooltip from "@components/UI/Tooltip";
-import type { ProjectProps } from ".";
 
 import AngularIcon from "@assets/icons/angular.svg";
 import TypeScriptIcon from "@assets/icons/typescript.svg";
@@ -14,19 +13,16 @@ import FirebaseIcon from "@assets/icons/firebase.svg";
 import SourceCode from "@components/UI/SourceCode";
 
 // Recylcing Game
-const RecyclingGame = ({ toggleModal }: ProjectProps) => {
+const RecyclingGame = () => {
   const title = "Recycling Game";
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="p-1 m-2">
-      <Cover title={title} toggleModal={() => toggleModal(modalRef)} />
+      <Cover title={title} setModalOpen={setModalOpen} />
 
-      <Modal
-        ref={modalRef}
-        toggleModal={() => toggleModal(modalRef)}
-        title={title}>
+      <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="flex flex-row justify-center gap-5">
           <Tooltip text="TypeScript">
             <img src={TypeScriptIcon} className="w-10 h-10" />

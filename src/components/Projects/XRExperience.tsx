@@ -1,11 +1,10 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Hyperlink from "@components/UI/Hyperlink";
 import Tooltip from "@components/UI/Tooltip";
 import SourceCode from "@components/UI/SourceCode";
-import type { ProjectProps } from ".";
 
 import HTMLIcon from "@assets/icons/html.svg";
 import CSSIcon from "@assets/icons/css.svg";
@@ -16,19 +15,16 @@ import ReactIcon from "@assets/icons/react.svg";
 import AzureIcon from "@assets/icons/azure.svg";
 
 // XR Experience
-const XRExperience = ({ toggleModal }: ProjectProps) => {
+const XRExperience = () => {
   const title = "XR Experience";
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="p-1 m-2">
-      <Cover title={title} toggleModal={() => toggleModal(modalRef)} />
+      <Cover title={title} setModalOpen={setModalOpen} />
 
-      <Modal
-        ref={modalRef}
-        toggleModal={() => toggleModal(modalRef)}
-        title={title}>
+      <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="flex flex-row justify-center gap-5">
           <Tooltip text="HTML">
             <img src={HTMLIcon} className="w-10 h-10" />

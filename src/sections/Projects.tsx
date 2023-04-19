@@ -27,8 +27,8 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const toggleModal = (modalRef: RefObject<HTMLDivElement>) => {
     modalRef.current?.classList.toggle("hidden");
     modalRef.current?.classList.toggle("flex");
-    document.body.classList.toggle("overflow-y-hidden");
 
+    document.body.classList.toggle("overflow-y-hidden");
     const nextSibling = currentRef.current?.nextElementSibling;
     if (nextSibling) {
       window.scrollTo({
@@ -53,11 +53,11 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
         </h1>
         <div className="p-2 justify-center align-middle container mx-auto max-h-screen overflow-y-auto overflow-x-hidden scrollbar-hide">
           <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center items-middle">
-            <Project.SRForm toggleModal={toggleModal} />
-            <Project.XRExperience toggleModal={toggleModal} />
-            <Project.RecyclingGame toggleModal={toggleModal} />
-            <Project.SudokuSolver toggleModal={toggleModal} />
-            <Project.OGDemo toggleModal={toggleModal} />
+            <Project.SRForm />
+            <Project.XRExperience />
+            <Project.RecyclingGame />
+            <Project.SudokuSolver />
+            <Project.OGDemo />
           </div>
         </div>
       </a.div>

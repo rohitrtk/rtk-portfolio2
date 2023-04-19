@@ -19,18 +19,17 @@ const Navbar = () => {
   const scrollConfig: ScrollIntoViewOptions = { behavior: "smooth" };
 
   return (
-    <nav className="px-2 py-2.5 w-full h-auto sticky top-0 z-20 shadow-xl p-5">
-      <div className="flex flex-row justify-end px-3">
-        <Hamburger onClick={hamburgerOnClick} />
+    <nav className="px-2 py-2.5 w-full sticky top-0 z-20 shadow-xl p-5 h-[72px] max-h-[72px]">
+      <div className="flex flex-row justify-end px-3 py-2">
         <div ref={menuRef} className="hidden w-full md:block md:w-auto">
-          <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+          <ul className="flex flex-col rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium [&>*]:text-center">
             <li>
               <a
                 href={"#about"}
                 onClick={() =>
                   aboutSectionRef?.current?.scrollIntoView(scrollConfig)
                 }
-                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
+                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
                 About
               </a>
             </li>
@@ -41,7 +40,7 @@ const Navbar = () => {
                 onClick={() =>
                   projectsSectionRef?.current?.scrollIntoView(scrollConfig)
                 }
-                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
+                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
                 Works
               </a>
             </li>
@@ -52,7 +51,7 @@ const Navbar = () => {
                 onClick={() =>
                   contactSectionRef?.current?.scrollIntoView(scrollConfig)
                 }
-                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
+                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
                 Contact
               </a>
             </li>
@@ -61,11 +60,14 @@ const Navbar = () => {
               <a
                 href="https://github.com/rohitrtk"
                 target="_blank"
-                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:border-0 md:p-0">
+                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
                 GitHub
               </a>
             </li>
           </ul>
+        </div>
+        <div className="p-0">
+          <Hamburger onClick={hamburgerOnClick} />
         </div>
       </div>
     </nav>

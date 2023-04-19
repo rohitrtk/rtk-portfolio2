@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
@@ -6,23 +6,19 @@ import Modal from "@components/UI/Modal";
 import CPPIcon from "@assets/icons/cplusplus.svg";
 import OpenGLIcon from "@assets/icons/opengl.svg";
 import Tooltip from "@components/UI/Tooltip";
-import type { ProjectProps } from ".";
 import SourceCode from "@components/UI/SourceCode";
 
 // OpenGL Demo
-const OGDemo = ({ toggleModal }: ProjectProps) => {
+const OGDemo = () => {
   const title = "Mathematics in 3D Graphics";
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="p-1 m-2">
-      <Cover title={title} toggleModal={() => toggleModal(modalRef)} />
+      <Cover title={title} setModalOpen={setModalOpen} />
 
-      <Modal
-        ref={modalRef}
-        toggleModal={() => toggleModal(modalRef)}
-        title={title}>
+      <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="flex flex-row justify-center gap-5">
           <Tooltip text="C++">
             <img src={CPPIcon} className="w-10 h-10" />
@@ -32,7 +28,7 @@ const OGDemo = ({ toggleModal }: ProjectProps) => {
           </Tooltip>
         </div>
         <div className="flex flex-row justify-center items-center w-full pt-5">
-          <SourceCode locked={true} />
+          <SourceCode src="https://github.com/rohitrtk/MAT392-demo" />
         </div>
         <div className="w-full text-left p-10 gap-5 [&>*]:m-5">
           <section>
