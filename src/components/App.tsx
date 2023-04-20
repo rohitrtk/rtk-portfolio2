@@ -47,7 +47,11 @@ const App = () => {
   return (
     <SectionContext.Provider value={provider}>
       <div className="overflow-x-clip relative">
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            className: "font-body text-center"
+          }}
+        />
 
         <ReturnArrow />
 
