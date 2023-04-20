@@ -1,0 +1,3 @@
+/       /.netlify/functions/entry    200
+/404    /.netlify/functions/entry    200
+/*      /.netlify/functions/entry    404
