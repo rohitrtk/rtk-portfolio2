@@ -30,6 +30,7 @@ const handler: Handler = async ({ body }) => {
     }
   );
 
+
   return {
     statusCode: status,
     body: JSON.stringify(status === 200 ? "Message sent!" : `An error occured sending email!\n${statusText}`)
