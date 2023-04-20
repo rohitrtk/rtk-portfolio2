@@ -1,4 +1,5 @@
 import type { Handler } from '@netlify/functions';
+import fetch from "node-fetch";
 
 const handler: Handler = async ({ body }) => {
   if (body === null) {
