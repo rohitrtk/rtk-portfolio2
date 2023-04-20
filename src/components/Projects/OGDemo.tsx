@@ -53,9 +53,9 @@ const OGDemo = () => {
           <section>
             The user of the application will see an airplane rendered in the
             sky. The user also has access to a control panel which can
-            manipulate the position, scale, and rotation of the plane. They can
-            also in the same control panel, change the strength of the lighting,
-            as well as the colour of the lighting.
+            manipulate the position, scale, and rotation of the plane. In the
+            same control panel, they can change the strength and colour of the
+            lighting.
           </section>
         </div>
       </Modal>

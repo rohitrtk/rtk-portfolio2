@@ -50,12 +50,12 @@ const RecyclingGame = () => {
           <section>
             <h3 className="text-xl underline">Goal</h3>
             For my Software Development course at the Univery of Toronto
-            Mississauga, I was tasked, along with several other students, with
-            working with Circular Toys (a start up company at UTM) to create a
-            game targeted at children to teach them about the importance of
-            recycling. Circular Toys already had an app containing three games,
-            all of which were focused around recylcing and saving the planet, we
-            were tasked with creating the fourth.
+            Mississauga, several students and I were tasked to work with
+            Circular Toys (a start up company at UTM) to create a game targeted
+            towards children, teaching them about the importance of recycling.
+            Circular Toys already had an app containing three games, all of
+            which were focused around recylcing and saving the planet, we were
+            tasked with creating the fourth.
           </section>
 
           <section>
@@ -73,19 +73,20 @@ const RecyclingGame = () => {
             any of the four games to play. The game that we developed involved
             various pieces of recyclables mixed in with garbage travelling off
             of a conveyor belt. The player would have to drag the recyclables
-            into a recycling bin whilst letting the garbage continue moving. If
-            the player failed to move a recyclable into the bin, they lost a
-            life. Similiarly, if a player dragged a piece of garbage into the
-            bin, they lost a life. The player had 3 difficulties to choose from,
-            with speed and number of items increasing.
+            into a recycling bin whilst not moving the garbage. If the player
+            failed to move a recyclable into the bin, they lost a life.
+            Similiarly, if a player dragged a piece of garbage into the bin,
+            they lost a life. The player had 3 difficulties to choose from, with
+            speed and number of items increasing per difficulty.
           </section>
 
           <section>
-            I was primarily incharge of some back end game logic and database
-            management. At the end of the game, the users score would be
-            recorded and compared against their current score in Firebase. If
-            their current score was greater than their high score, their high
-            score would be updated.
+            I was primarily incharge of some backend game logic and database
+            management. Some of my tasks included managing the players high
+            score, movement of recyclables, as well as refactoring the code to
+            meet standards outlined by our professor. My teammates and I tracked
+            these tasks on a Jira board and participated in daily scrum
+            meetings.
           </section>
         </div>
       </Modal>

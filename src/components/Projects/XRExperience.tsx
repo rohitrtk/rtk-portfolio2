@@ -57,15 +57,15 @@ const XRExperience = () => {
             My initial project at{" "}
             <Hyperlink href="https://snpolytechnic.com/">SNP</Hyperlink>, was to
             create a web app for people to learn about Indigenous Culture. Users
-            would be able to "vist" various locations in browser and walk around
-            to see various points of interest. These points of interest would
-            have various assets like videos, audio, or images which would
+            would be able to "vist" various locations in the browser and walk
+            around to see various points of interest. These points of interest
+            would have various assets like videos, audio, or images which would
             explain a topic or object of interest.
           </section>
 
           <section>
-            As a side goal, people wanting to create their own experiences can
-            do so (provided they have the source code). Using React, users can
+            Additionally, people who want to create their own experiences can do
+            so (provided they have the source code). Using React, users can
             create their own React components in which they can add their own
             points of interest, media assets, etc.
           </section>
@@ -92,9 +92,9 @@ const XRExperience = () => {
           </section>
 
           <section>
-            As mentioned previously, there is also the ability to create new
-            experiences. I created a small series of videos to help people, as
-            the process does require some code writing and the dragging and
+            As mentioned previously, there is the ability to create new
+            experiences. I created a small series of videos to aid people in
+            this process, as their is some code to write and the dragging and
             dropping of files.
           </section>
         </div>

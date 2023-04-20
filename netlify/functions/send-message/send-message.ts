@@ -14,7 +14,7 @@ const handler: Handler = async ({ body }) => {
   }
 
   const { status, statusText } = await fetch(
-    `./.netlify/functions/emails/subscribed`,
+    `${process.env.NETLIFY_URL}/.netlify/functions/emails/subscribed`,
     {
       headers: {
         "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
@@ -41,3 +41,4 @@ const handler: Handler = async ({ body }) => {
 }
 
 export { handler };
+
