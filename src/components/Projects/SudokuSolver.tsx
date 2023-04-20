@@ -60,7 +60,7 @@ const SudokuSolver = () => {
 
           <section>
             Being a fan of systems languages and a fanatic of C++, I thought I'd
-            give Rust a try. On the front end, the user is given a blank puzzle,
+            give Rust a try. On the frontend, the user is given a blank puzzle,
             which they can fill in numbers between 0 and 9. The user can then
             send the puzzle to the server which will calculate which numbers
             complete the puzzle or if there is no solution to the puzzle. If a
