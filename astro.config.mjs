@@ -8,5 +8,6 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   integrations: [react(), tailwind()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  outDir: "./build"
 });
