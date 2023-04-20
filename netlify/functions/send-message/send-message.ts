@@ -17,6 +17,8 @@ const handler: Handler = async ({ body }) => {
     {
       headers: {
         "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": process.env.NETLIFY_URL as string
       },
       method: "POST",
       body: JSON.stringify({
