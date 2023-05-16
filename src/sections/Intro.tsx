@@ -5,6 +5,11 @@ import { useFade } from "@hooks/useFade";
 
 import Stripe from "@components/Stripe";
 import Navbar from "@components//Navbar";
+import {
+  SiGithub,
+  SiLeetcode,
+  SiLinkedin
+} from "@icons-pack/react-simple-icons";
 
 const Intro = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();
@@ -26,8 +31,6 @@ const Intro = forwardRef<HTMLDivElement>((props, ref) => {
 export default Intro;
 
 const MobileView = () => {
-  const [ref, style] = useFade();
-
   return (
     <div className="flex sm:flex-row flex-col w-full">
       <div className="sm:hidden text-center justify-center align-middle shadow-xl rounded-xl p-5">
@@ -41,13 +44,22 @@ const MobileView = () => {
 const NormalView = () => {
   return (
     <div className="hidden sm:flex flex-row justify-center min-w-full">
-      <div className="flex flex-col justify-start text-center shadow-xl rounded-xl p-5">
-        <h1 className="flex flex-row text-9xl font-body font-bold">
-          Rohit Kisto
-        </h1>
+      <div className="flex flex-col justify-start items-center text-center shadow-xl rounded-xl p-5">
+        <h1 className="text-9xl font-body font-bold">Rohit Kisto</h1>
         <h1 className="text-2xl md:text-3xl font-body font-bold">
           Software Developer
         </h1>
+        <div className="flex flex-row pt-2 gap-4">
+          <a href="https://www.linkedin.com/in/rohit-kisto/" target="_blank">
+            <SiLinkedin />
+          </a>
+          <a href="https://github.com/rohitrtk" target="_blank">
+            <SiGithub />
+          </a>
+          <a href="https://leetcode.com/rohitrtk/" target="_blank">
+            <SiLeetcode />
+          </a>
+        </div>
       </div>
     </div>
   );

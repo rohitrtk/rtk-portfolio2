@@ -1,18 +1,18 @@
 import { useState } from "react";
+import { Tooltip, Carousel } from "@material-tailwind/react";
+import {
+  SiHtml5,
+  SiJavascript,
+  SiNodedotjs,
+  SiCss3,
+  SiReact,
+  SiMicrosoftazure,
+  SiAframe
+} from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Hyperlink from "@components/UI/Hyperlink";
-import Tooltip from "@components/UI/Tooltip";
-import SourceCode from "@components/UI/SourceCode";
-
-import HTMLIcon from "@assets/icons/html.svg";
-import CSSIcon from "@assets/icons/css.svg";
-import JavaScriptIcon from "@assets/icons/javascript.svg";
-import NodeIcon from "@assets/icons/node.svg";
-import AFrameIcon from "@assets/icons/aframe.svg";
-import ReactIcon from "@assets/icons/react.svg";
-import AzureIcon from "@assets/icons/azure.svg";
 
 // XR Experience
 const XRExperience = () => {
@@ -26,30 +26,27 @@ const XRExperience = () => {
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="flex flex-row justify-center gap-5">
-          <Tooltip text="HTML">
-            <img src={HTMLIcon} className="w-10 h-10" />
+          <Tooltip content="HTML">
+            <SiHtml5 color="#E34F26" />
           </Tooltip>
-          <Tooltip text="CSS">
-            <img src={CSSIcon} className="w-10 h-10" />
+          <Tooltip content="CSS">
+            <SiCss3 color="#1572B6" />
           </Tooltip>
-          <Tooltip text="JavaScript">
-            <img src={JavaScriptIcon} className="w-10 h-10" />
+          <Tooltip content="JavaScript">
+            <SiJavascript color="#F7DF1E" />
           </Tooltip>
-          <Tooltip text="NodeJS">
-            <img src={NodeIcon} className="w-10 h-10" />
+          <Tooltip content="Node.js">
+            <SiNodedotjs color="#339933" />
           </Tooltip>
-          <Tooltip text="React">
-            <img src={ReactIcon} className="w-10 h-10" />
+          <Tooltip content="React">
+            <SiReact color="#61DAFB" />
           </Tooltip>
-          <Tooltip text="aFrame">
-            <img src={AFrameIcon} className="w-10 h-10" />
+          <Tooltip content="aFrame">
+            <SiAframe color="#EF2D5E" />
           </Tooltip>
-          <Tooltip text="Azure">
-            <img src={AzureIcon} className="w-10 h-10" />
+          <Tooltip content="Azure">
+            <SiMicrosoftazure color="#0078D4" />
           </Tooltip>
-        </div>
-        <div className="flex flex-row justify-center items-center w-full pt-5">
-          <SourceCode locked={true} />
         </div>
         <div className="w-full text-left p-10 gap-5 [&>*]:m-5">
           <section>

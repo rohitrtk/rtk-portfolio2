@@ -52,12 +52,10 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
           Works
         </h1>
         <div className="p-2 justify-center align-middle container mx-auto max-h-screen overflow-y-auto overflow-x-hidden scrollbar-hide">
-          <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 gap-4 justify-center items-middle">
+          <div className="flex flex-col p-2 md:p-0 md:grid md:grid-cols-3 justify-center items-middle">
             <Project.SRForm />
-            <Project.XRExperience />
-            <Project.RecyclingGame />
-            <Project.SudokuSolver />
-            <Project.OGDemo />
+            <Project.KKClone />
+            <Project.Pomstagram />
           </div>
         </div>
       </a.div>

@@ -3,6 +3,13 @@ import { a, useSpring, easings } from "@react-spring/web";
 import SectionContext, { SectionContextProps } from "@context/SectionContext";
 import Temp from "@assets/images/snp-1.png";
 
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography
+} from "@material-tailwind/react";
+
 interface Props {
   title: string;
   setModalOpen: (open: boolean) => void;
@@ -12,7 +19,7 @@ export const Cover = ({ title, setModalOpen }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const style = useSpring({
-    transform: hovered ? "scale(1.05)" : "scale(1)",
+    transform: hovered ? "scale(1.025)" : "scale(1)",
     config: {
       friction: 300,
       mass: 500,
@@ -26,7 +33,7 @@ export const Cover = ({ title, setModalOpen }: Props) => {
 
   return (
     <a.div
-      className="rounded-md relative cursor-pointer flex flex-col align-middle justify-center bg-red-900"
+      className="rounded-md relative cursor-pointer flex flex-col align-middle justify-center border-none"
       style={style}
       onClick={() => {
         setModalOpen(true);
@@ -46,11 +53,25 @@ export const Cover = ({ title, setModalOpen }: Props) => {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <div className="rounded-md min-w-[320px] min-h-[240px]" />
-      {/*<a.img className="" src={Temp} />*/}
-      <div className="flex flex-col text-center items-center justify-center absolute w-full opacity-75 bg-neutral-900 p-5">
-        <p className="font-body">{title}</p>
-      </div>
+      <Card
+        shadow={false}
+        className="relative grid h-[15rem] min-w-[320px] items-end justify-center overflow-hidden text-center">
+        <CardHeader
+          floated={false}
+          shadow={false}
+          color="transparent"
+          className={`absolute inset-0 m-0 h-full w-full rounded-none bg-[url(/banner-1.jpg)] bg-contain overflow-hidden`}>
+          <div className="flex items-center justify-center to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
+            <div className="bg-black w-full bg-opacity-50 flex flex-col items-center justify-center text-center">
+              <Typography
+                variant="h2"
+                className="mb-6 leading-[1.5] text-blue-gray-400 font-body font-medium">
+                {title}
+              </Typography>
+            </div>
+          </div>
+        </CardHeader>
+      </Card>
     </a.div>
   );
 };
