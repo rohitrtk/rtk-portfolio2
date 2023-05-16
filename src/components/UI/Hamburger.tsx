@@ -1,6 +1,6 @@
-import HamburgerIcon from "@assets/icons/hamburger.svg";
-import CloseIcon from "@assets/icons/close.svg";
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface Props {
   onClick?: () => void;
@@ -21,10 +21,8 @@ const Hamburger = ({ onClick }: Props) => {
         setOpen(!open);
       }}>
       <span className="sr-only">Open main menu</span>
-      <img
-        src={!open ? HamburgerIcon : CloseIcon}
-        className="w-[20px] h-[20px] text-gray-500"
-      />
+
+      {!open ? <MenuIcon /> : <CloseIcon />}
     </button>
   );
 };

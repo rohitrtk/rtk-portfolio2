@@ -33,7 +33,6 @@ const Navbar = () => {
                 About
               </a>
             </li>
-
             <li>
               <a
                 href={"#works"}
@@ -44,7 +43,6 @@ const Navbar = () => {
                 Works
               </a>
             </li>
-
             <li>
               <a
                 href={"#contact"}
@@ -53,15 +51,6 @@ const Navbar = () => {
                 }
                 className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
                 Contact
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://github.com/rohitrtk"
-                target="_blank"
-                className="text-2xl block py-2 pl-3 pr-4 font-body font-bold rounded hover:text-neutral-300 md:hover:bg-transparent md:p-0">
-                GitHub
               </a>
             </li>
           </ul>

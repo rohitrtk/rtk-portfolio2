@@ -1,19 +1,20 @@
 import { useState } from "react";
+import { Carousel } from "@material-tailwind/react";
+import {
+  SiBootstrap,
+  SiCpanel,
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiJquery,
+  SiMysql,
+  SiPhp
+} from "@icons-pack/react-simple-icons";
+import { Tooltip } from "@material-tailwind/react";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Hyperlink from "@components/UI/Hyperlink";
-import Tooltip from "@components/UI/Tooltip";
-import SourceCode from "@components/UI/SourceCode";
-
-import PHPIcon from "@assets/icons/php.svg";
-import HTMLIcon from "@assets/icons/html.svg";
-import CSSIcon from "@assets/icons/css.svg";
-import BootstrapIcon from "@assets/icons/bootstrap.svg";
-import JavaScriptIcon from "@assets/icons/javascript.svg";
-import MySQLIcon from "@assets/icons/mysql.svg";
-import CPanelIcon from "@assets/icons/cpanel.svg";
-import JQueryIcon from "@assets/icons/jquery.svg";
 
 // Student Registration Form
 const SRForm = () => {
@@ -26,34 +27,50 @@ const SRForm = () => {
       <Cover title={title} setModalOpen={setModalOpen} />
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
-        <div className="flex flex-row justify-center gap-5">
-          <Tooltip text="HTML">
-            <img src={HTMLIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="CSS">
-            <img src={CSSIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="JavaScript">
-            <img src={JavaScriptIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="Bootstrap">
-            <img src={BootstrapIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="PHP">
-            <img src={PHPIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="jQuery">
-            <img src={JQueryIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="MySQL">
-            <img src={MySQLIcon} className="w-10 h-10" />
-          </Tooltip>
-          <Tooltip text="cPanel">
-            <img src={CPanelIcon} className="w-10 h-10" />
-          </Tooltip>
+        <div className="min-h-[480px] p-5">
+          <Carousel className="rounded-xl h-full" loop={true}>
+            <img
+              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+              alt="image 1"
+              className="h-full w-full object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+              alt="image 1"
+              className="h-full w-full object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+              alt="image 1"
+              className="h-full w-full object-cover"
+            />
+          </Carousel>
         </div>
-        <div className="flex flex-row justify-center items-center w-full pt-5">
-          <SourceCode locked={true} />
+        <div className="flex flex-row justify-center gap-5">
+          <Tooltip content="HTML">
+            <SiHtml5 color="#E34F26" size={48} />
+          </Tooltip>
+          <Tooltip content="CSS">
+            <SiCss3 color="#1572B6" size={48} />
+          </Tooltip>
+          <Tooltip content="JavaScript">
+            <SiJavascript color="#F7DF1E" size={48} />
+          </Tooltip>
+          <Tooltip content="Bootstrap">
+            <SiBootstrap color="#7952B3" size={48} />
+          </Tooltip>
+          <Tooltip content="PHP">
+            <SiPhp color="#777BB4" size={48} />
+          </Tooltip>
+          <Tooltip content="jQuery">
+            <SiJquery color="#0769AD" size={48} />
+          </Tooltip>
+          <Tooltip content="MySQL">
+            <SiMysql color="#4479A1" size={48} />
+          </Tooltip>
+          <Tooltip content="cPanel">
+            <SiCpanel color="#FF6C2C" size={48} />
+          </Tooltip>
         </div>
         <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
           <section>

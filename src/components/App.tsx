@@ -1,11 +1,5 @@
-import {
-  useState,
-  useRef,
-  createRef,
-  useEffect,
-  MutableRefObject,
-  useLayoutEffect
-} from "react";
+import { useRef } from "react";
+import { ThemeProvider as MTThemeProvider } from "@material-tailwind/react";
 
 import { Toaster } from "react-hot-toast";
 
@@ -15,22 +9,11 @@ import Intro from "@sections/Intro";
 import About from "@sections/About";
 import Projects from "@sections/Projects";
 import Contact from "@sections/Contact";
-import Logo from "./Logo";
 
 import ReturnArrow from "./ReturnArrow";
 
 export const prerender = true;
 
-/**
- * Pages
- * 0. Navbar & Intro
- * 1. Picture
- * 2. About Me
- * 3. Picture
- * 4. Works
- * 5. Picture
- * 6. Contact Me
- */
 const App = () => {
   const introSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -45,25 +28,27 @@ const App = () => {
   };
 
   return (
-    <SectionContext.Provider value={provider}>
-      <div className="overflow-x-clip relative">
-        <Toaster
-          toastOptions={{
-            className: "font-body text-center"
-          }}
-        />
+    <MTThemeProvider>
+      <SectionContext.Provider value={provider}>
+        <div className="overflow-x-clip relative">
+          <Toaster
+            toastOptions={{
+              className: "font-body text-center"
+            }}
+          />
 
-        <ReturnArrow />
+          <ReturnArrow />
 
-        <Intro ref={introSectionRef} />
-        <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />
-        <About ref={aboutSectionRef} />
-        <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/2177482/pexels-photo-2177482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />
-        <Projects ref={projectsSectionRef} />
-        <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />
-        <Contact ref={contactSectionRef} />
-      </div>
-    </SectionContext.Provider>
+          <Intro ref={introSectionRef} />
+          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-1.jpg)] grayscale" />
+          <About ref={aboutSectionRef} />
+          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/2177482/pexels-photo-2177482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />
+          <Projects ref={projectsSectionRef} />
+          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)]" />
+          <Contact ref={contactSectionRef} />
+        </div>
+      </SectionContext.Provider>
+    </MTThemeProvider>
   );
 };
 

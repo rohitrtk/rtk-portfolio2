@@ -1,7 +1,5 @@
-import { ReactNode, forwardRef, useEffect } from "react";
+import { ReactNode, forwardRef } from "react";
 import { a, useTransition } from "@react-spring/web";
-
-import CarouselGallery from "./CarouselGallery";
 
 interface Props {
   title: string;
@@ -44,9 +42,6 @@ const Modal = forwardRef<HTMLDivElement, Props>(
               <h1 className="font-body text-6xl underline p-5 text-center">
                 {title}
               </h1>
-              <div className="flex flex-row justify-center p-5">
-                <CarouselGallery images={[]} />
-              </div>
               {children}
             </a.div>
           </a.div>
