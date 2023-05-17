@@ -64,8 +64,8 @@ export const Cover = ({ title, setModalOpen }: Props) => {
           <div className="flex items-center justify-center to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
             <div className="bg-black w-full bg-opacity-50 flex flex-col items-center justify-center text-center">
               <Typography
-                variant="h2"
-                className="mb-6 leading-[1.5] text-blue-gray-400 font-body font-medium">
+                variant="h4"
+                className="py-2 leading-[1.5] text-blue-gray-400 font-body font-medium">
                 {title}
               </Typography>
             </div>

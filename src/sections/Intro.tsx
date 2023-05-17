@@ -10,6 +10,7 @@ import {
   SiLeetcode,
   SiLinkedin
 } from "@icons-pack/react-simple-icons";
+import Socials from "@components/UI/Socials";
 
 const Intro = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();
@@ -36,6 +37,7 @@ const MobileView = () => {
       <div className="sm:hidden text-center justify-center align-middle shadow-xl rounded-xl p-5">
         <h1 className="text-7xl font-body font-bold">Rohit Kisto</h1>
         <h1 className="text-2xl font-body font-bold">Software Developer</h1>
+        <Socials />
       </div>
     </div>
   );
@@ -49,17 +51,7 @@ const NormalView = () => {
         <h1 className="text-2xl md:text-3xl font-body font-bold">
           Software Developer
         </h1>
-        <div className="flex flex-row pt-2 gap-4">
-          <a href="https://www.linkedin.com/in/rohit-kisto/" target="_blank">
-            <SiLinkedin />
-          </a>
-          <a href="https://github.com/rohitrtk" target="_blank">
-            <SiGithub />
-          </a>
-          <a href="https://leetcode.com/rohitrtk/" target="_blank">
-            <SiLeetcode />
-          </a>
-        </div>
+        <Socials />
       </div>
     </div>
   );

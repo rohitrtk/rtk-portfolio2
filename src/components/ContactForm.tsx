@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
+import { Button, Textarea } from "@material-tailwind/react";
+
 export interface FormInputs {
   message: string;
 }
@@ -60,10 +62,11 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 ">
       <div className="block">
-        <textarea
+        <Textarea
           className="w-full h-full font-body rounded-lg text-black"
+          error={errors.message ? true : false}
           rows={4}
-          placeholder="Leave a message..."
+          label="Leave a message..."
           {...register("message", {
             required: "Required",
             minLength: {
@@ -86,12 +89,14 @@ const ContactForm = () => {
       </div>
 
       <div className="justify-center flex flex-row">
-        <button
+        <Button
           disabled={disabled}
           type="submit"
-          className="font-body w-1/4 m-2 p-2 bg-neutral-800 rounded-md">
-          Send
-        </button>
+          className="w-1/4 m-2 p-2 bg-transparent rounded-md shadow-none hover:shadow-none hover:bg-neutral-700">
+          <p className="font-body text-blue-gray-400 capitalize text-xl">
+            Send
+          </p>
+        </Button>
       </div>
     </form>
   );

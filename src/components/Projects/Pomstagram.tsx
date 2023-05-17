@@ -6,7 +6,8 @@ import {
   SiTailwindcss,
   SiMongodb,
   SiExpress,
-  SiNodedotjs
+  SiNodedotjs,
+  SiGithub
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
@@ -41,6 +42,7 @@ const Pomstagram = () => {
             />
           </Carousel>
         </div>
+
         <div className="flex flex-row justify-center gap-5">
           <Tooltip content="Next.js">
             <SiNextdotjs color="#ffffff" size={48} />
@@ -61,6 +63,14 @@ const Pomstagram = () => {
             <SiTailwindcss color="#06B6D4" size={48} />
           </Tooltip>
         </div>
+
+        <a
+          className="flex flex-row justify-center items-center gap-2 mt-5 hover:underline"
+          href="https://github.com/rohitrtk/pomstagram"
+          target="_blank">
+          <SiGithub />
+          GitHub Repo
+        </a>
       </Modal>
     </div>
   );

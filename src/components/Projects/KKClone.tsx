@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Tooltip, Carousel } from "@material-tailwind/react";
+import { Tooltip, Carousel, Typography } from "@material-tailwind/react";
 import {
   SiAstro,
   SiTypescript,
-  SiTailwindcss
+  SiTailwindcss,
+  SiGithub
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
@@ -52,6 +53,15 @@ const KKClone = () => {
             <SiTailwindcss color="#06B6D4" size={48} />
           </Tooltip>
         </div>
+
+        <a
+          className="flex flex-row justify-center items-center gap-2 mt-5 hover:underline"
+          href="https://github.com/rohitrtk/krispy-kreme-clone"
+          target="_blank">
+          <SiGithub />
+          GitHub Repo
+        </a>
+
         <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
           <section>
             <h3 className="text-xl underline">Goal</h3>
