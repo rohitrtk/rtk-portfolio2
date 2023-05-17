@@ -42,9 +42,9 @@ const App = () => {
           <Intro ref={introSectionRef} />
           <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-1.jpg)] grayscale" />
           <About ref={aboutSectionRef} />
-          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/2177482/pexels-photo-2177482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] grayscale" />
+          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-2.jpg)] grayscale" />
           <Projects ref={projectsSectionRef} />
-          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] grayscale" />
+          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-3.jpg)] grayscale" />
           <Contact ref={contactSectionRef} />
         </div>
       </SectionContext.Provider>

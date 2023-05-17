@@ -92,7 +92,7 @@ const ContactForm = () => {
         <Button
           disabled={disabled}
           type="submit"
-          className="w-1/4 m-2 p-2 bg-transparent rounded-md shadow-none hover:shadow-none hover:bg-neutral-700">
+          className="w-1/4 m-2 p-2 bg-transparent rounded-md shadow-none hover:shadow-none hover:bg-neutral-700 bg-neutral-900">
           <p className="font-body text-blue-gray-400 capitalize text-xl">
             Send
           </p>

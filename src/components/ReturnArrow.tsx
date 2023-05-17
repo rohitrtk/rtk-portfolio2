@@ -34,9 +34,9 @@ const ReturnArrow = () => {
   return (
     <div
       ref={ref}
-      className="hidden fixed top-5 right-5 z-20 brightness-50 shadow-xl rounded-xl hover:bg-neutral-700"
+      className="hidden fixed top-5 right-5 z-20 brightness-50 shadow-xl rounded-xl"
       onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}>
-      <IconButton className="bg-neutral-800 shadow-none focus:shadow-none">
+      <IconButton className="bg-neutral-800 shadow-none focus:shadow-none hover:shadow-none hover:bg-neutral-700">
         <ArrowUpwardIcon />
       </IconButton>
     </div>
