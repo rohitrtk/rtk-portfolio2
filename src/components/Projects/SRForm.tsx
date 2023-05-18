@@ -16,15 +16,15 @@ import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Hyperlink from "@components/UI/Hyperlink";
 
-import SNP1 from "@assets/images/SNP-1.png";
-import SNP2 from "@assets/images/SNP-2.png";
-import SNP3 from "@assets/images/SNP-3.png";
-import SNP4 from "@assets/images/SNP-4.png";
-import SNP5 from "@assets/images/SNP-5.png";
-import SNP6 from "@assets/images/SNP-6.png";
-import SNP7 from "@assets/images/SNP-7.png";
-import SNP8 from "@assets/images/SNP-8.png";
-import SNP9 from "@assets/images/SNP-9.png";
+import SNP1 from "@assets/images/snp-1.png";
+import SNP2 from "@assets/images/snp-2.png";
+import SNP3 from "@assets/images/snp-3.png";
+import SNP4 from "@assets/images/snp-4.png";
+import SNP5 from "@assets/images/snp-5.png";
+import SNP6 from "@assets/images/snp-6.png";
+import SNP7 from "@assets/images/snp-7.png";
+import SNP8 from "@assets/images/snp-8.png";
+import SNP9 from "@assets/images/snp-9.png";
 
 const images = [
   {

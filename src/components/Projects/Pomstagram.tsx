@@ -16,11 +16,11 @@ import {
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 
-import PG1 from "@assets/images/Pomstagram-1.png";
-import PG2 from "@assets/images/Pomstagram-2.png";
-import PG3 from "@assets/images/Pomstagram-3.png";
-import PG4 from "@assets/images/Pomstagram-4.png";
-import PG5 from "@assets/images/Pomstagram-5.png";
+import PG1 from "@assets/images/pomstagram-1.png";
+import PG2 from "@assets/images/pomstagram-2.png";
+import PG3 from "@assets/images/pomstagram-3.png";
+import PG4 from "@assets/images/pomstagram-4.png";
+import PG5 from "@assets/images/pomstagram-5.png";
 
 const images = [
   {
