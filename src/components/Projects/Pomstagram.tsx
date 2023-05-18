@@ -13,6 +13,35 @@ import {
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 
+import PG1 from "@assets/images/Pomstagram-1.png";
+import PG2 from "@assets/images/Pomstagram-2.png";
+import PG3 from "@assets/images/Pomstagram-3.png";
+import PG4 from "@assets/images/Pomstagram-4.png";
+import PG5 from "@assets/images/Pomstagram-5.png";
+
+const images = [
+  {
+    src: PG1,
+    alt: "First screenshot of Pomstagram"
+  },
+  {
+    src: PG2,
+    alt: "Second screenshot of Pomstagram"
+  },
+  {
+    src: PG3,
+    alt: "Third screenshot of Pomstagram"
+  },
+  {
+    src: PG4,
+    alt: "Fourth screenshot of Pomstagram"
+  },
+  {
+    src: PG5,
+    alt: "Fifth screenshot of Pomstagram"
+  }
+];
+
 const Pomstagram = () => {
   const title = "Pomstagram";
 
@@ -20,26 +49,19 @@ const Pomstagram = () => {
 
   return (
     <div className="p-1 m-2">
-      <Cover title={title} setModalOpen={setModalOpen} />
+      <Cover title={title} setModalOpen={setModalOpen} coverUrl={PG1} />
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
-        <div className="min-h-[480px] p-5">
+        <div className="max-h-[480px] p-5">
           <Carousel className="rounded-xl h-full" loop={true}>
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
+            {images.map(({ src, alt }, index) => (
+              <img
+                src={src}
+                alt={alt}
+                key={index}
+                className="h-full w-full object-contain"
+              />
+            ))}
           </Carousel>
         </div>
 

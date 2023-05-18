@@ -10,15 +10,11 @@ interface Props {
   coverUrl: string;
 }
 
-export const Cover = ({
-  title,
-  setModalOpen,
-  coverUrl = "/banner-1.jpg"
-}: Props) => {
+export const Cover = ({ title, setModalOpen, coverUrl }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const style = useSpring({
-    filter: hovered ? "grayscale(0)" : "grayscale(1)",
+    filter: hovered ? "grayscale(0.3)" : "grayscale(1)",
     opacity: hovered ? 1 : 0,
     config: {
       friction: 300,
@@ -63,15 +59,19 @@ export const Cover = ({
           color="transparent"
           className={`absolute inset-0 m-0 h-full w-full rounded-none overflow-hidden`}>
           <a.div
-            style={{ ...style, opacity: 1 }}
-            className={`h-full w-full bg-[url(${coverUrl})] bg-cover bg-no-repeat`}
+            style={{
+              ...style,
+              opacity: 1,
+              backgroundImage: `url(${coverUrl})`
+            }}
+            className={`h-full w-full ${coverUrl} bg-cover bg-center bg-no-repeat`}
           />
           <a.div
             style={style}
             className="flex items-center justify-center to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
             <Typography
               variant="h4"
-              className="py-2 leading-[1.5] text-blue-gray-400 font-body font-medium">
+              className="py-2 leading-[1.5] text-blue-gray-400 font-body font-medium bg-neutral-900 w-full">
               {title}
             </Typography>
           </a.div>

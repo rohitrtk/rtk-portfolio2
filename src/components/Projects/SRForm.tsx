@@ -16,6 +16,55 @@ import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Hyperlink from "@components/UI/Hyperlink";
 
+import SNP1 from "@assets/images/SNP-1.png";
+import SNP2 from "@assets/images/SNP-2.png";
+import SNP3 from "@assets/images/SNP-3.png";
+import SNP4 from "@assets/images/SNP-4.png";
+import SNP5 from "@assets/images/SNP-5.png";
+import SNP6 from "@assets/images/SNP-6.png";
+import SNP7 from "@assets/images/SNP-7.png";
+import SNP8 from "@assets/images/SNP-8.png";
+import SNP9 from "@assets/images/SNP-9.png";
+
+const images = [
+  {
+    src: SNP1,
+    alt: "First screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP2,
+    alt: "Second screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP3,
+    alt: "Third screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP4,
+    alt: "Fourth screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP5,
+    alt: "Fifth screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP6,
+    alt: "Sixth screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP7,
+    alt: "Seventh screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP8,
+    alt: "Eigth screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  },
+  {
+    src: SNP9,
+    alt: "Ninth screenshot of the Student Registration Form I helped design for Six Nations Polytechnic"
+  }
+];
+
 // Student Registration Form
 const SRForm = () => {
   const title = "Student Registration Form";
@@ -24,26 +73,19 @@ const SRForm = () => {
 
   return (
     <div className="p-1 m-2">
-      <Cover title={title} setModalOpen={setModalOpen} />
+      <Cover title={title} setModalOpen={setModalOpen} coverUrl={SNP1} />
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="min-h-[480px] p-5">
           <Carousel className="rounded-xl h-full" loop={true}>
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
+            {images.map(({ src, alt }, index) => (
+              <img
+                src={src}
+                alt={alt}
+                key={index}
+                className="h-full w-full object-cover"
+              />
+            ))}
           </Carousel>
         </div>
         <div className="flex flex-row justify-center gap-5">

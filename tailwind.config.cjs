@@ -5,6 +5,11 @@ module.exports = withMT({
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			backgroundImage: {
+				"snp-cover": "url('./src/assets/images/snp-1.png')",
+				"kk-cover": "url('./src/assets/images/kk-1.png')",
+				"pg-cover": "url('./src/assets/images/pomstagram-1.png')"
+			},
 			fontFamily: {
 				'heading': ['Merriweather', 'serif'],
 				'body': ['Quattrocento', 'serif'],
