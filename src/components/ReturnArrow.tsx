@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { a } from "@react-spring/web";
-
-import UpArrow from "@assets/icons/up_arrow.svg";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { IconButton } from "@material-tailwind/react";
 
 const ReturnArrow = () => {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [hidden, setHidden] = useState(true);
 
   const hide = () => {
@@ -32,13 +32,14 @@ const ReturnArrow = () => {
   }, []);
 
   return (
-    <a.button
+    <div
       ref={ref}
-      type="button"
-      className="hidden fixed top-5 right-5 z-20 brightness-50 shadow-xl rounded-xl hover:bg-neutral-700"
+      className="hidden fixed top-5 right-5 z-20 brightness-50 shadow-xl rounded-xl"
       onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}>
-      <img src={UpArrow} />
-    </a.button>
+      <IconButton className="bg-neutral-800 shadow-none focus:shadow-none hover:shadow-none hover:bg-neutral-700">
+        <ArrowUpwardIcon />
+      </IconButton>
+    </div>
   );
 };
 
