@@ -7,7 +7,10 @@ import {
   SiMongodb,
   SiExpress,
   SiNodedotjs,
-  SiGithub
+  SiGithub,
+  SiTensorflow,
+  SiRedux,
+  SiReact
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
@@ -69,6 +72,9 @@ const Pomstagram = () => {
           <Tooltip content="Next.js">
             <SiNextdotjs color="#ffffff" size={48} />
           </Tooltip>
+          <Tooltip content="React">
+            <SiReact color="#61DAFB" size={48} />
+          </Tooltip>
           <Tooltip content="TypeScript">
             <SiTypescript color="#3178C6" size={48} />
           </Tooltip>
@@ -81,8 +87,14 @@ const Pomstagram = () => {
           <Tooltip content="MongoDB">
             <SiMongodb color="#47A248" size={48} />
           </Tooltip>
+          <Tooltip content="Redux">
+            <SiRedux color="#764ABC" size={48} />
+          </Tooltip>
           <Tooltip content="TailwindCSS">
             <SiTailwindcss color="#06B6D4" size={48} />
+          </Tooltip>
+          <Tooltip content="TensorFlow">
+            <SiTensorflow color="#FF6F00" size={48} />
           </Tooltip>
         </div>
 
@@ -93,6 +105,43 @@ const Pomstagram = () => {
           <SiGithub />
           GitHub Repo
         </a>
+
+        <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
+          <section>
+            <h3 className="text-xl underline">Goal</h3>
+            <span>
+              My goal for this project to create a fullstack application where
+              on the frontend, looked similiar to that of VSCO. For the backend,
+              I wanted to create an API that would be able to check a user
+              upload and determine if it was a Pomeranian. If the picture was a
+              Pomeranian, the user would be allowed to post the photo, otherwise
+              the user wouldn't be able to upload the photo.
+            </span>
+          </section>
+
+          <section>
+            <h3 className="text-xl underline">Description</h3>
+            <span className="bg-yellow-300 text-black">
+              The project uses a MERN (MongoDB, Express, React, Node) stack
+              together with TensorFlow to verify user uploads.
+            </span>
+          </section>
+
+          <section>
+            Users of the site can create an account and then log in. On the home
+            page, users will see posts from all users who have posted. Users can
+            navigate to their own profile by clicking on their profile picture
+            to see their uploads, or they can click on the profile pictures of
+            other users who have uploaded photos to view that users profile.
+            Each profile displays the number of likes that user has given, and
+            the number of posts they have. Users can upload photos by clicking
+            on a button on the navbar where they can choose a photo from the
+            computer and write a description. Upon posting the image, the
+            backend checks if the photo is of a Pomeranian. If the picture isn't
+            of a Pomeranian (or if the Pomeranian isn't clear enough), the user
+            is given an error message.
+          </section>
+        </div>
       </Modal>
     </div>
   );
