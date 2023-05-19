@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Tooltip, Carousel, Typography } from "@material-tailwind/react";
+import { Tooltip } from "@material-tailwind/react";
 import {
   SiAstro,
   SiTypescript,
@@ -10,6 +10,7 @@ import {
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
+import Carousel from "@components/UI/Carousel";
 
 import KK1 from "@assets/images/kk-1.png";
 import KK2 from "@assets/images/kk-2.png";
@@ -52,30 +53,43 @@ const KKClone = () => {
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="min-h-[480px] p-5">
-          <Carousel className="rounded-xl h-full" loop={true}>
+          <Carousel>
             {images.map(({ src, alt }, index) => (
               <img
                 src={src}
                 alt={alt}
                 key={index}
-                className="h-full w-full object-contain"
+                draggable={false}
+                className="h-full w-full object-cover"
               />
             ))}
           </Carousel>
         </div>
 
-        <div className="flex flex-row justify-center gap-5">
+        <div className="flex flex-row justify-center gap-5 md:p-0 p-5 flex-wrap md:flex-nowrap">
           <Tooltip content="Astro">
-            <SiAstro color="#FF5D01" size={48} />
+            <SiAstro
+              color="#FF5D01"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="HTML">
-            <SiHtml5 color="#E34F26" size={48} />
+            <SiHtml5
+              color="#E34F26"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="TypeScript">
-            <SiTypescript color="#3178C6" size={48} />
+            <SiTypescript
+              color="#3178C6"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="TailwindCSS">
-            <SiTailwindcss color="#06B6D4" size={48} />
+            <SiTailwindcss
+              color="#06B6D4"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
         </div>
 
@@ -87,7 +101,7 @@ const KKClone = () => {
           GitHub Repo
         </a>
 
-        <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
+        <div className="w-full text-left p-2 gap-5 md:[&>*]:m-5 [&>*]:m-2 md:text-xl text-md">
           <section>
             <h3 className="text-xl underline">Goal</h3>
             <span>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Carousel } from "@material-tailwind/react";
 import {
   SiBootstrap,
   SiCpanel,
@@ -14,6 +13,7 @@ import { Tooltip } from "@material-tailwind/react";
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
+import Carousel from "@components/UI/Carousel";
 import Hyperlink from "@components/UI/Hyperlink";
 
 import SNP1 from "@assets/images/snp-1.png";
@@ -77,46 +77,71 @@ const SRForm = () => {
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="min-h-[480px] p-5">
-          <Carousel className="rounded-xl h-full" loop={true}>
+          <Carousel>
             {images.map(({ src, alt }, index) => (
               <img
                 src={src}
                 alt={alt}
                 key={index}
-                className="h-full w-full object-cover"
+                draggable={false}
+                className="h-full w-full object-center md:object-cover object-contain"
               />
             ))}
           </Carousel>
         </div>
-        <div className="flex flex-row justify-center gap-5">
+        <div className="flex flex-row justify-center gap-5 md:p-0 p-5 flex-wrap md:flex-nowrap">
           <Tooltip content="HTML">
-            <SiHtml5 color="#E34F26" size={48} />
+            <SiHtml5
+              color="#E34F26"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="CSS">
-            <SiCss3 color="#1572B6" size={48} />
+            <SiCss3
+              color="#1572B6"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="JavaScript">
-            <SiJavascript color="#F7DF1E" size={48} />
+            <SiJavascript
+              color="#F7DF1E"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="Bootstrap">
-            <SiBootstrap color="#7952B3" size={48} />
+            <SiBootstrap
+              color="#7952B3"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="PHP">
-            <SiPhp color="#777BB4" size={48} />
+            <SiPhp
+              color="#777BB4"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="jQuery">
-            <SiJquery color="#0769AD" size={48} />
+            <SiJquery
+              color="#0769AD"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="MySQL">
-            <SiMysql color="#4479A1" size={48} />
+            <SiMysql
+              color="#4479A1"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="cPanel">
-            <SiCpanel color="#FF6C2C" size={48} />
+            <SiCpanel
+              color="#FF6C2C"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
         </div>
-        <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
+        <div className="w-full text-left p-2 gap-5 md:[&>*]:m-5 [&>*]:m-2 md:text-xl text-md">
           <section>
-            <h3 className="text-xl underline">Goal</h3>
+            <h3 className="underline">Goal</h3>
             As a part of my time at{" "}
             <Hyperlink href="https://snpolytechnic.com/">SNP</Hyperlink>, I had
             to design a registration system similiar to{" "}
@@ -130,7 +155,7 @@ const SRForm = () => {
           </section>
 
           <section>
-            <h3 className="text-xl underline">Description</h3>
+            <h3 className="underline">Description</h3>
             <span className="bg-yellow-300 text-black">
               The project is using a LAMP (Linux, Apache, MySQL, PHP) stack on
               the backend together with HTML, CSS, and JavaScript with help from
