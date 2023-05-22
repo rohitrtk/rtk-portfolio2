@@ -1,6 +1,11 @@
 import { useRef, ReactNode } from "react";
 import { Carousel as MTCarousel, IconButton } from "@material-tailwind/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronRightIcon,
+  ChevronLeftIcon
+} from "@heroicons/react/24/outline";
 import type {
   nextArrow as NextArrow,
   prevArrow as PrevArrow,
@@ -8,6 +13,7 @@ import type {
 } from "@material-tailwind/react/types/components/carousel";
 
 import useSwipe from "@hooks/useSwipe";
+import useMobileView from "@hooks/useMobileView";
 
 interface Props {
   children: ReactNode;
@@ -15,30 +21,51 @@ interface Props {
 
 const Carousel = ({ children }: Props) => {
   const indexHandler = useRef<Parameters<Navigation>[0] | null>(null);
+  const isMobile = useMobileView();
 
   const handlePrev: PrevArrow = ({ handlePrev }) => {
-    return (
-      <IconButton
-        variant="text"
-        color="red"
-        size="lg"
+    return isMobile ? (
+      <></>
+    ) : (
+      <div
         onClick={handlePrev}
-        className="!absolute top-2/4 -translate-y-2/4 left-4">
-        <ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
-      </IconButton>
+        className="!absolute top-2/4 -translate-y-2/4 left-0 bg-white opacity-40 blur-sm hover:bg-neutral-700 min-w-[100px] min-h-full flex items-center justify-center">
+        <ChevronLeftIcon
+          strokeWidth={4}
+          className="w-10 h-10 bg-blue-gray-600"
+        />
+      </div>
+      // <IconButton
+      //   variant="text"
+      //   color="blue-gray"
+      //   size="lg"
+      //   onClick={handlePrev}
+      //   className="!absolute top-2/4 -translate-y-2/4 left-4">
+      //   <ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
+      // </IconButton>
     );
   };
 
   const handleNext: NextArrow = ({ handleNext }) => {
-    return (
-      <IconButton
-        variant="text"
-        color="red"
-        size="lg"
+    return isMobile ? (
+      <></>
+    ) : (
+      <div
         onClick={handleNext}
-        className="!absolute top-2/4 -translate-y-2/4 !right-4">
-        <ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
-      </IconButton>
+        className="!absolute top-2/4 -translate-y-2/4 !right-0 bg-white opacity-40 blur-sm hover:bg-neutral-700 min-w-[100px] min-h-full">
+        <ChevronLeftIcon
+          strokeWidth={4}
+          className="w-10 h-10 bg-blue-gray-600"
+        />
+      </div>
+      // <IconButton
+      //   variant="text"
+      //   color="blue-gray"
+      //   size="lg"
+      //   onClick={handleNext}
+      //   className="!absolute top-2/4 -translate-y-2/4 !right-4 bg-neutral-800 hover:bg-neutral-700">
+      //   <ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
+      // </IconButton>
     );
   };
 

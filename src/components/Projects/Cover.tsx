@@ -3,6 +3,7 @@ import { a, useSpring, easings } from "@react-spring/web";
 import SectionContext, { SectionContextProps } from "@context/SectionContext";
 
 import { Card, CardHeader, Typography } from "@material-tailwind/react";
+import useMobileView from "@hooks/useMobileView";
 
 interface Props {
   title: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export const Cover = ({ title, setModalOpen, coverUrl }: Props) => {
+  const isMobileView = useMobileView();
   const [hovered, setHovered] = useState(false);
 
   const style = useSpring({
@@ -59,15 +61,19 @@ export const Cover = ({ title, setModalOpen, coverUrl }: Props) => {
           color="transparent"
           className={`absolute inset-0 m-0 h-full w-full rounded-none overflow-hidden`}>
           <a.div
-            style={{
-              ...style,
-              opacity: 1,
-              backgroundImage: `url(${coverUrl})`
-            }}
+            style={
+              !isMobileView
+                ? {
+                    ...style,
+                    opacity: 1,
+                    backgroundImage: `url(${coverUrl})`
+                  }
+                : { backgroundImage: `url(${coverUrl})` }
+            }
             className={`h-full w-full ${coverUrl} bg-cover bg-center bg-no-repeat`}
           />
           <a.div
-            style={style}
+            style={!isMobileView ? { ...style } : {}}
             className="flex items-center justify-center to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
             <Typography
               variant="h4"
