@@ -11,8 +11,11 @@ type UseSwipe = (args: {
 const useSwipe: UseSwipe = ({ next, prev }) => {
   const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
-  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) =>
-    setTouchPosition((e as TouchEvent).touches[0].clientX);
+  const handleTouchStart = (
+    e: TouchEvent<HTMLDivElement>,
+    listener = null,
+    useCapture = true
+  ) => setTouchPosition((e as TouchEvent).touches[0].clientX);
 
   const handleTouchMove = (e: TouchEvent<HTMLElement>) => {
     if (!touchPosition) {
