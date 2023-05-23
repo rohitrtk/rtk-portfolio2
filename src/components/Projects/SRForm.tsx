@@ -140,7 +140,7 @@ const SRForm = () => {
                 alt={alt}
                 key={index}
                 draggable={false}
-                className="h-full w-full object-center object-contain"
+                className="h-full w-full object-center object-contain cursor-pointer"
               />
             ))}
           </Carousel>

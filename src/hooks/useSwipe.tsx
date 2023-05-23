@@ -1,4 +1,4 @@
-import { TouchEvent, useState } from "react";
+import { DragEvent, TouchEvent, useState } from "react";
 
 type UseSwipe = (args: {
   next: (() => void) | null;
@@ -12,7 +12,7 @@ const useSwipe: UseSwipe = ({ next, prev }) => {
   const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) =>
-    setTouchPosition(e.touches[0].clientX);
+    setTouchPosition((e as TouchEvent).touches[0].clientX);
 
   const handleTouchMove = (e: TouchEvent<HTMLElement>) => {
     if (!touchPosition) {
