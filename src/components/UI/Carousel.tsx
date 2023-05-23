@@ -94,14 +94,13 @@ const Carousel = ({ children }: Props) => {
 
   return (
     <MTCarousel
-      className="rounded-xl"
+      className="rounded-xl cursor-pointer"
       loop={true}
       prevArrow={handlePrev}
       nextArrow={handleNext}
       navigation={handleNavigation}
       onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onDragStart={(e) => {}}>
+      onTouchMove={handleTouchMove}>
       {children}
     </MTCarousel>
   );
