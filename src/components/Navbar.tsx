@@ -24,10 +24,8 @@ const Navbar = () => {
     contactSectionRef?.current?.scrollIntoView(scrollConfig);
 
   return (
-    <nav className="px-2 py-2.5 w-full sticky inset-0 z-20 shadow-xl p-5 h-[72px] max-h-[72px] items-center flex justify-end">
-      <div
-        ref={divRef}
-        className="flex flex-row justify-end md:px-3 md:py-2 items-center">
+    <nav className="px-2 py-2.5 w-full sticky inset-0 z-20 shadow-xl p-5 h-[72px] max-h-[72px] items-center flex md:justify-center justify-end">
+      <div ref={divRef} className="flex flex-row md:px-3 md:py-2 items-center">
         <div
           ref={menuRef}
           className="hidden w-screen bg-transparent md:block md:w-auto">

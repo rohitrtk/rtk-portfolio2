@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Tooltip, Carousel } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import { Tooltip } from "@material-tailwind/react";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -15,12 +15,19 @@ import {
 
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
+import Carousel from "@components/UI/Carousel";
+import useMobileView from "@hooks/useMobileView";
 
 import PG1 from "@assets/images/pomstagram-1.png";
 import PG2 from "@assets/images/pomstagram-2.png";
 import PG3 from "@assets/images/pomstagram-3.png";
 import PG4 from "@assets/images/pomstagram-4.png";
 import PG5 from "@assets/images/pomstagram-5.png";
+import MPG1 from "@assets/images/mobile/pomstagramm-1.png";
+import MPG2 from "@assets/images/mobile/pomstagramm-2.png";
+import MPG3 from "@assets/images/mobile/pomstagramm-3.png";
+import MPG4 from "@assets/images/mobile/pomstagramm-4.png";
+import MPG5 from "@assets/images/mobile/pomstagramm-5.png";
 
 const images = [
   {
@@ -45,10 +52,40 @@ const images = [
   }
 ];
 
+const mobileImages = [
+  {
+    src: MPG1,
+    alt: "First mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG2,
+    alt: "Second mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG3,
+    alt: "Third mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG4,
+    alt: "Fourth mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG5,
+    alt: "Fifth mobile screenshot of Pomstagram"
+  }
+];
+
 const Pomstagram = () => {
   const title = "Pomstagram";
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState<typeof images>([]);
+  const isMobileView = useMobileView();
+
+  useEffect(
+    () => setCurrentImages(isMobileView ? mobileImages : images),
+    [isMobileView]
+  );
 
   return (
     <div className="p-1 m-2">
@@ -56,45 +93,73 @@ const Pomstagram = () => {
 
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="max-h-[480px] p-5">
-          <Carousel className="rounded-xl h-full" loop={true}>
-            {images.map(({ src, alt }, index) => (
+          <Carousel>
+            {currentImages.map(({ src, alt }, index) => (
               <img
                 src={src}
                 alt={alt}
                 key={index}
-                className="h-full w-full object-contain"
+                draggable={false}
+                className="h-full w-full object-center object-fill"
               />
             ))}
           </Carousel>
         </div>
 
-        <div className="flex flex-row justify-center gap-5">
+        <div className="flex flex-row justify-center gap-5 md:p-0 p-5 flex-wrap md:flex-nowrap">
           <Tooltip content="Next.js">
-            <SiNextdotjs color="#ffffff" size={48} />
+            <SiNextdotjs
+              color="#ffffff"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="React">
-            <SiReact color="#61DAFB" size={48} />
+            <SiReact
+              color="#61DAFB"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="TypeScript">
-            <SiTypescript color="#3178C6" size={48} />
+            <SiTypescript
+              color="#3178C6"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="Node.js">
-            <SiNodedotjs color="#339933" size={48} />
+            <SiNodedotjs
+              color="#339933"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="Express.js">
-            <SiExpress color="#ffffff" size={48} />
+            <SiExpress
+              color="#ffffff"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="MongoDB">
-            <SiMongodb color="#47A248" size={48} />
+            <SiMongodb
+              color="#47A248"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="Redux">
-            <SiRedux color="#764ABC" size={48} />
+            <SiRedux
+              color="#764ABC"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="TailwindCSS">
-            <SiTailwindcss color="#06B6D4" size={48} />
+            <SiTailwindcss
+              color="#06B6D4"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
           <Tooltip content="TensorFlow">
-            <SiTensorflow color="#FF6F00" size={48} />
+            <SiTensorflow
+              color="#FF6F00"
+              className="md:w-[48px] md:h-[48px] w-[20px] h-[20px]"
+            />
           </Tooltip>
         </div>
 
@@ -106,7 +171,7 @@ const Pomstagram = () => {
           GitHub Repo
         </a>
 
-        <div className="w-full text-left p-2 gap-5 [&>*]:m-5">
+        <div className="w-full text-left p-2 gap-5 md:[&>*]:m-5 [&>*]:m-2 md:text-xl text-md">
           <section>
             <h3 className="text-xl underline">Goal</h3>
             <span>

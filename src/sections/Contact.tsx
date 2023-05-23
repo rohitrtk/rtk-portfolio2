@@ -12,12 +12,12 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col p-10 align-middle min-w-full w-screen h-screen items-center justify-center sticky top-0 bg-neutral-900 overflow-hidden">
+      className="flex flex-col p-10 align-middle w-screen h-screen items-center justify-center sticky top-0 bg-neutral-900 overflow-hidden">
       <Stripe />
       <a.div
         ref={fadeRef}
         style={style}
-        className="flex flex-col w-full justify-center text-center items-center gap-2 shadow-xl rounded-xl p-5">
+        className="flex flex-col justify-center text-center items-center gap-2 shadow-xl rounded-xl p-5">
         <h1 className="md:text-6xl text-4xl font-body overflow-hidden">
           Contact
         </h1>

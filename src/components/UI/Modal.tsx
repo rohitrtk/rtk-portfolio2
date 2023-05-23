@@ -38,8 +38,8 @@ const Modal = forwardRef<HTMLDivElement, Props>(
             />
             <a.div
               style={style}
-              className="relative rounded-lg m-auto justify-start items-center flex flex-col bg-neutral-900 w-2/3 h-full overflow-y-scroll">
-              <h1 className="font-body text-6xl underline p-5 text-center">
+              className="relative rounded-lg m-auto justify-start items-center flex flex-col bg-neutral-900 md:w-2/3 w-11/12 h-full overflow-y-scroll">
+              <h1 className="font-body md:text-6xl text-2xl underline p-5 text-center">
                 {title}
               </h1>
               {children}
