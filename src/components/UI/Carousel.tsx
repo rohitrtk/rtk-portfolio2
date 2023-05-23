@@ -99,8 +99,10 @@ const Carousel = ({ children }: Props) => {
       prevArrow={handlePrev}
       nextArrow={handleNext}
       navigation={handleNavigation}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}>
+      //onTouchStart={handleTouchStart}
+      //onTouchMove={handleTouchMove}
+      onTouchStartCapture={handleTouchStart}
+      onTouchMoveCapture={handleTouchMove}>
       {children}
     </MTCarousel>
   );
