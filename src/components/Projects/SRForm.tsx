@@ -139,7 +139,7 @@ const SRForm = () => {
                 src={src}
                 alt={alt}
                 key={index}
-                //draggable={false}
+                draggable={false}
                 className="h-full w-full object-center object-contain cursor-pointer"
               />
             ))}
