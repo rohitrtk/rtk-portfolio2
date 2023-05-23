@@ -12,6 +12,10 @@ import Contact from "@sections/Contact";
 
 import ReturnArrow from "./ReturnArrow";
 
+import Banner1 from "@assets/banner-1.jpg";
+import Banner2 from "@assets/banner-2.jpg";
+import Banner3 from "@assets/banner-3.jpg";
+
 import initReactFastclick from "react-fastclick";
 initReactFastclick();
 
@@ -43,11 +47,11 @@ const App = () => {
           <ReturnArrow />
 
           <Intro ref={introSectionRef} />
-          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-1.jpg)] grayscale" />
+          <Banner src={Banner1} />
           <About ref={aboutSectionRef} />
-          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-2.jpg)] grayscale" />
+          <Banner src={Banner2} />
           <Projects ref={projectsSectionRef} />
-          <div className="w-screen h-screen justify-center sticky top-0 bg-cover bg-no-repeat bg-[url(/banner-3.jpg)] grayscale" />
+          <Banner src={Banner3} />
           <Contact ref={contactSectionRef} />
         </div>
       </SectionContext.Provider>
@@ -56,3 +60,12 @@ const App = () => {
 };
 
 export default App;
+
+const Banner = ({ src }: { src: string }) => {
+  return (
+    <img
+      src={src}
+      className="w-screen h-screen justify-center sticky top-0 grayscale"
+    />
+  );
+};
