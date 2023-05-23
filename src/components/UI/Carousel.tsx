@@ -29,20 +29,9 @@ const Carousel = ({ children }: Props) => {
     ) : (
       <div
         onClick={handlePrev}
-        className="!absolute top-2/4 -translate-y-2/4 left-0 bg-white opacity-40 blur-sm hover:bg-neutral-700 min-w-[100px] min-h-full flex items-center justify-center">
-        <ChevronLeftIcon
-          strokeWidth={4}
-          className="w-10 h-10 bg-blue-gray-600"
-        />
+        className="!absolute top-2/4 -translate-y-2/4 left-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
+        <ChevronLeftIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
       </div>
-      // <IconButton
-      //   variant="text"
-      //   color="blue-gray"
-      //   size="lg"
-      //   onClick={handlePrev}
-      //   className="!absolute top-2/4 -translate-y-2/4 left-4">
-      //   <ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
-      // </IconButton>
     );
   };
 
@@ -52,20 +41,9 @@ const Carousel = ({ children }: Props) => {
     ) : (
       <div
         onClick={handleNext}
-        className="!absolute top-2/4 -translate-y-2/4 !right-0 bg-white opacity-40 blur-sm hover:bg-neutral-700 min-w-[100px] min-h-full">
-        <ChevronLeftIcon
-          strokeWidth={4}
-          className="w-10 h-10 bg-blue-gray-600"
-        />
+        className="!absolute top-2/4 -translate-y-2/4 !right-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
+        <ChevronRightIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
       </div>
-      // <IconButton
-      //   variant="text"
-      //   color="blue-gray"
-      //   size="lg"
-      //   onClick={handleNext}
-      //   className="!absolute top-2/4 -translate-y-2/4 !right-4 bg-neutral-800 hover:bg-neutral-700">
-      //   <ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
-      // </IconButton>
     );
   };
 
@@ -77,7 +55,7 @@ const Carousel = ({ children }: Props) => {
     indexHandler.current = { setActiveIndex, activeIndex, length };
 
     return (
-      <div className="absolute -bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
         {[...new Array(length)].map((_, i) => (
           <span
             key={i}

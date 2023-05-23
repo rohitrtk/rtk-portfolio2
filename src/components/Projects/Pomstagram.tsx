@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import {
   SiNextdotjs,
@@ -16,12 +16,18 @@ import {
 import Cover from "./Cover";
 import Modal from "@components/UI/Modal";
 import Carousel from "@components/UI/Carousel";
+import useMobileView from "@hooks/useMobileView";
 
 import PG1 from "@assets/images/pomstagram-1.png";
 import PG2 from "@assets/images/pomstagram-2.png";
 import PG3 from "@assets/images/pomstagram-3.png";
 import PG4 from "@assets/images/pomstagram-4.png";
 import PG5 from "@assets/images/pomstagram-5.png";
+import MPG1 from "@assets/images/mobile/pomstagramm-1.png";
+import MPG2 from "@assets/images/mobile/pomstagramm-2.png";
+import MPG3 from "@assets/images/mobile/pomstagramm-3.png";
+import MPG4 from "@assets/images/mobile/pomstagramm-4.png";
+import MPG5 from "@assets/images/mobile/pomstagramm-5.png";
 
 const images = [
   {
@@ -46,10 +52,40 @@ const images = [
   }
 ];
 
+const mobileImages = [
+  {
+    src: MPG1,
+    alt: "First mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG2,
+    alt: "Second mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG3,
+    alt: "Third mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG4,
+    alt: "Fourth mobile screenshot of Pomstagram"
+  },
+  {
+    src: MPG5,
+    alt: "Fifth mobile screenshot of Pomstagram"
+  }
+];
+
 const Pomstagram = () => {
   const title = "Pomstagram";
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState<typeof images>([]);
+  const isMobileView = useMobileView();
+
+  useEffect(
+    () => setCurrentImages(isMobileView ? mobileImages : images),
+    [isMobileView]
+  );
 
   return (
     <div className="p-1 m-2">
@@ -58,13 +94,13 @@ const Pomstagram = () => {
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="max-h-[480px] p-5">
           <Carousel>
-            {images.map(({ src, alt }, index) => (
+            {currentImages.map(({ src, alt }, index) => (
               <img
                 src={src}
                 alt={alt}
                 key={index}
                 draggable={false}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-center object-fill"
               />
             ))}
           </Carousel>

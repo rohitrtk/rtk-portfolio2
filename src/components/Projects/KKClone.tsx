@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import {
   SiAstro,
@@ -17,6 +17,11 @@ import KK2 from "@assets/images/kk-2.png";
 import KK3 from "@assets/images/kk-3.png";
 import KK4 from "@assets/images/kk-4.png";
 import KK5 from "@assets/images/kk-5.png";
+import MKK1 from "@assets/images/mobile/kkm-1.png";
+import MKK2 from "@assets/images/mobile/kkm-2.png";
+import MKK3 from "@assets/images/mobile/kkm-3.png";
+import MKK4 from "@assets/images/mobile/kkm-4.png";
+import useMobileView from "@hooks/useMobileView";
 
 const images = [
   {
@@ -41,11 +46,37 @@ const images = [
   }
 ];
 
+const mobileImages = [
+  {
+    src: MKK1,
+    alt: "First mobile screenshot of my Krispy Kreme clone"
+  },
+  {
+    src: MKK2,
+    alt: "Second mobile screenshot of my Krispy Kreme clone"
+  },
+  {
+    src: MKK3,
+    alt: "Third mobile screenshot of my Krispy Kreme clone"
+  },
+  {
+    src: MKK4,
+    alt: "Fourth mobile screenshot of my Krispy Kreme clone"
+  }
+];
+
 // Krispy Kreme Clone
 const KKClone = () => {
   const title = "Krispy Kreme Clone";
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState<typeof images>([]);
+  const isMobileView = useMobileView();
+
+  useEffect(
+    () => setCurrentImages(isMobileView ? mobileImages : images),
+    [isMobileView]
+  );
 
   return (
     <div className="p-1 m-2">
@@ -54,13 +85,13 @@ const KKClone = () => {
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} title={title}>
         <div className="min-h-[480px] p-5">
           <Carousel>
-            {images.map(({ src, alt }, index) => (
+            {currentImages.map(({ src, alt }, index) => (
               <img
                 src={src}
                 alt={alt}
                 key={index}
                 draggable={false}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-center object-contain"
               />
             ))}
           </Carousel>
