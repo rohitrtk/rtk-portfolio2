@@ -100,7 +100,7 @@ const Pomstagram = () => {
                 alt={alt}
                 key={index}
                 draggable={false}
-                className="h-full w-full object-center object-fill"
+                className="h-full w-full object-center object-fill cursor-pointer"
               />
             ))}
           </Carousel>
