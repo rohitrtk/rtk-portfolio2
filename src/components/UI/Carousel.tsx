@@ -87,22 +87,21 @@ const Carousel = ({ children }: Props) => {
     setActiveIndex(activeIndex - 1 < 0 ? length - 1 : activeIndex - 1);
   };
 
-  const { handleTouchStart, handleTouchMove } = useSwipe({
+  const { handleTouchStart, handleTouchMove, handleClick } = useSwipe({
     prev,
     next
   });
 
   return (
     <MTCarousel
-      className="rounded-xl cursor-pointer"
+      className="rounded-xl cursor-pointer z-50"
       loop={true}
       prevArrow={handlePrev}
       nextArrow={handleNext}
       navigation={handleNavigation}
-      //onTouchStart={handleTouchStart}
-      //onTouchMove={handleTouchMove}
-      onTouchStartCapture={handleTouchStart}
-      onTouchMoveCapture={handleTouchMove}>
+      onClick={handleClick}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}>
       {children}
     </MTCarousel>
   );

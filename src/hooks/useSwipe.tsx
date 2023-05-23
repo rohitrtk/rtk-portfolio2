@@ -1,4 +1,4 @@
-import { DragEvent, TouchEvent, useState } from "react";
+import { MouseEvent, TouchEvent, useState } from "react";
 
 type UseSwipe = (args: {
   next: (() => void) | null;
@@ -6,16 +6,13 @@ type UseSwipe = (args: {
 }) => {
   handleTouchStart: (e: TouchEvent<HTMLDivElement>) => void;
   handleTouchMove: (e: TouchEvent<HTMLDivElement>) => void;
+  handleClick: (e: MouseEvent<HTMLDivElement>) => void;
 };
 
 const useSwipe: UseSwipe = ({ next, prev }) => {
   const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
-  const handleTouchStart = (
-    e: TouchEvent<HTMLDivElement>,
-    listener = null,
-    useCapture = true
-  ) => {
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     e.stopPropagation();
 
     setTouchPosition(e.touches[0].clientX);
@@ -44,7 +41,17 @@ const useSwipe: UseSwipe = ({ next, prev }) => {
     setTouchPosition(null);
   };
 
-  return { handleTouchStart, handleTouchMove };
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    const { offsetWidth } = e.currentTarget;
+
+    if (e.clientX <= offsetWidth / 2 && prev) {
+      prev();
+    } else if (next) {
+      next();
+    }
+  };
+
+  return { handleTouchStart, handleTouchMove, handleClick };
 };
 
 export default useSwipe;
