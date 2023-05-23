@@ -12,6 +12,9 @@ import Contact from "@sections/Contact";
 
 import ReturnArrow from "./ReturnArrow";
 
+import initReactFastclick from "react-fastclick";
+initReactFastclick();
+
 export const prerender = true;
 
 const App = () => {
