@@ -7,8 +7,8 @@ import type {
   navigation as Navigation
 } from "@material-tailwind/react/types/components/carousel";
 
-// import useSwipe from "@hooks/useSwipe";
-// import useMobileView from "@hooks/useMobileView";
+import useSwipe from "@hooks/useSwipe";
+import useMobileView from "@hooks/useMobileView";
 
 interface Props {
   children: ReactNode;
@@ -16,32 +16,34 @@ interface Props {
 
 const Carousel = ({ children }: Props) => {
   const indexHandler = useRef<Parameters<Navigation>[0] | null>(null);
-  // const isMobile = useMobileView();
+  const isMobile = useMobileView();
 
   const handlePrev: PrevArrow = ({ handlePrev }) => {
-    return;
+    return (
+      <div
+        onClick={handlePrev}
+        className="!absolute top-2/4 -translate-y-2/4 left-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
+        <ChevronLeftIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
+      </div>
+    );
     // isMobile ? (
     //   <></>
     // ) : (
     // );
-    <div
-      onClick={handlePrev}
-      className="!absolute top-2/4 -translate-y-2/4 left-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
-      <ChevronLeftIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
-    </div>;
   };
 
   const handleNext: NextArrow = ({ handleNext }) => {
-    return;
     // isMobile ? (
     //   <></>
     // ) : (
     // );
-    <div
-      onClick={handleNext}
-      className="!absolute top-2/4 -translate-y-2/4 !right-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
-      <ChevronRightIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
-    </div>;
+    return (
+      <div
+        onClick={handleNext}
+        className="!absolute top-2/4 -translate-y-2/4 !right-0 bg-black opacity-0 hover:opacity-50 min-w-[100px] min-h-full flex items-center justify-center">
+        <ChevronRightIcon className="w-10 h-10 text-blue-gray-600 opacity-100" />
+      </div>
+    );
   };
 
   const handleNavigation: Navigation = ({
