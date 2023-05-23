@@ -15,9 +15,18 @@ const useSwipe: UseSwipe = ({ next, prev }) => {
     e: TouchEvent<HTMLDivElement>,
     listener = null,
     useCapture = true
-  ) => setTouchPosition((e as TouchEvent).touches[0].clientX);
+  ) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    setTouchPosition(e.touches[0].clientX);
+    console.log("Handle touch");
+  };
 
   const handleTouchMove = (e: TouchEvent<HTMLElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+    console.log("Handle move");
     if (!touchPosition) {
       return;
     }
