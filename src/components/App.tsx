@@ -17,6 +17,7 @@ import Banner2 from "@assets/banner-2.jpg";
 import Banner3 from "@assets/banner-3.jpg";
 
 import initReactFastclick from "react-fastclick";
+import HashImage from "./UI/HashImage";
 initReactFastclick();
 
 export const prerender = true;
@@ -47,11 +48,26 @@ const App = () => {
           <ReturnArrow />
 
           <Intro ref={introSectionRef} />
-          <Banner src={Banner1} />
+          <HashImage
+            src={Banner1}
+            alt="Banner 1"
+            hash="LE9%bY,,xCoz~9%2t6oejCbwkWn~"
+            className="w-screen h-screen justify-centersticky top-0 grayscale"
+          />
           <About ref={aboutSectionRef} />
-          <Banner src={Banner2} />
+          <HashImage
+            src={Banner2}
+            alt="Banner 2"
+            hash="LdINsv~TNMI[SiRPofo00hE3%1ae"
+            className="w-screen h-screen justify-centersticky top-0 grayscale"
+          />
           <Projects ref={projectsSectionRef} />
-          <Banner src={Banner3} />
+          <HashImage
+            src={Banner3}
+            alt="Banner 3"
+            hash="LDBz8}+:~T?H^z?G-Uxpt9t0ofo#"
+            className="w-screen h-screen justify-centersticky top-0 grayscale"
+          />
           <Contact ref={contactSectionRef} />
         </div>
       </SectionContext.Provider>
