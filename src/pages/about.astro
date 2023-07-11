@@ -1,10 +1,11 @@
 ---
 import Html from "@components/Astro/Html.astro";
+import About from "@sections/RAbout.tsx";
 
 import "@styles/global.css";
 ---
 
 <Html>
-  <div>Hello World</div>
+  <About client:only="react" />
 </Html>
 
