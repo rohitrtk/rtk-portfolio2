@@ -11,8 +11,8 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
-import Modal from "@components/UI/Modal";
-import Hyperlink from "@components/UI/Hyperlink";
+import Modal from "@components/React/UI/Modal";
+import Hyperlink from "@components/React/UI/Hyperlink";
 
 // XR Experience
 const XRExperience = () => {

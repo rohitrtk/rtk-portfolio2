@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { a } from "@react-spring/web";
 
-import Stripe from "@components/Stripe";
+import Stripe from "@components/React/Stripe";
 import { useFade } from "@hooks/useFade";
 
 const About = forwardRef<HTMLDivElement>((props, ref) => {

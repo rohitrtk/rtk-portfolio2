@@ -9,8 +9,8 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
-import Modal from "@components/UI/Modal";
-import Carousel from "@components/UI/Carousel";
+import Modal from "@components/React/UI/Modal";
+import Carousel from "@components/React/UI/Carousel";
 
 import KK1 from "@assets/images/kk-1.png";
 import KK2 from "@assets/images/kk-2.png";

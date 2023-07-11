@@ -2,8 +2,8 @@ import { a } from "@react-spring/web";
 
 import { useFade } from "@hooks/useFade";
 
-import ContactForm from "@components/ContactForm";
-import Stripe from "@components/Stripe";
+import ContactForm from "@components/React/ContactForm";
+import Stripe from "@components/React/Stripe";
 import { forwardRef } from "react";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {

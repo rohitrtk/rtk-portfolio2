@@ -3,14 +3,14 @@ import { a } from "@react-spring/web";
 
 import { useFade } from "@hooks/useFade";
 
-import Stripe from "@components/Stripe";
-import Navbar from "@components//Navbar";
+import Stripe from "@components/React/Stripe";
+import Navbar from "@components/React/Navbar";
 import {
   SiGithub,
   SiLeetcode,
   SiLinkedin
 } from "@icons-pack/react-simple-icons";
-import Socials from "@components/UI/Socials";
+import Socials from "@components/React/UI/Socials";
 
 const Intro = forwardRef<HTMLDivElement>((props, ref) => {
   const [fadeRef, style] = useFade();

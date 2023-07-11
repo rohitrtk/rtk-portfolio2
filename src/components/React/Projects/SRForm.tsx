@@ -12,9 +12,9 @@ import {
 import { Tooltip } from "@material-tailwind/react";
 
 import Cover from "./Cover";
-import Modal from "@components/UI/Modal";
-import Carousel from "@components/UI/Carousel";
-import Hyperlink from "@components/UI/Hyperlink";
+import Modal from "@components/React/UI/Modal";
+import Carousel from "@components/React/UI/Carousel";
+import Hyperlink from "@components/React/UI/Hyperlink";
 import useMobileView from "@hooks/useMobileView";
 
 import SNP1 from "@assets/images/snp-1.png";

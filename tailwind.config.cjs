@@ -2,7 +2,7 @@ const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
 			backgroundImage: {
@@ -15,6 +15,15 @@ module.exports = withMT({
 				'body': ['Quattrocento', 'serif'],
 			},
 			colors: {
+				"dt-black": "#181818",
+				"dt-grey": "1f1f1f",
+				"dt-orange": "#a77864",
+				"dt-purple": "#c586c0",
+				"dt-aqua": "#4ec9b0",
+				"dt-blue": "#569cd6",
+				"dt-light-blue": "#9cdcfe",
+				"dt-yellow": "#ffd602",
+				"dt-gold": "#dcdcaa",
 				slate: {
 					50: "#f8fafc",
 					100: "#f1f5f9",

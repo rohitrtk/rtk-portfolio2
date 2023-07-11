@@ -1,8 +1,8 @@
 import { forwardRef, RefObject, useRef } from "react";
 import { a } from "@react-spring/web";
 
-import { Project } from "@components/Projects";
-import Stripe from "@components/Stripe";
+import { Project } from "@components/React/Projects";
+import Stripe from "@components/React/Stripe";
 import { useFade } from "@hooks/useFade";
 
 const mergeRefs =

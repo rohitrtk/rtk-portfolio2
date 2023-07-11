@@ -14,8 +14,8 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 import Cover from "./Cover";
-import Modal from "@components/UI/Modal";
-import Carousel from "@components/UI/Carousel";
+import Modal from "@components/React/UI/Modal";
+import Carousel from "@components/React/UI/Carousel";
 import useMobileView from "@hooks/useMobileView";
 
 import PG1 from "@assets/images/pomstagram-1.png";
