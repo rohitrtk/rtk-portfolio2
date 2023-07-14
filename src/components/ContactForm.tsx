@@ -2,13 +2,36 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
-import { Button, Textarea } from "@material-tailwind/react";
+import { Button, Textarea, Typography } from "@material-tailwind/react";
+
+export default function ContactForm() {
+  return (
+    <form
+      className="flex flex-col gap-4 w-full h-full"
+      onSubmit={() => console.log("boop")}>
+      <Textarea
+        className="w-full h-full font-primary text-black rounded-xs"
+        rows={4}
+        label="Leave a message..."
+      />
+
+      <div className="flex justify-center items-center">
+        <Button
+          disabled={false}
+          type="submit"
+          className="w-1/4 m-2 p-2 shadow-none hover:shadow-none bg-dt-black text-dt-blue">
+          <Typography className="font-primary capitalize">Send</Typography>
+        </Button>
+      </div>
+    </form>
+  );
+}
 
 export interface FormInputs {
   message: string;
 }
 
-const ContactForm = () => {
+export const ContactForm2 = () => {
   const {
     register,
     handleSubmit,
@@ -101,5 +124,3 @@ const ContactForm = () => {
     </form>
   );
 };
-
-export default ContactForm;

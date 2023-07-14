@@ -1,40 +1,84 @@
-import { useState } from "react";
+"use client";
+
+import { a } from "@react-spring/web";
+
 import Image from "next/image";
 import { Typography } from "@lib/MT";
-import { a, useTransition } from "@react-spring/web";
+import {
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiDotnet,
+  SiOpengl,
+  SiUnrealengine
+} from "@icons-pack/react-simple-icons";
+import UofTIcon from "@assets/uoft.svg";
+import WeightliftingIcon from "@assets/weightlifting.svg";
+import GuitarIcon from "@assets/guitar.svg";
+import BookIcon from "@assets/book.svg";
 
-import Navbar from "@components/Navbar";
-import LineAround from "@components/LineAround";
-import useSlideIn from "@hooks/useSlideIn";
-import useFadeIn from "@hooks/useFadeIn";
+import Backdrop from "@components/Backdrop";
+import LineTitle from "@components/LineTitle";
+import usePageTransition from "@hooks/usePageTransition";
 
-import Me from "@assets/images/me.jpeg";
 import Test from "@assets/banner-1.jpg";
 
 export default function About() {
-  return (
-    <main className="w-full h-full flex flex-col items-center justify-start t-10">
-      <Image alt="" className="fixed -z-20 grayscale opacity-10" src={Test} />
+  const pageStyle = usePageTransition();
 
-      <div className="mt-20 w-3/4">
-        <LineAround>
-          <Typography
-            variant="h1"
-            className="p-0 text-center text-dt-light-blue relative mx-[1vh] my-auto font-primary before:content-none before:min-h-[2px] before:min-w-[50vw] before:bg-black before:absolute before:top-1/2">
-            About
-          </Typography>
-        </LineAround>
-        <section className="flex justify-center items-center h-full">
-          <Typography className="font-primary" variant="h4">
-            Hi! I'm Rohit, and I'm a Software Developer. I'm also a graduate of
-            the University of Toronto Mississauga. I specialize in building
-            full-stack web applications primarily using React, TypeScript, and
-            Tailwind. I also have interests in Application Development, API
-            Development, Game Development, and Graphics Programming. In my free
-            time, I enjoy weight lifting, playing guitar, and reading.
-          </Typography>
-        </section>
-      </div>
+  return (
+    <main className="w-full h-full flex flex-col items-center justify-start my-10">
+      <Backdrop src={Test} />
+
+      <a.div
+        style={pageStyle}
+        className="mt-20 w-full flex flex-col items-center h-full">
+        <div className="w-3/4 items-center h-full">
+          <LineTitle text="About" />
+
+          <section className="flex flex-col items-center text-center mt-20 gap-5">
+            <Typography className="font-primary" variant="h5">
+              Hi! I'm Rohit, and I'm a Software Developer. I'm also a graduate
+              of the University of Toronto Mississauga.
+            </Typography>
+
+            <Image src={UofTIcon} alt="" width="360" height="360" />
+
+            <Typography className="font-primary" variant="h5">
+              I specialize in building full-stack web applications primarily
+              using React, TypeScript, and Tailwind.
+            </Typography>
+
+            <div className="flex flex-row justify-evenly w-full">
+              <SiTypescript color="#3178C6" size={128} />
+              <SiReact color="#61DAFB" size={128} />
+              <SiTailwindcss color="#06B6D4" size={128} />
+            </div>
+
+            <Typography className="font-primary" variant="h5">
+              I also have interests in Application Development, API Development,
+              Game Development, and Graphics Programming.
+            </Typography>
+
+            <div className="flex flex-row justify-evenly w-full">
+              <SiDotnet color="#512BD4" size={128} />
+              <SiUnrealengine color="#FFFFFF" size={128} />
+              <SiOpengl color="#5586A4" size={128} />
+            </div>
+
+            <Typography className="font-primary" variant="h5">
+              In my free time, I enjoy weight lifting, playing guitar, and
+              reading.
+            </Typography>
+
+            <div className="flex flex-row justify-evenly w-full">
+              <Image src={GuitarIcon} alt="" width={128} height={128} />
+              <Image src={WeightliftingIcon} alt="" width={128} height={128} />
+              <Image src={BookIcon} alt="" width={128} height={128} />
+            </div>
+          </section>
+        </div>
+      </a.div>
     </main>
   );
 }

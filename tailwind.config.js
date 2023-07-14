@@ -14,7 +14,7 @@ module.exports = withMT({
       },
       colors: {
         "dt-black": "#181818",
-        "dt-grey": "1f1f1f",
+        "dt-grey": "#1f1f1f",
         "dt-orange": "#a77864",
         "dt-purple": "#c586c0",
         "dt-aqua": "#4ec9b0",

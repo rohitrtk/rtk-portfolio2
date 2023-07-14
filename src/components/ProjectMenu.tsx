@@ -1,4 +1,4 @@
-import { useState, ReactNode } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import {
   Accordion,
@@ -8,29 +8,27 @@ import {
   Carousel
 } from "@material-tailwind/react";
 import { ExpandMore } from "@mui/icons-material";
-import { a, useSpring } from "@react-spring/web";
+import { a } from "@react-spring/web";
+
 import useInvertRotation from "@hooks/useInvertRotation";
 
-import Test1 from "@assets/images/kk-1.png";
-import Test2 from "@assets/images/kk-2.png";
-import Test3 from "@assets/images/kk-3.png";
+import Projects, { Project } from "@components/Projects";
 
 export default function ProjectMenu() {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <ProjectDropdown title={"Project 1"} />
-      <ProjectDropdown title={"Project 2"} />
-      <ProjectDropdown title={"Project 3"} />
+      {Projects.map((project, index) => (
+        <ProjectDropdown key={`project-${index}`} project={project} />
+      ))}
     </div>
   );
 }
 
-interface ProjectDropProps {
-  title: string;
-  children?: ReactNode;
+interface ProjectDropdownProps {
+  project: Project;
 }
 
-function ProjectDropdown({ title }: ProjectDropProps) {
+function ProjectDropdown({ project }: ProjectDropdownProps) {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => setOpen((open) => !open);
 
@@ -42,70 +40,46 @@ function ProjectDropdown({ title }: ProjectDropProps) {
         onClick={toggleOpen}
         className="flex flex-row justify-start text-dt-light-blue hover:text-dt-orange border-b-dt-light-blue">
         <Typography variant="h4" className="font-primary font-bold">
-          {title}
+          {project.title}
         </Typography>
         <a.div style={{ ...invertionProps }}>
           <ExpandMore fontSize="large" />
         </a.div>
       </AccordionHeader>
       <AccordionBody>
-        <ProjectBody />
+        <ProjectBody {...project} />
       </AccordionBody>
     </Accordion>
   );
 }
 
-function ProjectBody() {
+function ProjectBody({ title, year, sections, images, tools }: Project) {
   return (
-    <div className="">
+    <div className="justify-center items-center">
       <Carousel className="w-1/2 float-left mb-4 mr-4">
-        <Image alt="" placeholder="blur" src={Test1} />
-        <Image alt="" placeholder="blur" src={Test2} />
-        <Image alt="" placeholder="blur" src={Test3} />
+        {images.map((image, index) => (
+          <Image
+            alt=""
+            src={image}
+            width="1917"
+            height="941"
+            key={`carousel-${title}-${index}`}
+          />
+        ))}
       </Carousel>
-      <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam est felis,
-        congue in consectetur eget, placerat elementum dui. Proin vehicula sit
-        amet nisl in egestas. Nam mattis vel metus ut ullamcorper. Nulla
-        pharetra nisi non neque commodo euismod. Quisque nec arcu id metus
-        vestibulum ultricies in ut arcu. Quisque mollis congue turpis, ac
-        tristique dui ultrices vitae. Quisque eget efficitur nisl, eu aliquet
-        sapien. Integer elementum tincidunt magna eu accumsan. Mauris
-        scelerisque orci mauris, at varius metus sollicitudin sit amet. Aliquam
-        tempus vitae dolor eget convallis. Duis tempus, nunc ac pulvinar
-        convallis, nulla mi lobortis augue, at lobortis ligula diam vitae nisi.
-        Cras turpis leo, vulputate ac elit feugiat, convallis interdum quam. Sed
-        a blandit metus. Pellentesque tempus nunc nec dictum fringilla.
-        Phasellus et faucibus massa, dapibus suscipit augue. Donec non sem ut
-        neque venenatis mattis ac at metus. Nam sed pellentesque ex. Sed non
-        risus vitae orci hendrerit iaculis a eget augue. Donec rhoncus, odio a
-        rutrum luctus, arcu mauris pretium tellus, sed dapibus mauris felis a
-        augue. Donec risus ante, porta eget justo vitae, convallis eleifend
-        nisi. Sed sollicitudin libero eget diam interdum rhoncus. Donec tempus
-        est sed magna vehicula molestie. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Donec luctus, enim sit amet posuere suscipit, mauris elit
-        auctor neque, nec faucibus lectus enim in nunc. Aenean consequat
-        elementum quam quis vehicula. Nam ultricies vitae risus a faucibus.
-        Quisque at dignissim orci, sed cursus purus. Morbi et rhoncus tortor,
-        nec imperdiet mi. Aliquam sodales risus sit amet aliquet porttitor.
-        Integer nec elit at lacus tempor varius. Cras lobortis ante et massa
-        laoreet, at porta sapien blandit. Sed sodales, nunc ac dapibus
-        consectetur, dolor sem vestibulum augue, scelerisque iaculis risus felis
-        eget mi. Curabitur id augue ac nunc sagittis tincidunt ut nec magna.
-        Maecenas felis nibh, tristique ut commodo vehicula, gravida a tortor.
-        Nunc maximus mauris faucibus, cursus lectus ut, posuere enim. Sed
-        lacinia viverra justo, eu eleifend velit convallis nec. Mauris efficitur
-        urna ac mi blandit, non imperdiet eros varius. Mauris eu nisl non purus
-        consectetur iaculis a nec lorem. Praesent volutpat ullamcorper purus,
-        vitae pellentesque sem eleifend ac. Etiam tempor est massa, a faucibus
-        mauris eleifend in. Aenean tempus felis turpis, non suscipit ipsum
-        facilisis at. Quisque fermentum dui neque, ac rutrum sapien luctus ut.
-        Aenean at elit feugiat, semper magna at, euismod nunc. Aenean bibendum
-        augue non urna finibus, sit amet viverra elit dapibus. Praesent nec
-        cursus massa, non rutrum augue. Curabitur nisi urna, dapibus at arcu ut,
-        commodo tempus risus.
-      </Typography>
+      {sections.map((section, index) => (
+        <Typography
+          variant="paragraph"
+          className="font-primary"
+          key={`section-${title}-${index}`}>
+          {section}
+        </Typography>
+      ))}
+      <div className="flex flex-row justify-around my-10 w-2/3">
+        {tools.map((Tool, index) => (
+          <div key={`tools-${title}-${index}`}>{Tool}</div>
+        ))}
+      </div>
     </div>
   );
 }

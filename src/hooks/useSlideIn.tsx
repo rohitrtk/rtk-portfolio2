@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import { useTrail } from "@react-spring/web";
 
-export default function useSlideIn(items: JSX.Element[]) {
+export default function useSlideIn(items: ReactNode[]) {
   const [trails] = useTrail(
     items.length,
     () => ({
