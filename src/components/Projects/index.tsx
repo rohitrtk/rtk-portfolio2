@@ -24,36 +24,63 @@ import {
   SiOpengl
 } from "@icons-pack/react-simple-icons";
 
+interface Tool {
+  name: string;
+  icon: JSX.Element;
+}
+
 export type Project = {
   title: string;
   year: number;
   sections: string[];
-  images: string[];
-  tools: JSX.Element[];
+  images: StaticImageData[];
+  tools: Tool[];
 };
 
+// Ugly af until LQIP works with Next 13
+import Img_KK1 from "@assets/images/kk-1.png";
+import Img_KK2 from "@assets/images/kk-2.png";
+import Img_KK3 from "@assets/images/kk-3.png";
+import Img_KK4 from "@assets/images/kk-4.png";
+import Img_KK5 from "@assets/images/kk-5.png";
+import Img_PM1 from "@assets/images/pomstagram-1.png";
+import Img_PM2 from "@assets/images/pomstagram-2.png";
+import Img_PM3 from "@assets/images/pomstagram-3.png";
+import Img_PM4 from "@assets/images/pomstagram-4.png";
+import Img_PM5 from "@assets/images/pomstagram-5.png";
+import Img_SNP1 from "@assets/images/snp-1.png";
+import Img_SNP2 from "@assets/images/snp-2.png";
+import Img_SNP3 from "@assets/images/snp-3.png";
+import Img_SNP4 from "@assets/images/snp-4.png";
+import Img_SNP5 from "@assets/images/snp-5.png";
+import Img_SNP6 from "@assets/images/snp-6.png";
+import Img_SNP7 from "@assets/images/snp-7.png";
+import Img_SNP8 from "@assets/images/snp-8.png";
+import Img_SNP9 from "@assets/images/snp-9.png";
+import { StaticImageData } from "next/image";
+
 const tools = {
-  HTML: <SiHtml5 color="#E34F26" />,
-  CSS: <SiCss3 color="#1572B6" />,
-  JavaScript: <SiJavascript color="#F7DF1E" />,
-  Bootstrap: <SiBootstrap color="#7952B3" />,
-  PHP: <SiPhp color="#777BB4" />,
-  jQuery: <SiJquery color="#0769AD" />,
-  MySQL: <SiMysql color="#4479A1" />,
-  cPanel: <SiCpanel color="#FF6C2C" />,
-  TypeScript: <SiTypescript color="#3178C6" />,
-  Astro: <SiAstro color="#FF5D01" />,
-  Tailwind: <SiTailwindcss color="06B6D4" />,
-  React: <SiReact color="#61DAFB" />,
-  NextJS: <SiNextdotjs color="#61DAFB" />,
-  NodeJS: <SiNodedotjs color="#339933" />,
-  Express: <SiExpress color="#FFFFFF" />,
-  MongoDB: <SiMongodb color="#47A248" />,
-  Redux: <SiRedux color="#764ABC" />,
-  TensorFlow: <SiTensorflow color="#FF6F00" />,
-  ThreeJS: <SiThreedotjs color="#FFFFFF" />,
-  CPP: <SiCplusplus color="#00599C" />,
-  OpenGL: <SiOpengl color="#5586A4" />
+  HTML: { name: "HTML", icon: <SiHtml5 color="#E34F26" /> },
+  CSS: { name: "CSS", icon: <SiCss3 color="#1572B6" /> },
+  JavaScript: { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
+  Bootstrap: { name: "Bootstrap", icon: <SiBootstrap color="#7952B3" /> },
+  PHP: { name: "PHP", icon: <SiPhp color="#777BB4" /> },
+  jQuery: { name: "jQuery", icon: <SiJquery color="#0769AD" /> },
+  MySQL: { name: "MySQL", icon: <SiMysql color="#4479A1" /> },
+  cPanel: { name: "cPanel", icon: <SiCpanel color="#FF6C2C" /> },
+  TypeScript: { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
+  Astro: { name: "Astro", icon: <SiAstro color="#FF5D01" /> },
+  Tailwind: { name: "Tailwind", icon: <SiTailwindcss color="#06B6D4" /> },
+  React: { name: "React", icon: <SiReact color="#61DAFB" /> },
+  NextJS: { name: "Next", icon: <SiNextdotjs color="#FFFFFF" /> },
+  NodeJS: { name: "Node", icon: <SiNodedotjs color="#339933" /> },
+  Express: { name: "Express", icon: <SiExpress color="#FFFFFF" /> },
+  MongoDB: { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+  Redux: { name: "Redux", icon: <SiRedux color="#764ABC" /> },
+  TensorFlow: { name: "TensorFlow", icon: <SiTensorflow color="#FF6F00" /> },
+  ThreeJS: { name: "Three", icon: <SiThreedotjs color="#FFFFFF" /> },
+  CPP: { name: "C++", icon: <SiCplusplus color="#00599C" /> },
+  OpenGL: { name: "OpenGL", icon: <SiOpengl color="#5586A4" /> }
 };
 
 const projects: Project[] = [
@@ -66,15 +93,15 @@ const projects: Project[] = [
       `The project uses a LAMP stack (Linux, Apache, MySQL, PHP) on the backend together with HTML, CSS, and JavaScript with help from Bootstrap and jQuery on the frontend.`
     ],
     images: [
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-1.png?alt=media&token=731db6f0-ae30-4e67-a4f0-ee4e591770c5",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-2.png?alt=media&token=2915357f-d04e-45e4-b3bf-0f35b51e7f22",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-3.png?alt=media&token=b5a82b37-a61e-4ebb-94b6-89bda0c7768c",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-4.png?alt=media&token=4b73f9f5-8001-4676-84a0-04fed33862b1",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-5.png?alt=media&token=d2f40415-ef90-459a-8b96-feedad8bbf85",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-6.png?alt=media&token=7a745ed9-e52c-46fe-9858-ee3342c3a824",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-7.png?alt=media&token=3fe445cf-ac68-4901-a61f-50e8c874f08c",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-8.png?alt=media&token=3ce92cbb-1142-4c19-a2b8-e319e9fe4d27",
-      "https://firebasestorage.googleapis.com/v0/b/rohitkistodev-b976f.appspot.com/o/Student%20Registration%20Form%2Fsnp-9.png?alt=media&token=f63d21d0-39d3-4236-8cf8-3afc6ea921b3"
+      Img_SNP1,
+      Img_SNP2,
+      Img_SNP3,
+      Img_SNP4,
+      Img_SNP5,
+      Img_SNP6,
+      Img_SNP7,
+      Img_SNP8,
+      Img_SNP9
     ],
     tools: [
       tools.HTML,
@@ -90,15 +117,30 @@ const projects: Project[] = [
   {
     title: "Krispy Kreme Clone",
     year: 2023,
-    sections: [],
-    images: [],
+    sections: [
+      `I wanted to practice my tailwind skills, so I decided to clone the
+      Krispy Kreme website because it is a relatively simple website,
+      and I like donuts.`,
+      `The project uses Astro for page routing, TypeScript for
+      interactivity, and TailwindCSS for styling.`
+    ],
+    images: [Img_KK1, Img_KK2, Img_KK3, Img_KK4, Img_KK5],
     tools: [tools.Astro, tools.TypeScript, tools.HTML, tools.Tailwind]
   },
   {
     title: "Pomstagram",
     year: 2023,
-    sections: [],
-    images: [],
+    sections: [
+      `My goal for this project to create a fullstack application where
+      on the frontend, looked similiar to that of VSCO. For the backend,
+      I wanted to create an API that would be able to check a user
+      upload and determine if it was a Pomeranian. If the picture was a
+      Pomeranian, the user would be allowed to post the photo, otherwise
+      the user wouldn't be able to upload the photo.`,
+      `The project uses a MERN (MongoDB, Express, React, Node) stack
+      together with TensorFlow to verify user uploads.`
+    ],
+    images: [Img_PM1, Img_PM2, Img_PM3, Img_PM4, Img_PM5],
     tools: [
       tools.NextJS,
       tools.React,

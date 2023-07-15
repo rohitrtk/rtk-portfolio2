@@ -3,15 +3,14 @@
 import { ReactNode, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Typography } from "@lib/MT";
-import { a, useSpring } from "@react-spring/web";
+import { a } from "@react-spring/web";
 
 import Backdrop from "@components/Backdrop";
 import useSlideIn from "@hooks/useSlideIn";
-import useFadeIn from "@hooks/useFadeIn";
 import Socials from "@components/Socials";
 
 import Me from "@assets/images/me.jpeg";
-import Test from "@assets/banner-1.jpg";
+import Bg from "@assets/banner-1.jpg";
 import usePageTransition from "@hooks/usePageTransition";
 
 const items: ReactNode[] = [
@@ -34,7 +33,7 @@ export default function Home() {
   return (
     <main className="w-full h-full flex flex-col items-center justify-center">
       <div className="fixed -z-20 w-screen h-screen overflow-hidden">
-        <Backdrop src={Test} />
+        <Backdrop src={Bg} />
       </div>
       <a.div
         style={pageStyle}
@@ -44,7 +43,7 @@ export default function Home() {
             <Image
               src={Me}
               alt="Rohit Kisto"
-              className="rounded-full w-64 h-64 object-cover"
+              className="rounded-full w-64 h-64 object-cover unselectable"
               placeholder="blur"
             />
           </div>

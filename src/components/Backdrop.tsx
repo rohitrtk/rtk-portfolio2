@@ -8,13 +8,12 @@ interface Props {
 
 export default function Backdrop({ src }: Props) {
   return (
-    <>
-      <Image
-        src={src}
-        className="sticky top-0 -z-20 grayscale opacity-10"
-        fill
-        alt=""
-      />
-    </>
+    <Image
+      src={src}
+      className="!fixed -z-20 grayscale opacity-10"
+      fill
+      alt=""
+      placeholder="blur"
+    />
   );
 }

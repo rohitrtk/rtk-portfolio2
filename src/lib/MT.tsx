@@ -7,8 +7,7 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
-  Carousel,
-  Textarea
+  Carousel
 } from "@material-tailwind/react";
 export {
   ThemeProvider,

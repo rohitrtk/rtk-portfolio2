@@ -3,7 +3,7 @@
 import { a } from "@react-spring/web";
 
 import Image from "next/image";
-import { Typography } from "@lib/MT";
+import { Typography } from "@material-tailwind/react";
 import {
   SiReact,
   SiTypescript,
@@ -21,14 +21,14 @@ import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
 
-import Test from "@assets/banner-1.jpg";
+import Bg from "@assets/banner-3.jpg";
 
 export default function About() {
   const pageStyle = usePageTransition();
 
   return (
     <main className="w-full h-full flex flex-col items-center justify-start my-10">
-      <Backdrop src={Test} />
+      <Backdrop src={Bg} />
 
       <a.div
         style={pageStyle}
