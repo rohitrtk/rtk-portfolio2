@@ -12,6 +12,8 @@ import {
   SiOpengl,
   SiUnrealengine
 } from "@icons-pack/react-simple-icons";
+
+import Me from "@assets/images/me.jpeg";
 import UofTIcon from "@assets/uoft.svg";
 import WeightliftingIcon from "@assets/weightlifting.svg";
 import GuitarIcon from "@assets/guitar.svg";
@@ -22,6 +24,19 @@ import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
 
 import Bg from "@assets/banner-3.jpg";
+import GraphWheel from "@components/GraphWheel";
+
+const description = [
+  `I'm Rohit, I'm a Software Developer, and a graduate of the
+  University of Toronto Mississauga.`,
+  `I specialize in building full-stack web applications primarily
+  using React, TypeScript, and Tailwind, but also have experience writing
+  apps in C++ and Java.`,
+  `I also have interests in Application Development, API
+  Development, Game Development, and Graphics Programming.`,
+  `In my free time, I enjoy weight lifting, playing guitar, and
+  reading.`
+];
 
 export default function About() {
   const pageStyle = usePageTransition();
@@ -32,51 +47,45 @@ export default function About() {
 
       <a.div
         style={pageStyle}
-        className="mt-20 w-full flex flex-col items-center h-full">
+        className="mt-20 w-full h-full flex flex-col items-center">
         <div className="w-3/4 items-center h-full">
           <LineTitle text="About" />
 
-          <section className="flex flex-col items-center text-center mt-20 gap-5">
-            <Typography className="font-primary" variant="h5">
-              Hi! I'm Rohit, and I'm a Software Developer. I'm also a graduate
-              of the University of Toronto Mississauga.
-            </Typography>
-
-            <Image src={UofTIcon} alt="" width="360" height="360" />
-
-            <Typography className="font-primary" variant="h5">
-              I specialize in building full-stack web applications primarily
-              using React, TypeScript, and Tailwind.
-            </Typography>
-
-            <div className="flex flex-row justify-evenly w-full">
-              <SiTypescript color="#3178C6" size={128} />
-              <SiReact color="#61DAFB" size={128} />
-              <SiTailwindcss color="#06B6D4" size={128} />
+          <div className="w-full justify-center items-center mt-10 flex flex-row">
+            <section className="flex flex-col gap-6 w-1/2">
+              {description.map((d, i) => (
+                <Typography
+                  key={`about-descriptions-${i}`}
+                  className="font-primary text-dt-blue"
+                  variant="h5">
+                  {d}
+                </Typography>
+              ))}
+            </section>
+            <div className="w-1/2 h-full">
+              <GraphWheel
+                center={Me}
+                items={[
+                  <SiTypescript color="#3178C6" size={50} />,
+                  <SiReact color="#61DAFB" size={50} />,
+                  <SiTailwindcss color="#06B6D4" size={50} />,
+                  <SiUnrealengine color="#FFFFFF" size={50} />,
+                  <SiOpengl color="#5586A4" size={50} />
+                ]}
+              />
             </div>
 
-            <Typography className="font-primary" variant="h5">
-              I also have interests in Application Development, API Development,
-              Game Development, and Graphics Programming.
-            </Typography>
-
-            <div className="flex flex-row justify-evenly w-full">
-              <SiDotnet color="#512BD4" size={128} />
-              <SiUnrealengine color="#FFFFFF" size={128} />
-              <SiOpengl color="#5586A4" size={128} />
-            </div>
-
-            <Typography className="font-primary" variant="h5">
-              In my free time, I enjoy weight lifting, playing guitar, and
-              reading.
-            </Typography>
-
-            <div className="flex flex-row justify-evenly w-full">
-              <Image src={GuitarIcon} alt="" width={128} height={128} />
-              <Image src={WeightliftingIcon} alt="" width={128} height={128} />
-              <Image src={BookIcon} alt="" width={128} height={128} />
-            </div>
-          </section>
+            {/* <Image src={UofTIcon} alt="" width="360" height="360" />
+            <SiTypescript color="#3178C6" size={128} />
+            <SiReact color="#61DAFB" size={128} />
+            <SiTailwindcss color="#06B6D4" size={128} />
+            <SiDotnet color="#512BD4" size={128} />
+            <SiUnrealengine color="#FFFFFF" size={128} />
+            <SiOpengl color="#5586A4" size={128} />
+            <Image src={GuitarIcon} alt="" width={128} height={128} />
+            <Image src={WeightliftingIcon} alt="" width={128} height={128} />
+            <Image src={BookIcon} alt="" width={128} height={128} /> */}
+          </div>
         </div>
       </a.div>
     </main>
