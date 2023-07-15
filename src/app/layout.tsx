@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@lib/MT";
 
 import Navbar from "@components/Navbar";
+import Test from "@components/Test";
 
 import "@styles/globals.css";
 
