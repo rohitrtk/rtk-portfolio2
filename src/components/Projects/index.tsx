@@ -1,5 +1,6 @@
 "use client";
 
+import type { StaticImageData } from "next/image";
 import {
   SiHtml5,
   SiCss3,
@@ -32,9 +33,10 @@ interface Tool {
 export type Project = {
   title: string;
   year: number;
-  sections: string[];
+  sections: (string | JSX.Element)[];
   images: StaticImageData[];
   tools: Tool[];
+  repo?: string;
 };
 
 // Ugly af until LQIP works with Next 13
@@ -57,7 +59,19 @@ import Img_SNP6 from "@assets/images/snp-6.png";
 import Img_SNP7 from "@assets/images/snp-7.png";
 import Img_SNP8 from "@assets/images/snp-8.png";
 import Img_SNP9 from "@assets/images/snp-9.png";
-import { StaticImageData } from "next/image";
+import Img_LCV1 from "@assets/images/lcv-1.png";
+import Img_LCV2 from "@assets/images/lcv-2.png";
+import Img_LCV3 from "@assets/images/lcv-3.png";
+import Img_LCV4 from "@assets/images/lcv-4.png";
+import Img_SB1 from "@assets/images/sb-1.png";
+import Img_SB2 from "@assets/images/sb-2.png";
+import Img_SB3 from "@assets/images/sb-3.png";
+import Img_MP1 from "@assets/images/mp-1.png";
+import Img_MP2 from "@assets/images/mp-2.png";
+import Img_MP3 from "@assets/images/mp-3.png";
+import Img_MP4 from "@assets/images/mp-4.png";
+import Img_MP5 from "@assets/images/mp-5.png";
+import Img_MP6 from "@assets/images/mp-6.png";
 
 const tools = {
   HTML: { name: "HTML", icon: <SiHtml5 color="#E34F26" /> },
@@ -125,7 +139,8 @@ const projects: Project[] = [
       interactivity, and TailwindCSS for styling.`
     ],
     images: [Img_KK1, Img_KK2, Img_KK3, Img_KK4, Img_KK5],
-    tools: [tools.Astro, tools.TypeScript, tools.HTML, tools.Tailwind]
+    tools: [tools.Astro, tools.TypeScript, tools.HTML, tools.Tailwind],
+    repo: "https://github.com/rohitrtk/krispy-kreme-clone"
   },
   {
     title: "Pomstagram",
@@ -151,34 +166,60 @@ const projects: Project[] = [
       tools.Redux,
       tools.Tailwind,
       tools.TensorFlow
-    ]
+    ],
+    repo: "https://github.com/rohitrtk/pomstagram"
   },
   {
     title: "League Champ Viewer",
     year: 2023,
-    sections: [],
-    images: [],
+    sections: [
+      `Being a fan of League of Legends, I thought it would be fun to create a web application
+      to view the 3D models that are used in game, and also display a little about section for each model
+      detailing a champions lore and abilities.`,
+      `The project queries information regarding a champions lore and abilities from Riot Games' public API and queries
+      the 3D models from my own database as the 3D models weren't available publically. I used various open source tools to convert the 3D models to a GLTF
+      format to be shown by ThreeJS, and used some simple useEffect magic to make an API request to display champion information.`
+    ],
+    images: [Img_LCV1, Img_LCV2, Img_LCV3, Img_LCV4],
     tools: [
       tools.React,
       tools.TypeScript,
       tools.Tailwind,
       tools.Redux,
       tools.ThreeJS
-    ]
+    ],
+    repo: "https://github.com/rohitrtk/league-champ-viewer"
   },
   {
     title: "Computer Graphics in Mathematics",
     year: 2023,
-    sections: [],
-    images: [],
-    tools: [tools.CPP, tools.OpenGL]
+    sections: [
+      `For one of my classes at UofT, I had to write a mathematical paper detailing the use of Computer Graphics in Mathematics, followed by
+      giving a presentation. I thought it would be nice for my classmates to see a physical demonstration of the use, so I created this small C++ & OpenGL app.`,
+      `In this application there are some simple controls using ImGui to perform transformations and change lighting through GLSL. In addition, I made use of assimp
+      to import GLTF models to show something more interesting than a coloured cube.`,
+      `I also made use of the wireframe option to add emphasis on the fact that any shape can be made up of triangles.`,
+      <a
+        className="underline text-dt-gold"
+        href="https://drive.google.com/file/d/1OoxeiK6usWvNF271Sv9QLNmZUU_BSDmI/view?usp=drive_link"
+        target="_blank">
+        Here's a link to the paper if you'd like to read it.
+      </a>
+    ],
+    images: [Img_MP1, Img_MP2, Img_MP3, Img_MP4, Img_MP5, Img_MP6],
+    tools: [tools.CPP, tools.OpenGL],
+    repo: "https://github.com/rohitrtk/MAT392-demo"
   },
   {
-    title: "Starbucks Clone",
+    title: "Starbucks Landing Clone",
     year: 2022,
-    sections: [],
-    images: [],
-    tools: [tools.React, tools.TypeScript, tools.CSS]
+    sections: [
+      `Nothing more than a straight up clone of the Starbucks front page. I just wanted to practice my CSS skills and I happened to be drinking a Starbucks coffee.`,
+      ``
+    ],
+    images: [Img_SB1, Img_SB2, Img_SB3],
+    tools: [tools.React, tools.TypeScript, tools.CSS],
+    repo: "https://github.com/rohitrtk/starbucks-landing-clone"
   }
 ];
 

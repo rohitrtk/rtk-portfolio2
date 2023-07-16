@@ -4,22 +4,90 @@ import { toast } from "react-hot-toast";
 
 import { Button, Textarea, Typography } from "@material-tailwind/react";
 
+export type ContactFormInputs = {
+  message: string;
+};
+
+const minCharacters = 3;
+const maxCharacters = 2500;
+
+const messageOptions = {
+  required: "Required",
+  minLength: {
+    value: minCharacters,
+    message: `Please use at least ${minCharacters + 1} characters!`
+  },
+  maxLength: {
+    value: maxCharacters,
+    message: `Please use a minimum of ${maxCharacters} characters!`
+  }
+};
+
 export default function ContactForm() {
+  const [sendDisabled, setSendDisabled] = useState(false);
+  const [characterCount, setCharacterCount] = useState(0);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormInputs>();
+
+  const sendMessage = async () => {};
+
+  const onSubmit = () => {
+    if (sendDisabled) {
+      return;
+    }
+  };
+
+  const { onChange, onBlur, name, ref } = register("message", messageOptions);
+
   return (
     <form
       className="flex flex-col gap-4 w-full h-full"
-      onSubmit={() => console.log("boop")}>
-      <Textarea
-        className="w-full h-full font-primary text-black rounded-xs"
-        rows={4}
-        label="Leave a message..."
-      />
+      onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex flex-col justify-center items-center">
+        <textarea
+          className={`w-full h-full rounded-none font-primary p-1 text-black bg-white resize-none shadow-sm
+            ${
+              errors.message ? "border-2 border-red-700" : ""
+            } focus:border-dt-orange focus:border-2 focus:!outline-none`}
+          rows={4}
+          onBlur={onBlur}
+          name={name}
+          ref={ref}
+          onChange={({ target, type }) => {
+            setCharacterCount(target.value.length);
+            onChange({ target, type });
+          }}
+        />
+        <div className="w-full flex justify-end">
+          <Typography
+            className={`font-primary ${
+              characterCount > maxCharacters
+                ? "text-red-700 font-bold"
+                : "text-dt-light-blue"
+            }`}
+            variant="small">
+            {characterCount}/{maxCharacters} Characters
+          </Typography>
+        </div>
+        {errors.message ? (
+          <Typography className="font-primary text-red-700">
+            {errors.message.message}
+          </Typography>
+        ) : (
+          <></>
+        )}
+      </div>
 
       <div className="flex justify-center items-center">
         <Button
-          disabled={false}
+          disabled={sendDisabled}
           type="submit"
-          className="w-1/4 m-2 p-2 shadow-none hover:shadow-none bg-dt-black text-dt-blue">
+          className="w-1/4 m-2 p-2 shadow-sm hover:shadow-none bg-dt-grey text-dt-blue border border-dt-blue hover:border-dt-orange hover:text-dt-orange">
           <Typography className="font-primary capitalize">Send</Typography>
         </Button>
       </div>
@@ -27,7 +95,7 @@ export default function ContactForm() {
   );
 }
 
-export interface FormInputs {
+interface FormInputs2 {
   message: string;
 }
 
@@ -37,11 +105,11 @@ export const ContactForm2 = () => {
     handleSubmit,
     formState: { errors },
     reset
-  } = useForm<FormInputs>();
+  } = useForm<ContactFormInputs>();
 
   const [disabled, setDisabled] = useState(false);
 
-  const sendMessage = async ({ message }: FormInputs) => {
+  const sendMessage = async ({ message }: ContactFormInputs) => {
     const { status } = await fetch("./.netlify/functions/send-message", {
       method: "POST",
       body: JSON.stringify({
@@ -56,7 +124,9 @@ export const ContactForm2 = () => {
     reset();
   };
 
-  const onSubmit: SubmitHandler<FormInputs> = async (data: FormInputs) => {
+  const onSubmit: SubmitHandler<ContactFormInputs> = async (
+    data: ContactFormInputs
+  ) => {
     if (disabled) return;
 
     await toast.promise(
