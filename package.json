@@ -13,7 +13,8 @@
     "preinstall": "npx npm-force-resolutions",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "rebuild": "npm run clean && npm install && npm run build"
+    "rebuild": "npm run clean && npm install && npm run build",
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
