@@ -8,8 +8,7 @@ import Backdrop from "@components/Backdrop";
 import ContactForm from "@components/ContactForm";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
-
-import Test from "@assets/banner-1.jpg";
+import Bg from "@assets/banner-1.jpg";
 
 export default function Contact() {
   const pageStyle = usePageTransition();
@@ -17,7 +16,7 @@ export default function Contact() {
   return (
     <>
       <main className="w-full h-full flex flex-col items-center justify-start mt-10">
-        <Backdrop src={Test} />
+        <Backdrop src={Bg} />
 
         <a.div style={pageStyle} className="mt-20 w-3/4">
           <LineTitle text="Contact" />
