@@ -17,8 +17,6 @@ import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import GraphWheel from "@components/GraphWheel";
 import usePageTransition from "@hooks/usePageTransition";
-// import Bg from "@assets/banner-3.jpg";
-import Me from "@assets/images/me.jpeg";
 
 const description = [
   `I'm Rohit, I'm a Software Developer, and a graduate of the

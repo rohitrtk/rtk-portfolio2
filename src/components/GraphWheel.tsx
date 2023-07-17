@@ -1,4 +1,3 @@
-import Image, { StaticImageData } from "next/image";
 import { a, useSpring } from "@react-spring/web";
 import BlurImage from "./BlurImage";
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode, useLayoutEffect } from "react";
-import Image from "next/image";
 import { Typography } from "@lib/MT";
 import { a } from "@react-spring/web";
 
@@ -9,8 +8,6 @@ import Backdrop from "@components/Backdrop";
 import useSlideIn from "@hooks/useSlideIn";
 import Socials from "@components/Socials";
 
-// import Me from "@assets/images/me.jpeg";
-// import Bg from "@assets/banner-1.jpg";
 import usePageTransition from "@hooks/usePageTransition";
 import BlurImage from "@components/BlurImage";
 

@@ -8,7 +8,6 @@ import Backdrop from "@components/Backdrop";
 import ContactForm from "@components/ContactForm";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
-// import Bg from "@assets/banner-1.jpg";
 
 export default function Contact() {
   const pageStyle = usePageTransition();

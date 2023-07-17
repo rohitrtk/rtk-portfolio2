@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { Typography, Carousel, Tooltip } from "@material-tailwind/react";
-
+import BlurImage from "@components/BlurImage";
 import type { Project } from "@components/Projects";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
@@ -17,12 +16,12 @@ export default function ProjectBody({
       <Carousel className="w-1/2 float-left mb-2 mr-4">
         {images.map((image, index) => {
           return (
-            <Image
+            <BlurImage
               alt=""
               src={image}
               placeholder="blur"
-              width="1917"
-              height="941"
+              width="1920"
+              height="960"
               key={`carousel-${title}-${index}`}
             />
           );

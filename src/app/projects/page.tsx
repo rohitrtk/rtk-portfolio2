@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
-// import Bg from "@assets/banner-2.jpg";
 
 const DyanmicProjectMenu = dynamic(
   () => import("./../../components/Project/Menu")
