@@ -13,7 +13,7 @@ export default function ProjectBody({
 }: Project) {
   return (
     <div className="justify-center items-center">
-      <Carousel className="w-1/2 float-left mb-2 mr-4">
+      <Carousel className="md:w-1/2 md:float-left md:mb-2 md:mr-4 md:min-h-auto w-full">
         {images.map((image, index) => {
           return (
             <BlurImage
@@ -36,7 +36,7 @@ export default function ProjectBody({
         </Typography>
       ))}
       <div className="flex flex-col w-full h-auto justify-center items-center">
-        <div className="flex flex-row justify-center my-10 w-2/3 gap-5">
+        <div className="flex md:flex-row flex-wrap justify-center my-10 w-2/3 gap-5">
           {tools.map(({ name, icon }, index) => (
             <Tooltip
               className="bg-dt-grey text-dt-blue"

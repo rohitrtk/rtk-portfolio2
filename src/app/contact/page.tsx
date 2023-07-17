@@ -21,7 +21,7 @@ export default function Contact() {
           <LineTitle text="Contact" />
 
           <div className="w-full h-full flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center w-1/2 mt-10">
+            <div className="flex justify-center items-center md:w-1/2 w-full mt-10">
               <ContactForm />
             </div>
           </div>

@@ -37,27 +37,84 @@ export type Project = {
 };
 
 const tools = {
-  HTML: { name: "HTML", icon: <SiHtml5 color="#E34F26" /> },
-  CSS: { name: "CSS", icon: <SiCss3 color="#1572B6" /> },
-  JavaScript: { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
-  Bootstrap: { name: "Bootstrap", icon: <SiBootstrap color="#7952B3" /> },
-  PHP: { name: "PHP", icon: <SiPhp color="#777BB4" /> },
-  jQuery: { name: "jQuery", icon: <SiJquery color="#0769AD" /> },
-  MySQL: { name: "MySQL", icon: <SiMysql color="#4479A1" /> },
-  cPanel: { name: "cPanel", icon: <SiCpanel color="#FF6C2C" /> },
-  TypeScript: { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
-  Astro: { name: "Astro", icon: <SiAstro color="#FF5D01" /> },
-  Tailwind: { name: "Tailwind", icon: <SiTailwindcss color="#06B6D4" /> },
-  React: { name: "React", icon: <SiReact color="#61DAFB" /> },
-  NextJS: { name: "Next", icon: <SiNextdotjs color="#FFFFFF" /> },
-  NodeJS: { name: "Node", icon: <SiNodedotjs color="#339933" /> },
-  Express: { name: "Express", icon: <SiExpress color="#FFFFFF" /> },
-  MongoDB: { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-  Redux: { name: "Redux", icon: <SiRedux color="#764ABC" /> },
-  TensorFlow: { name: "TensorFlow", icon: <SiTensorflow color="#FF6F00" /> },
-  ThreeJS: { name: "Three", icon: <SiThreedotjs color="#FFFFFF" /> },
-  CPP: { name: "C++", icon: <SiCplusplus color="#00599C" /> },
-  OpenGL: { name: "OpenGL", icon: <SiOpengl color="#5586A4" /> }
+  HTML: {
+    name: "HTML",
+    icon: <SiHtml5 color="#E34F26" size={48} />
+  },
+  CSS: { name: "CSS", icon: <SiCss3 color="#1572B6" size={48} /> },
+  JavaScript: {
+    name: "JavaScript",
+    icon: <SiJavascript color="#F7DF1E" size={48} />
+  },
+  Bootstrap: {
+    name: "Bootstrap",
+    icon: <SiBootstrap color="#7952B3" size={48} />
+  },
+  PHP: { name: "PHP", icon: <SiPhp color="#777BB4" size={48} /> },
+  jQuery: {
+    name: "jQuery",
+    icon: <SiJquery color="#0769AD" size={48} />
+  },
+  MySQL: {
+    name: "MySQL",
+    icon: <SiMysql color="#4479A1" size={48} />
+  },
+  cPanel: {
+    name: "cPanel",
+    icon: <SiCpanel color="#FF6C2C" size={48} />
+  },
+  TypeScript: {
+    name: "TypeScript",
+    icon: <SiTypescript color="#3178C6" size={48} />
+  },
+  Astro: {
+    name: "Astro",
+    icon: <SiAstro color="#FF5D01" size={48} />
+  },
+  Tailwind: {
+    name: "Tailwind",
+    icon: <SiTailwindcss color="#06B6D4" size={48} />
+  },
+  React: {
+    name: "React",
+    icon: <SiReact color="#61DAFB" size={48} />
+  },
+  NextJS: {
+    name: "Next",
+    icon: <SiNextdotjs color="#FFFFFF" size={48} />
+  },
+  NodeJS: {
+    name: "Node",
+    icon: <SiNodedotjs color="#339933" size={48} />
+  },
+  Express: {
+    name: "Express",
+    icon: <SiExpress color="#FFFFFF" size={48} />
+  },
+  MongoDB: {
+    name: "MongoDB",
+    icon: <SiMongodb color="#47A248" size={48} />
+  },
+  Redux: {
+    name: "Redux",
+    icon: <SiRedux color="#764ABC" size={48} />
+  },
+  TensorFlow: {
+    name: "TensorFlow",
+    icon: <SiTensorflow color="#FF6F00" size={48} />
+  },
+  ThreeJS: {
+    name: "Three",
+    icon: <SiThreedotjs color="#FFFFFF" size={48} />
+  },
+  CPP: {
+    name: "C++",
+    icon: <SiCplusplus color="#00599C" size={48} />
+  },
+  OpenGL: {
+    name: "OpenGL",
+    icon: <SiOpengl color="#5586A4" size={48} />
+  }
 };
 
 const projects: Project[] = [
@@ -171,7 +228,7 @@ const projects: Project[] = [
     repo: "https://github.com/rohitrtk/league-champ-viewer"
   },
   {
-    title: "Computer Graphics in Mathematics",
+    title: "Graphics in Mathematics",
     year: 2023,
     sections: [
       `For one of my classes at UofT, I had to write a mathematical paper detailing the use of Computer Graphics in Mathematics, followed by

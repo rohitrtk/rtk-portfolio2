@@ -70,7 +70,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="flex flex-col gap-4 w-full h-full"
+      className="flex flex-col gap-4 w-full h-full "
       onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col justify-center items-center">
         <textarea

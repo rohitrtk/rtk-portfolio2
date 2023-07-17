@@ -8,6 +8,7 @@ import {
 import { ExpandMore } from "@mui/icons-material";
 import { a } from "@react-spring/web";
 import dynamic from "next/dynamic";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import useInvertRotation from "@hooks/useInvertRotation";
 import type { Project } from "@components/Projects";
@@ -26,15 +27,26 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
 
   return (
     <Accordion open={open} className="w-full">
-      <AccordionHeader
-        onClick={toggleOpen}
-        className="flex flex-row justify-start text-dt-light-blue hover:text-dt-orange border-b-dt-light-blue">
-        <Typography variant="h4" className="font-primary font-bold">
-          {project.title}
-        </Typography>
-        <a.div style={{ ...invertionProps }}>
-          <ExpandMore fontSize="large" />
-        </a.div>
+      <AccordionHeader className=" border-b-dt-light-blue">
+        <div className="flex flex-row justify-between text-dt-light-blue  w-full">
+          <div
+            className="flex flex-row justify-start items-center hover:text-dt-orange w-full"
+            onClick={toggleOpen}>
+            <Typography className="lg:text-3xl md:text-xl text-md font-primary font-bold">
+              {project.title}
+            </Typography>
+            <a.div style={{ ...invertionProps }}>
+              <ExpandMore fontSize="large" />
+            </a.div>
+          </div>
+          {project.repo ? (
+            <a href={project.repo} target="_blank" className="">
+              <SiGithub color="#FFFFFF" size={36} />
+            </a>
+          ) : (
+            <></>
+          )}
+        </div>
       </AccordionHeader>
       <AccordionBody>
         <DynamicProjectBody {...project} />

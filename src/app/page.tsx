@@ -36,7 +36,7 @@ export default function Home() {
       <a.div
         style={pageStyle}
         className="flex flex-col justify-center items-center">
-        <div className="flex flex-row gap-5 w-full h-full m-10 justify-center items-center">
+        <div className="flex md:flex-row flex-col gap-5 w-full h-full m-10 justify-center items-center text-center">
           <div>
             <BlurImage
               src="/me.jpg"
@@ -46,7 +46,7 @@ export default function Home() {
               className="rounded-full w-64 h-64 object-cover unselectable"
             />
           </div>
-          <div className="flex flex-col justify-center items-start">
+          <div className="flex flex-col justify-center md:items-start items-center">
             {slideIns.map((props, index) => (
               <a.div key={`main-slidein-${index}`} style={props}>
                 <>{items[index]}</>
