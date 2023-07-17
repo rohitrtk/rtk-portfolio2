@@ -17,7 +17,7 @@ import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import GraphWheel from "@components/GraphWheel";
 import usePageTransition from "@hooks/usePageTransition";
-import Bg from "@assets/banner-3.jpg";
+// import Bg from "@assets/banner-3.jpg";
 import Me from "@assets/images/me.jpeg";
 
 const description = [
@@ -37,7 +37,7 @@ export default function About() {
 
   return (
     <main className="w-full h-full flex flex-col items-center justify-start my-10">
-      <Backdrop src={Bg} />
+      <Backdrop src="/banner-3.jpg" />
 
       <a.div
         style={pageStyle}
@@ -58,7 +58,7 @@ export default function About() {
             </section>
             <div className="w-1/2 h-full">
               <GraphWheel
-                center={Me}
+                center="/me.jpg"
                 items={[
                   <SiTypescript color="#3178C6" size={50} />,
                   <SiReact color="#61DAFB" size={50} />,
