@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   images: {
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  output: "export"
+    unoptimized: true,
+    domains: ['res.cloudinary.com'],
+    // loader: "custom",
+    // loaderFile: "./src/image.ts"
+  }
 }
 
 module.exports = nextConfig

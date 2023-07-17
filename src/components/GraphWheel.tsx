@@ -1,8 +1,8 @@
-import Image, { StaticImageData } from "next/image";
 import { a, useSpring } from "@react-spring/web";
+import BlurImage from "./BlurImage";
 
 interface Props {
-  center: StaticImageData;
+  center: string;
   items?: JSX.Element[];
 }
 
@@ -10,9 +10,10 @@ export default function GraphWheel({ center, items }: Props) {
   return (
     <div className="min-w-full min-h-full relative justify-center items-center">
       <div className="flex justify-center items-center">
-        <Image
+        <BlurImage
           src={center}
-          placeholder="blur"
+          width="400"
+          height="400"
           alt=""
           className="rounded-full w-52 h-52 object-cover unselectable"
         />

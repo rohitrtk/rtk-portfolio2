@@ -1,19 +1,20 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import BlurImage from "./BlurImage";
 
 interface Props {
-  src: StaticImageData;
+  src: string;
 }
 
 export default function Backdrop({ src }: Props) {
   return (
-    <Image
+    <BlurImage
       src={src}
-      className="!fixed -z-20 grayscale opacity-10"
+      width={1920}
+      height={1080}
+      className="!fixed -z-20 grayscale opacity-10 w-full h-full top-0"
       fill
       alt=""
-      placeholder="blur"
     />
   );
 }

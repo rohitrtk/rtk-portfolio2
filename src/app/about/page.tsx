@@ -17,8 +17,6 @@ import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import GraphWheel from "@components/GraphWheel";
 import usePageTransition from "@hooks/usePageTransition";
-import Bg from "@assets/banner-3.jpg";
-import Me from "@assets/images/me.jpeg";
 
 const description = [
   `I'm Rohit, I'm a Software Developer, and a graduate of the
@@ -36,8 +34,8 @@ export default function About() {
   const pageStyle = usePageTransition();
 
   return (
-    <main className="w-full h-full flex flex-col items-center justify-start my-10">
-      <Backdrop src={Bg} />
+    <main className="w-full h-full flex flex-col items-center justify-start mt-10 overflow-x-hidden">
+      <Backdrop src="/banner-3.jpg" />
 
       <a.div
         style={pageStyle}
@@ -45,8 +43,8 @@ export default function About() {
         <div className="w-3/4 items-center h-full">
           <LineTitle text="About" />
 
-          <div className="w-full justify-center items-center mt-10 flex flex-row">
-            <section className="flex flex-col gap-6 w-1/2">
+          <div className="w-full justify-center items-center mt-10 flex md:flex-row flex-col-reverse">
+            <section className="flex flex-col gap-6 md:w-1/2 w-full text-center md:text-start">
               {description.map((d, i) => (
                 <Typography
                   key={`about-descriptions-${i}`}
@@ -56,9 +54,9 @@ export default function About() {
                 </Typography>
               ))}
             </section>
-            <div className="w-1/2 h-full">
+            <div className="md:w-1/2 w-full h-full md:px-5 md:py-0 px-0 py-20">
               <GraphWheel
-                center={Me}
+                center="/me.jpg"
                 items={[
                   <SiTypescript color="#3178C6" size={50} />,
                   <SiReact color="#61DAFB" size={50} />,

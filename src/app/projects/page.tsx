@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
-import Bg from "@assets/banner-2.jpg";
 
 const DyanmicProjectMenu = dynamic(
   () => import("./../../components/Project/Menu")
@@ -17,7 +16,7 @@ export default function Projects() {
 
   return (
     <main className="w-full h-full flex flex-col items-center justify-start mt-10">
-      <Backdrop src={Bg} />
+      <Backdrop src="/banner-2.jpg" />
 
       <a.div style={pageStyle} className="mt-20 w-3/4">
         <LineTitle text="Projects" />
