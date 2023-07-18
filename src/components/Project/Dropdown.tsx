@@ -26,7 +26,7 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
   const invertionProps = useInvertRotation(open);
 
   return (
-    <Accordion open={open} className="w-full">
+    <Accordion open={open} className="w-[99%]">
       <AccordionHeader className=" border-b-dt-light-blue">
         <div className="flex flex-row justify-between text-dt-light-blue  w-full">
           <div

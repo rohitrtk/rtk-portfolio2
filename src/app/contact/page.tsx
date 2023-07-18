@@ -20,7 +20,7 @@ export default function Contact() {
         <a.div style={pageStyle} className="mt-20 w-3/4">
           <LineTitle text="Contact" />
 
-          <div className="w-full h-full flex flex-col justify-center items-center">
+          <div className="w-full h-auto flex flex-col justify-center items-center">
             <div className="flex justify-center items-center md:w-1/2 w-full mt-10">
               <ContactForm />
             </div>
