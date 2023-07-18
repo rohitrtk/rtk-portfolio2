@@ -1,7 +1,8 @@
-import { Typography, Carousel, Tooltip } from "@material-tailwind/react";
+import { Typography, Tooltip } from "@material-tailwind/react";
+import CarouselWrapper from "@components/CarouselWrapper";
+import Carousel from "@components/Carousel";
 import BlurImage from "@components/BlurImage";
 import type { Project } from "@components/Projects";
-import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function ProjectBody({
   title,
@@ -13,20 +14,20 @@ export default function ProjectBody({
 }: Project) {
   return (
     <div className="justify-center items-center">
-      <Carousel className="md:w-1/2 md:float-left md:mb-2 md:mr-4 md:min-h-auto w-full">
-        {images.map((image, index) => {
-          return (
+      <div className="md:w-1/2 md:float-left md:mb-2 md:mr-4 md:min-h-auto w-full h-full">
+        <Carousel>
+          {images.map((image, index) => (
             <BlurImage
               alt=""
               src={image}
-              placeholder="blur"
               width="1920"
               height="960"
               key={`carousel-${title}-${index}`}
+              className="unselectable"
             />
-          );
-        })}
-      </Carousel>
+          ))}
+        </Carousel>
+      </div>
       {sections.map((section, index) => (
         <Typography
           variant="h5"
@@ -46,13 +47,6 @@ export default function ProjectBody({
             </Tooltip>
           ))}
         </div>
-        {repo ? (
-          <a href={repo} target="_blank">
-            <SiGithub color="#FFFFFF" />
-          </a>
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );
