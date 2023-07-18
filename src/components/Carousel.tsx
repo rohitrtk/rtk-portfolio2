@@ -1,6 +1,7 @@
 import { useState, useEffect, ReactNode, Children } from "react";
-import { a, useTransition } from "@react-spring/web";
+import { a, easings, useTransition } from "@react-spring/web";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import useSwipe from "@hooks/useSwipe";
 
 interface Props {
   children: ReactNode;
@@ -41,26 +42,34 @@ export default function Carousel({ children }: Props) {
     api.start();
   }, [activeIndex]);
 
+  const { onTouchStart, onTouchMove, onTouchEnd } = useSwipe(next, prev);
+
   return (
     <div className="flex flex-col w-full min-h-full justify-center items-center overflow-hidden">
-      <div className="relative min-h-[300px] w-full flex flex-row flex-nowrap whitespace-nowrap will-change-transform overflow-hidden">
+      <div className="relative min-h-[200px] w-full flex flex-row overflow-hidden">
         {transitions((style, index) => {
           const Img = Children.toArray(children)[index];
           return (
-            <a.div className="absolute" style={style}>
+            <a.div
+              className="absolute inset-0"
+              style={style}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}>
               {Img}
             </a.div>
           );
         })}
-        <div
-          onClick={next}
-          className="absolute flex justify-center items-center opacity-0 hover:opacity-20 bg-black right-0 top-0 bottom-0 w-1/5 h-full">
-          <ArrowForwardIcon className="text-dt-blue text-5xl" />
-        </div>
-        <div
-          onClick={prev}
-          className="absolute flex justify-center items-center opacity-0 hover:opacity-20 bg-black left-0 top-0 bottom-0 w-1/5 h-full">
-          <ArrowForwardIcon className="text-dt-blue text-5xl rotate-180" />
+        <div className="md:block hidden">
+          <CarouselArrow
+            onClick={next}
+            className="absolute flex justify-center items-center bg-opacity-0 opacity-0 hover:bg-opacity-20 hover:opacity-100 bg-dt-grey right-0 top-0 bottom-0 w-1/5 h-full cursor-pointer"
+          />
+          <CarouselArrow
+            onClick={prev}
+            flip={true}
+            className="absolute flex justify-center items-center bg-opacity-0 opacity-0 hover:bg-opacity-20 hover:opacity-100 bg-dt-grey left-0 top-0 bottom-0 w-1/5 h-full cursor-pointer"
+          />
         </div>
       </div>
 
@@ -75,6 +84,22 @@ export default function Carousel({ children }: Props) {
           />
         ))}
       </div>
+    </div>
+  );
+}
+
+interface CarouselArrowProps {
+  onClick: () => unknown;
+  className: string;
+  flip?: boolean;
+}
+
+function CarouselArrow({ onClick, flip, className }: CarouselArrowProps) {
+  return (
+    <div onClick={onClick} className={className}>
+      <ArrowForwardIcon
+        className={`text-dt-blue text-5xl ${flip ? "rotate-180" : "rotate-0"}`}
+      />
     </div>
   );
 }

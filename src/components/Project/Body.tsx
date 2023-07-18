@@ -1,5 +1,4 @@
 import { Typography, Tooltip } from "@material-tailwind/react";
-import CarouselWrapper from "@components/CarouselWrapper";
 import Carousel from "@components/Carousel";
 import BlurImage from "@components/BlurImage";
 import type { Project } from "@components/Projects";
