@@ -24,7 +24,6 @@
     "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.14.0",
     "@netlify/functions": "^1.6.0",
-    "@react-spring/parallax": "^9.7.3",
     "@react-spring/web": "^9.7.3",
     "autoprefixer": "10.4.14",
     "cloudinary-build-url": "^0.2.4",
