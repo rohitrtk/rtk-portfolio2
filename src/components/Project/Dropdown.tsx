@@ -25,7 +25,7 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
       <Accordion.Header>
         <div className="flex flex-row justify-between text-dt-light-blue w-full">
           <div
-            className="flex flex-row justify-start items-center hover:text-dt-orange w-full"
+            className="flex flex-row justify-start items-center hover:text-dt-orange w-full hover:cursor-pointer"
             onClick={toggleOpen}>
             <Typography className="lg:text-3xl md:text-xl text-md font-primary font-bold">
               {project.title}

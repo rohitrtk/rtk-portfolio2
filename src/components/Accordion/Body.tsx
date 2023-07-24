@@ -15,7 +15,8 @@ export default function Body({ children }: Props) {
     enter: { opacity: 1, display: "flex" },
     leave: { opacity: 0, display: "none" },
     config: {
-      duration: 500
+      duration: 500,
+      delay: 0
     }
   }));
 
