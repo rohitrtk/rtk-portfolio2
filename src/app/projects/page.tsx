@@ -1,15 +1,11 @@
 "use client";
 
 import { a } from "@react-spring/web";
-import dynamic from "next/dynamic";
 
+import ProjectMenu from "@components/Project/Menu";
 import Backdrop from "@components/Backdrop";
 import LineTitle from "@components/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
-
-const DyanmicProjectMenu = dynamic(
-  () => import("./../../components/Project/Menu")
-);
 
 export default function Projects() {
   const pageStyle = usePageTransition();
@@ -21,7 +17,7 @@ export default function Projects() {
       <a.div style={pageStyle} className="mt-20 w-3/4">
         <LineTitle text="Projects" />
 
-        <DyanmicProjectMenu />
+        <ProjectMenu />
       </a.div>
     </main>
   );

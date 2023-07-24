@@ -3,13 +3,11 @@ import { Typography } from "@material-tailwind/react";
 import { ExpandMore } from "@mui/icons-material";
 import { a } from "@react-spring/web";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import dynamic from "next/dynamic";
 
 import Accordion from "@components/Accordion";
 import useInvertRotation from "@hooks/useInvertRotation";
 import type { Project } from "@components/Projects";
-
-const DynamicProjectBody = dynamic(() => import("@components/Project/Body"));
+import ProjectBody from "@components/Project/Body";
 
 interface ProjectDropdownProps {
   project: Project;
@@ -46,7 +44,7 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
         </div>
       </Accordion.Header>
       <Accordion.Body>
-        <DynamicProjectBody {...project} />
+        <ProjectBody {...project} />
       </Accordion.Body>
     </Accordion.Wrapper>
   );
