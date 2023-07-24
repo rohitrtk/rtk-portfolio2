@@ -20,6 +20,7 @@ export default function Projects() {
 
       <a.div style={pageStyle} className="mt-20 w-3/4">
         <LineTitle text="Projects" />
+
         <DyanmicProjectMenu />
       </a.div>
     </main>

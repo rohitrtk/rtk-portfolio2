@@ -1,15 +1,11 @@
 import { useState } from "react";
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Typography
-} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import { ExpandMore } from "@mui/icons-material";
 import { a } from "@react-spring/web";
-import dynamic from "next/dynamic";
 import { SiGithub } from "@icons-pack/react-simple-icons";
+import dynamic from "next/dynamic";
 
+import Accordion from "@components/Accordion";
 import useInvertRotation from "@hooks/useInvertRotation";
 import type { Project } from "@components/Projects";
 
@@ -26,9 +22,10 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
   const invertionProps = useInvertRotation(open);
 
   return (
-    <Accordion open={open} className="w-[99%]">
-      <AccordionHeader className=" border-b-dt-light-blue">
-        <div className="flex flex-row justify-between text-dt-light-blue  w-full">
+    <Accordion.Wrapper>
+      {/* className=" border-b-dt-light-blue" */}
+      <Accordion.Header>
+        <div className="flex flex-row justify-between text-dt-light-blue w-full">
           <div
             className="flex flex-row justify-start items-center hover:text-dt-orange w-full"
             onClick={toggleOpen}>
@@ -47,10 +44,10 @@ export default function ProjectDropdown({ project }: ProjectDropdownProps) {
             <></>
           )}
         </div>
-      </AccordionHeader>
-      <AccordionBody>
+      </Accordion.Header>
+      <Accordion.Body>
         <DynamicProjectBody {...project} />
-      </AccordionBody>
-    </Accordion>
+      </Accordion.Body>
+    </Accordion.Wrapper>
   );
 }
