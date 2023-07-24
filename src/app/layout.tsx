@@ -7,7 +7,15 @@ import "@styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Rohit Kisto",
-  description: "Rohit Kisto's Portfolio"
+  description: "Rohit Kisto's Portfolio",
+  viewport: {
+    height: "device-height",
+    width: "device-width",
+    minimumScale: 1.0,
+    maximumScale: 1.0,
+    userScalable: false,
+    viewportFit: "contain"
+  }
 };
 
 export default function RootLayout({
