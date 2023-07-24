@@ -34,13 +34,13 @@ export default function About() {
   const pageStyle = usePageTransition();
 
   return (
-    <main className="w-full h-full flex flex-col items-center justify-start mt-10 overflow-x-hidden mb-5">
+    <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden mb-5">
       <Backdrop src="/banner-3.jpg" />
 
       <a.div
         style={pageStyle}
         className="mt-20 w-full h-full flex flex-col items-center">
-        <div className="w-3/4 items-center h-auto bg-red-900">
+        <div className="w-3/4 items-center h-auto">
           <LineTitle text="About" />
 
           <div className="w-full justify-center items-center mt-10 flex md:flex-row flex-col-reverse">
