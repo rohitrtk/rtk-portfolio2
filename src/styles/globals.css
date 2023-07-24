@@ -17,3 +17,8 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+* {
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
