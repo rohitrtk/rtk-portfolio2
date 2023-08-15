@@ -4,5 +4,8 @@ functions = 'netlify/functions'
 publish = 'out'
 
 [[plugins]]
-  package = "@netlify/plugin-emails"
+package = "@netlify/plugin-emails"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
   
