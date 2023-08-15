@@ -34,7 +34,7 @@ export default function About() {
   const pageStyle = usePageTransition();
 
   return (
-    <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden mb-5">
+    <main className="w-full h-full flex flex-col items-center justify-start mt-10 overflow-x-hidden mb-20 md:mb-1">
       <Backdrop src="/banner-3.jpg" />
 
       <a.div

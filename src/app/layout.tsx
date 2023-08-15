@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className="bg-dt-black text-dt-light-blue m-0 scrollbar-hide w-screen h-screen flex flex-col items-center">
+        <body className="bg-dt-black text-dt-light-blue m-0 p-0 scrollbar-hide w-screen h-screen flex flex-col items-center overflow-x-hidden">
           <Navbar />
 
           {children}
