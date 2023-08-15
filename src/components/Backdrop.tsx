@@ -12,7 +12,7 @@ export default function Backdrop({ src }: Props) {
       src={src}
       width={1920}
       height={1080}
-      className="!fixed -z-20 grayscale opacity-10 w-full h-full top-0"
+      className="!fixed -z-20 grayscale opacity-10 w-screen h-screen inset-0"
       fill
       alt=""
     />
