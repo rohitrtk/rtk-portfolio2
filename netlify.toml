@@ -1,7 +1,6 @@
 [build]
-command = 'npm run build && npm run export'
+command = 'next build'
 functions = 'netlify/functions'
-publish = 'out'
 
 [[plugins]]
 package = "@netlify/plugin-emails"
