@@ -1,5 +1,5 @@
 import { a, useSpring } from "@react-spring/web";
-import BlurImage from "./BlurImage";
+import BlurImage from "../common/BlurImage";
 
 interface Props {
   center: string;

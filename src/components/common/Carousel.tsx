@@ -45,8 +45,8 @@ export default function Carousel({ children }: Props) {
   const { onTouchStart, onTouchMove, onTouchEnd } = useSwipe(next, prev);
 
   return (
-    <div className="flex flex-col w-full min-h-full justify-center items-center overflow-hidden">
-      <div className="relative min-h-[200px] w-full flex flex-row overflow-hidden">
+    <div className="flex flex-col w-full min-h-full h-full justify-center items-center overflow-hidden">
+      <div className="relative sm:w-2/3 w-full flex flex-row overflow-hidden h-full">
         {transitions((style, index) => {
           const Img = Children.toArray(children)[index];
           return (
@@ -60,7 +60,7 @@ export default function Carousel({ children }: Props) {
             </a.div>
           );
         })}
-        <div className="md:block hidden">
+        <div className="sm:block w-full hidden">
           <CarouselArrow
             onClick={next}
             className="absolute flex justify-center items-center bg-opacity-0 opacity-0 hover:bg-opacity-20 hover:opacity-100 bg-dt-grey right-0 top-0 bottom-0 w-1/5 h-full cursor-pointer"

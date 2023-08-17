@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import NextImage, { ImageProps } from "next/image";
 import { buildUrl } from "cloudinary-build-url";
 
-interface Props extends ImageProps {}
-
 const cloud = {
   cloudName: "dvrv27c2t"
 };
 
-export default function BlurImage({ src, width, height, className }: Props) {
+export default function BlurImage({
+  src,
+  width,
+  height,
+  className
+}: ImageProps) {
   const [loaded, setLoaded] = useState(false);
 
   const url = buildUrl(`rohitkistodev/${src}`, { cloud });
