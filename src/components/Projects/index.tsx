@@ -34,6 +34,8 @@ export type Project = {
   images: string[];
   tools: Tool[];
   repo?: string;
+  href: string;
+  description: string;
 };
 
 const tools = {
@@ -119,8 +121,12 @@ const tools = {
 
 const projects: Project[] = [
   {
-    title: "Student Regstration Form",
+    title: "Student Registration Form",
+    href: "student-registration-form",
     year: 2022,
+    description: `During my time at Six Nations Polytechnic, I had to design a registration system similiar to that of OUAC. I had to learn a bunch of technologies that I had never used before
+    such as PHP, Bootstrap, and MySQL. The goal of this project was to have graduating high school students apply through this website, rather than through OUAC. This way, SNP would have greater
+    control over the students who were to be accepted and rejected to the school.`,
     sections: [
       `As a part of my time at Six Nations Polytechnic, I had to design a registration system similiar to OUAC, which is what high students use to apply
       to various post secondary institutes in Ontario, Canada. The goal was to have students apply directly to SNP, rather than through OUAC.`,
@@ -150,7 +156,10 @@ const projects: Project[] = [
   },
   {
     title: "Krispy Kreme Clone",
+    href: "krispy-kreme-clone",
     year: 2023,
+    description: `Upon visiting the Krispy Kreme website one day, I had noticed some bugs in their site with regards to responsiveness. I figured I could do a better job,
+    so I attempted to do so. It also gave me an excuse to practice my Tailwind skills.`,
     sections: [
       `I wanted to practice my tailwind skills, so I decided to clone the
       Krispy Kreme website because it is a relatively simple website,
@@ -170,7 +179,11 @@ const projects: Project[] = [
   },
   {
     title: "Pomstagram",
+    href: "pomstagram",
     year: 2023,
+    description: `Before I had started this project, I had an itch to make a project with a MERN stack. I wanted to create some kind of social
+    media app but also wanted it to have something unique to it. Pomeranians are my favourite breed of dog, so I decided to make the app focused around
+    them - the user can only upload photos of pomeranians, and that is enforced via image recognition.`,
     sections: [
       `My goal for this project to create a fullstack application where
       on the frontend, looked similiar to that of VSCO. For the backend,
@@ -203,7 +216,9 @@ const projects: Project[] = [
   },
   {
     title: "League Champ Viewer",
+    href: "league-champ-viewer",
     year: 2023,
+    description: `League of legends has some of the best 3D models I've seen and I wanted to create a simple and straight forward app to show them off. This project was super fun, as I love using ThreeJS and React.`,
     sections: [
       `Being a fan of League of Legends, I thought it would be fun to create a web application
       to view the 3D models that are used in game, and also display a little about section for each model
@@ -228,8 +243,11 @@ const projects: Project[] = [
     repo: "https://github.com/rohitrtk/league-champ-viewer"
   },
   {
-    title: "Graphics in Mathematics",
+    title: "Mathematics in Graphics",
+    href: "mathematics-in-graphics",
     year: 2023,
+    description: `During my final year of undergrad, I took a course focused on writing mathematical essays. For my final project, I had to take one of my essays, and give a presentation on it. As the title suggest,
+    my essay topic was mathematics in graphics. I figured it'd be nice to show off some of the code behind creating graphics, so I wrote this small OpenGL app.`,
     sections: [
       `For one of my classes at UofT, I had to write a mathematical paper detailing the use of Computer Graphics in Mathematics, followed by
       giving a presentation. I thought it would be nice for my classmates to see a physical demonstration of the use, so I created this small C++ & OpenGL app.`,
@@ -256,7 +274,10 @@ const projects: Project[] = [
   },
   {
     title: "Starbucks Landing Clone",
+    href: "starbucks-landing-clone",
     year: 2022,
+    description: `Admittedly, my raw CSS skills aren't the best, I'd much rather use something like Tailwind or Bootstrap. That being said, I understand the importance of raw CSS, so in an effort
+    to practice, I wrote this Starbucks landing page clone.`,
     sections: [
       `Nothing more than a straight up clone of the Starbucks front page. I just wanted to practice my CSS skills and I happened to be drinking a Starbucks coffee.`,
       ``
