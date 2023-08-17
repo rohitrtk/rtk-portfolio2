@@ -1,9 +1,9 @@
 import { Typography, Tooltip } from "@material-tailwind/react";
-import Carousel from "@components/Carousel";
-import BlurImage from "@components/BlurImage";
-import type { Project } from "@components/Projects";
+import Carousel from "@components/common/Carousel";
+import BlurImage from "@components/common/BlurImage";
+import type { Project } from "@assets/ProjectData";
 
-export default function ProjectBody({
+export default function Body({
   title,
   sections,
   images,

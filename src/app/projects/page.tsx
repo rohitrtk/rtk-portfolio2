@@ -2,14 +2,12 @@
 
 import { a } from "@react-spring/web";
 
-import Preview from "@components/Project/Preview";
-import Backdrop from "@components/Backdrop";
-import LineTitle from "@components/LineTitle";
+import Preview from "@components/project/Preview";
+import Backdrop from "@components/common/Backdrop";
+import LineTitle from "@components/common/LineTitle";
 import usePageTransition from "@hooks/usePageTransition";
 
-import projects from "@components/Projects";
-import { Typography } from "@material-tailwind/react";
-import Link from "next/link";
+import projects from "@assets/ProjectData";
 
 export default function Projects() {
   const pageStyle = usePageTransition();

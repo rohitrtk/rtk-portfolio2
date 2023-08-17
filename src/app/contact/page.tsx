@@ -5,9 +5,9 @@ import { Typography } from "@material-tailwind/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Backdrop from "@components/Backdrop";
-import ContactForm from "@components/ContactForm";
-import LineTitle from "@components/LineTitle";
+import Backdrop from "@components/common/Backdrop";
+import LineTitle from "@components/common/LineTitle";
+import ContactForm from "@components/contact/ContactForm";
 import usePageTransition from "@hooks/usePageTransition";
 
 export default function Contact() {

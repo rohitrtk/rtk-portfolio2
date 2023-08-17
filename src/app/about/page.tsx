@@ -13,9 +13,9 @@ import {
   SiPython
 } from "@icons-pack/react-simple-icons";
 
-import Backdrop from "@components/Backdrop";
-import LineTitle from "@components/LineTitle";
-import GraphWheel from "@components/GraphWheel";
+import Backdrop from "@components/common/Backdrop";
+import LineTitle from "@components/common/LineTitle";
+import GraphWheel from "@components/about/GraphWheel";
 import usePageTransition from "@hooks/usePageTransition";
 
 const description = [

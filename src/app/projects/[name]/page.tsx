@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
 
-import LineTitle from "@components/LineTitle";
-import Backdrop from "@components/Backdrop";
-import Skeleton from "@components/Project/Skeleton";
+import Backdrop from "@components/common/Backdrop";
+import Skeleton from "@components/project/Skeleton";
 
-import projects from "@components/Projects";
+import projects from "@assets/ProjectData";
 
 // import ProjectMenu from "@components/Project/Menu";
 // import usePageTransition from "@hooks/usePageTransition";

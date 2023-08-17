@@ -1,15 +1,15 @@
 "use client";
 
-import { ReactNode, useLayoutEffect } from "react";
+import { ReactNode } from "react";
 import { Typography } from "@lib/MT";
 import { a } from "@react-spring/web";
 
-import Backdrop from "@components/Backdrop";
+import Backdrop from "@components/common/Backdrop";
 import useSlideIn from "@hooks/useSlideIn";
-import Socials from "@components/Socials";
+import Socials from "@components/common/Socials";
 
 import usePageTransition from "@hooks/usePageTransition";
-import BlurImage from "@components/BlurImage";
+import BlurImage from "@components/common/BlurImage";
 
 const items: ReactNode[] = [
   <Typography variant="h1" className="font-primary font-bold text-dt-blue">

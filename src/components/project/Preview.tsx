@@ -1,4 +1,4 @@
-import BlurImage from "@components/BlurImage";
+import BlurImage from "@components/common/BlurImage";
 import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
