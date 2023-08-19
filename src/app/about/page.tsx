@@ -36,7 +36,8 @@ export default function About() {
   return (
     <>
       <Backdrop src="/banner-3.jpg" />
-      <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden mb-20 md:mb-1">
+
+      <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden">
         <a.div
           style={pageStyle}
           className="mt-20 w-full h-full flex flex-col items-center">
@@ -44,7 +45,7 @@ export default function About() {
             <LineTitle text="About" />
 
             <div className="w-full justify-center items-center mt-10 flex md:flex-row flex-col-reverse">
-              <section className="flex flex-col gap-6 md:w-1/2 w-full text-center md:text-start">
+              <section className="flex flex-col gap-6 md:w-1/2 w-full text-center md:text-start md:pb-0 pb-10">
                 {description.map((d, i) => (
                   <Typography
                     key={`about-descriptions-${i}`}

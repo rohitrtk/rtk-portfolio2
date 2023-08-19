@@ -16,7 +16,7 @@ export default function Projects() {
     <>
       <Backdrop src="/banner-2.jpg" />
 
-      <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden mb-20 md:mb-1">
+      <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden pb-10">
         <a.div style={pageStyle} className="mt-20 w-3/4">
           <LineTitle text="Projects" />
 
