@@ -3,6 +3,9 @@ import Carousel from "@components/common/Carousel";
 import BlurImage from "@components/common/BlurImage";
 import type { Project } from "@assets/ProjectData";
 
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
+
 export default function Body({
   title,
   sections,
@@ -44,6 +47,13 @@ export default function Body({
           </Typography>
         ))}
       </div>
+      {repo ? (
+        <Link href={repo} className="pb-10">
+          <SiGithub size={48} color="#ffffff" />
+        </Link>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
