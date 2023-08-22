@@ -3,6 +3,9 @@ import Carousel from "@components/common/Carousel";
 import BlurImage from "@components/common/BlurImage";
 import type { Project } from "@assets/ProjectData";
 
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
+
 export default function Body({
   title,
   sections,
@@ -34,7 +37,7 @@ export default function Body({
           </Tooltip>
         ))}
       </div>
-      <div className="py-10">
+      <div className="flex flex-col gap-10 py-10">
         {sections.map((section, index) => (
           <Typography
             variant="h5"
@@ -44,6 +47,13 @@ export default function Body({
           </Typography>
         ))}
       </div>
+      {repo ? (
+        <Link href={repo} className="pb-10">
+          <SiGithub size={48} color="#ffffff" />
+        </Link>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
