@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     minimumScale: 1.0,
     maximumScale: 1.0,
     userScalable: false,
-    viewportFit: "contain"
+    viewportFit: "auto"
   }
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className="bg-dt-black text-dt-light-blue m-0 p-0 scrollbar-hide w-screen h-screen flex flex-col items-center overflow-x-hidden">
+        <body className="bg-dt-black text-dt-light-blue p-0 min-h-screen flex flex-col items-center justify-start">
           <Navbar />
 
           {children}

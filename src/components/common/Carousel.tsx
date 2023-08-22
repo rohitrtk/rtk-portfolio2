@@ -84,12 +84,12 @@ export default function Carousel({ children }: Props) {
       </div>
 
       <div
-        className="group-hover:block hover:cursor-pointer text-6xl bg-dt-grey bg-opacity-90 border-2 border-dt-light-blue hidden absolute top-1/2 -translate-x-0 -translate-y-1/2 left-5 m-auto rounded-full"
+        className="sm:group-hover:block hover:cursor-pointer text-6xl bg-dt-grey bg-opacity-90 border-2 border-dt-light-blue hidden absolute top-1/2 -translate-x-0 -translate-y-1/2 left-5 m-auto rounded-full"
         onClick={prev}>
         <ArrowForwardIcon fontSize="inherit" className="rotate-180" />
       </div>
       <div
-        className="group-hover:block hover:cursor-pointer text-6xl bg-dt-grey bg-opacity-90 border-2 border-dt-light-blue hidden absolute top-1/2 -translate-x-0 -translate-y-1/2 right-5 m-auto rounded-full"
+        className="sm:group-hover:block hover:cursor-pointer text-6xl bg-dt-grey bg-opacity-90 border-2 border-dt-light-blue hidden absolute top-1/2 -translate-x-0 -translate-y-1/2 right-5 m-auto rounded-full"
         onClick={next}>
         <ArrowForwardIcon fontSize="inherit" />
       </div>

@@ -24,11 +24,9 @@ export default function Page({ params }: Params) {
   }
 
   return (
-    <>
+    <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden">
       <Backdrop src="/banner-2.jpg" />
-      <main className="w-full h-full flex flex-col items-center justify-start overflow-x-hidden">
-        <Skeleton project={projects[index]} />
-      </main>
-    </>
+      <Skeleton project={projects[index]} />
+    </main>
   );
 }
