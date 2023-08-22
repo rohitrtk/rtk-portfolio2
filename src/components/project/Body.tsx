@@ -34,7 +34,7 @@ export default function Body({
           </Tooltip>
         ))}
       </div>
-      <div className="py-10">
+      <div className="flex flex-col gap-10 py-10">
         {sections.map((section, index) => (
           <Typography
             variant="h5"
