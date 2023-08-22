@@ -15,9 +15,9 @@ export default function Contact() {
 
   return (
     <>
-      <Backdrop src="/banner-1.jpg" />
-
       <main className="w-full h-full flex flex-col items-center justify-start">
+        <Backdrop src="/banner-1.jpg" />
+
         <a.div style={pageStyle} className="mt-20 w-3/4">
           <LineTitle text="Contact" />
 
