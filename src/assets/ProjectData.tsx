@@ -121,6 +121,39 @@ const tools = {
 
 const projects: Project[] = [
   {
+    title: "Marquee Printing",
+    href: "marquee-printing",
+    year: 2023,
+    description: `For my first freelance gig, I had to create a webpage as a part of Marquee Design & Printing's rebranding. The primary role for the webpage
+    was to improve the experience for both clients and Marquee when it came to ordering custom printed floors. I was fortunate enough to learn some new skills whilst creating
+    this project as I opted to use the new shadcn UI library as well as react-hook-forms and Zod to handle the form submissions.`,
+    sections: [
+      `Developing this project for Marquee proved to be an amazing experience as I got to use the new server components by Next combined with the power of TypeScript. This allowed me to
+      improve the page load times and improve SEO.`,
+      `It was also a little bit of a challenge as when I started this project, I wanted to use all of these fancy animations
+      either by using react-spring or Motion Framer; becuase of how new the server components were, these animation libraries just weren't compatible so I had to write the animations from scratch.`
+    ],
+    images: [
+      "/marqueeprinting/1",
+      "/marqueeprinting/2",
+      "/marqueeprinting/3",
+      "/marqueeprinting/4",
+      "/marqueeprinting/5",
+      "/marqueeprinting/6",
+      "/marqueeprinting/7",
+      "/marqueeprinting/8",
+      "/marqueeprinting/9"
+    ],
+    tools: [
+      tools.HTML,
+      tools.CSS,
+      tools.TypeScript,
+      tools.React,
+      tools.NextJS,
+      tools.Tailwind
+    ]
+  },
+  {
     title: "Student Registration Form",
     href: "student-registration-form",
     year: 2022,
